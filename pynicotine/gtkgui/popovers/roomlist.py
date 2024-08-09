@@ -202,7 +202,17 @@ class RoomList(Popover):
         self.add_room(msg.room, is_private=True)
 
     def join_room(self, msg):
-        self.update_room_user_count(msg.room, user_count=len(msg.users))
+
+        room = msg.room
+        user_count = len(msg.users)
+
+        if room not in self.list_view.iterators:
+            self.add_room(
+                room, user_count, is_private=msg.private,
+                is_owned=(msg.owner == core.users.login_username)
+            )
+
+        self.update_room_user_count(room, user_count=user_count)
 
     def show_room(self, room, *_args):
         if room == core.chatrooms.GLOBAL_ROOM_NAME:
@@ -216,10 +226,12 @@ class RoomList(Popover):
         self.update_room_user_count(room, decrement=True)
 
     def user_joined_room(self, msg):
-        self.update_room_user_count(msg.room)
+        if msg.userdata.username != core.users.login_username:
+            self.update_room_user_count(msg.room)
 
     def user_left_room(self, msg):
-        self.update_room_user_count(msg.room, decrement=True)
+        if msg.username != core.users.login_username:
+            self.update_room_user_count(msg.room, decrement=True)
 
     def room_list(self, msg):
 
