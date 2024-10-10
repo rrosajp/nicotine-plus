@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13.0-rc.1',
+        python: ['3.6', '3.7', '3.8', '3.9', '3.10', '3.11', '3.12', '3.13',
                  'pypy-3.6', 'pypy-3.7', 'pypy-3.8', 'pypy-3.9', 'pypy-3.10']
     steps:
       - name: Checkout code
@@ -111,7 +111,7 @@ jobs:
       - name: Install dependencies
         run: |
           zypper refresh
-          zypper -n install gettext-tools python312-build python312-gobject \
+          zypper -n install dejavu-fonts gettext-tools python312-build python312-gobject \
             python312-gobject-Gdk python312-pycodestyle python312-pylint typelib-1_0-Gtk-4_0
 
       - name: PEP 8 style checks
@@ -141,7 +141,7 @@ jobs:
       - name: Install dependencies
         run: |
           apk update
-          apk add gettext gtk4.0 py3-build py3-gobject3 py3-pycodestyle py3-pylint
+          apk add font-dejavu gettext gtk4.0 py3-build py3-gobject3 py3-pycodestyle py3-pylint
 
       - name: PEP 8 style checks
         run: python3 -m pycodestyle
@@ -161,13 +161,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        arch: [x86_64]
+        include:
+          - arch: x86_64
+            prefix: mingw-w64-clang-x86_64
     defaults:
       run:
         shell: msys2 {0}
-    env:
-      NICOTINE_GTK_VERSION: 4
-      NICOTINE_LIBADWAITA: 1
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -175,19 +174,20 @@ jobs:
       - name: Setup msys2
         uses: msys2/setup-msys2@v2
         with:
-          msystem: MINGW64
+          msystem: clang64
           release: false
           update: true
           install: >-
-            mingw-w64-${{ matrix.arch }}-ca-certificates
-            mingw-w64-${{ matrix.arch }}-gettext-tools
-            mingw-w64-${{ matrix.arch }}-gtk${{ env.NICOTINE_GTK_VERSION }}
-            mingw-w64-${{ matrix.arch }}-libadwaita
-            mingw-w64-${{ matrix.arch }}-python-build
-            mingw-w64-${{ matrix.arch }}-python-cx-freeze
-            mingw-w64-${{ matrix.arch }}-python-pycodestyle
-            mingw-w64-${{ matrix.arch }}-python-pylint
-            mingw-w64-${{ matrix.arch }}-python-gobject
+            ${{ matrix.prefix }}-ca-certificates
+            ${{ matrix.prefix }}-gettext-tools
+            ${{ matrix.prefix }}-gtk4
+            ${{ matrix.prefix }}-libadwaita
+            ${{ matrix.prefix }}-python-build
+            ${{ matrix.prefix }}-python-cx-freeze
+            ${{ matrix.prefix }}-python-pycodestyle
+            ${{ matrix.prefix }}-python-pylint
+            ${{ matrix.prefix }}-python-gobject
+            ${{ matrix.prefix }}-webp-pixbuf-loader
 
       - name: Install additional dependencies
         run: python3 packaging/windows/dependencies.py
@@ -214,10 +214,7 @@ jobs:
           - arch: arm64
             platform: macos-14
     runs-on: ${{ matrix.platform }}
-    timeout-minutes: 15
-    env:
-      NICOTINE_GTK_VERSION: 4
-      NICOTINE_LIBADWAITA: 1
+    timeout-minutes: 20
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -232,9 +229,7 @@ jobs:
           python3.12 -m venv venv
 
       - name: Install dependencies
-        run: |
-          brew update
-          venv/bin/python3 packaging/macos/dependencies.py
+        run: venv/bin/python3 packaging/macos/dependencies.py
 
       - name: PEP 8 style checks
         run: venv/bin/python3 -m pycodestyle

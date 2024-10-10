@@ -30,6 +30,7 @@ import time
 from operator import itemgetter
 
 from gi.repository import Gdk
+from gi.repository import GObject
 from gi.repository import Gtk
 from gi.repository import Pango
 
@@ -90,7 +91,8 @@ class NetworkPage:
         self.application = application
         self.portmap_required = None
 
-        self.check_port_status_label.connect("activate-link", lambda x, url: open_uri(url))
+        self.username_entry.set_max_length(core.users.USERNAME_MAX_LENGTH)
+        self.check_port_status_label.connect("activate-link", self.on_activate_link)
 
         self.network_interface_combobox = ComboBox(
             container=self.network_interface_label.get_parent(), has_entry=True,
@@ -187,6 +189,10 @@ class NetworkPage:
                 "auto_connect_startup": self.auto_connect_startup_toggle.get_active()
             }
         }
+
+    def on_activate_link(self, _label, url):
+        open_uri(url)
+        return True
 
     def on_change_password_response(self, dialog, _response_id, user_status):
 
@@ -374,7 +380,7 @@ class DownloadsPage:
         else:
             self.use_unlimited_speed_radio.set_active(True)
 
-        self.filter_list_view.disable_sorting()
+        self.filter_list_view.freeze()
 
         for item in config.sections["transfers"]["downloadfilters"]:
             if not isinstance(item, list) or len(item) < 2:
@@ -385,7 +391,7 @@ class DownloadsPage:
 
             self.filter_list_view.add_row([dfilter, enable_regex], select_row=False)
 
-        self.filter_list_view.enable_sorting()
+        self.filter_list_view.unfreeze()
 
     def get_settings(self):
 
@@ -504,20 +510,23 @@ class DownloadsPage:
     def on_remove_filter(self, *_args):
 
         for iterator in reversed(list(self.filter_list_view.get_selected_rows())):
-            self.filter_list_view.remove_row(iterator)
+            dfilter = self.filter_list_view.get_row_value(iterator, "filter")
+            orig_iterator = self.filter_list_view.iterators[dfilter]
+
+            self.filter_list_view.remove_row(orig_iterator)
 
         self.on_verify_filter()
 
     def on_default_filters(self, *_args):
 
         self.filter_list_view.clear()
-        self.filter_list_view.disable_sorting()
+        self.filter_list_view.freeze()
 
         for download_filter, escaped in config.defaults["transfers"]["downloadfilters"]:
             enable_regex = not escaped
             self.filter_list_view.add_row([download_filter, enable_regex], select_row=False)
 
-        self.filter_list_view.enable_sorting()
+        self.filter_list_view.unfreeze()
         self.on_verify_filter()
 
     def on_verify_filter(self, *_args):
@@ -638,7 +647,7 @@ class SharesPage:
     def set_settings(self):
 
         self.shares_list_view.clear()
-        self.shares_list_view.disable_sorting()
+        self.shares_list_view.freeze()
 
         self.application.preferences.set_widgets_data(self.options)
 
@@ -658,7 +667,7 @@ class SharesPage:
             self.shares_list_view.add_row(
                 [virtual_name, folder_path, _("Trusted")], select_row=False)
 
-        self.shares_list_view.enable_sorting()
+        self.shares_list_view.unfreeze()
         self.rescan_required = self.recompress_shares_required = False
 
     def get_settings(self):
@@ -769,11 +778,12 @@ class SharesPage:
 
         for iterator in iterators:
             virtual_name = self.shares_list_view.get_row_value(iterator, "virtual_name")
+            orig_iterator = self.shares_list_view.iterators[virtual_name]
 
             core.shares.remove_share(
                 virtual_name, share_groups=(self.shared_folders, self.buddy_shared_folders, self.trusted_shared_folders)
             )
-            self.shares_list_view.remove_row(iterator)
+            self.shares_list_view.remove_row(orig_iterator)
 
         if iterators:
             self.rescan_required = True
@@ -971,6 +981,10 @@ class IgnoredUsersPage:
         ) = self.widgets = ui.load(scope=self, path="settings/ignore.ui")
 
         self.application = application
+        self.added_users = set()
+        self.added_ips = set()
+        self.removed_users = set()
+        self.removed_ips = set()
 
         self.ignored_users = []
         self.ignored_users_list_view = TreeView(
@@ -1021,6 +1035,8 @@ class IgnoredUsersPage:
 
     def set_settings(self):
 
+        self.clear_changes()
+
         self.ignored_users_list_view.clear()
         self.ignored_ips_list_view.clear()
         self.ignored_users.clear()
@@ -1039,6 +1055,13 @@ class IgnoredUsersPage:
             }
         }
 
+    def clear_changes(self):
+
+        self.added_users.clear()
+        self.added_ips.clear()
+        self.removed_users.clear()
+        self.removed_ips.clear()
+
     def on_add_ignored_user_response(self, dialog, _response_id, _data):
 
         user = dialog.get_entry_value().strip()
@@ -1046,6 +1069,9 @@ class IgnoredUsersPage:
         if user and user not in self.ignored_users:
             self.ignored_users.append(user)
             self.ignored_users_list_view.add_row([str(user)])
+
+            self.added_users.add(user)
+            self.removed_users.discard(user)
 
     def on_add_ignored_user(self, *_args):
 
@@ -1061,9 +1087,15 @@ class IgnoredUsersPage:
 
         for iterator in reversed(list(self.ignored_users_list_view.get_selected_rows())):
             user = self.ignored_users_list_view.get_row_value(iterator, "username")
+            orig_iterator = self.ignored_users_list_view.iterators[user]
 
-            self.ignored_users_list_view.remove_row(iterator)
+            self.ignored_users_list_view.remove_row(orig_iterator)
             self.ignored_users.remove(user)
+
+            if user not in self.added_users:
+                self.removed_users.add(user)
+
+            self.added_users.discard(user)
 
     def on_add_ignored_ip_response(self, dialog, _response_id, _data):
 
@@ -1074,8 +1106,13 @@ class IgnoredUsersPage:
 
         if ip_address not in self.ignored_ips:
             user = core.network_filter.get_online_username(ip_address) or ""
+            user_ip_pair = (user, ip_address)
+
             self.ignored_ips[ip_address] = user
             self.ignored_ips_list_view.add_row([ip_address, user])
+
+            self.added_ips.add(user_ip_pair)
+            self.removed_ips.discard(user_ip_pair)
 
     def on_add_ignored_ip(self, *_args):
 
@@ -1091,9 +1128,17 @@ class IgnoredUsersPage:
 
         for iterator in reversed(list(self.ignored_ips_list_view.get_selected_rows())):
             ip_address = self.ignored_ips_list_view.get_row_value(iterator, "ip_address")
+            user = self.ignored_ips_list_view.get_row_value(iterator, "user")
+            user_ip_pair = (user, ip_address)
+            orig_iterator = self.ignored_ips_list_view.iterators[ip_address]
 
-            self.ignored_ips_list_view.remove_row(iterator)
+            self.ignored_ips_list_view.remove_row(orig_iterator)
             del self.ignored_ips[ip_address]
+
+            if user_ip_pair not in self.added_ips:
+                self.removed_ips.add(user_ip_pair)
+
+            self.added_ips.discard(user_ip_pair)
 
 
 class BannedUsersPage:
@@ -1113,7 +1158,10 @@ class BannedUsersPage:
         ) = self.widgets = ui.load(scope=self, path="settings/ban.ui")
 
         self.application = application
-        self.ip_ban_required = False
+        self.added_users = set()
+        self.added_ips = set()
+        self.removed_users = set()
+        self.removed_ips = set()
 
         self.banned_users = []
         self.banned_users_list_view = TreeView(
@@ -1172,6 +1220,8 @@ class BannedUsersPage:
 
     def set_settings(self):
 
+        self.clear_changes()
+
         self.banned_users_list_view.clear()
         self.banned_ips_list_view.clear()
         self.banned_users.clear()
@@ -1182,8 +1232,6 @@ class BannedUsersPage:
         self.banned_users = config.sections["server"]["banlist"][:]
         self.banned_ips = config.sections["server"]["ipblocklist"].copy()
         self.geo_block_country_entry.set_text(config.sections["transfers"]["geoblockcc"][0])
-
-        self.ip_ban_required = False
 
     def get_settings(self):
 
@@ -1202,6 +1250,13 @@ class BannedUsersPage:
             }
         }
 
+    def clear_changes(self):
+
+        self.added_users.clear()
+        self.added_ips.clear()
+        self.removed_users.clear()
+        self.removed_ips.clear()
+
     def on_add_banned_user_response(self, dialog, _response_id, _data):
 
         user = dialog.get_entry_value().strip()
@@ -1209,6 +1264,9 @@ class BannedUsersPage:
         if user and user not in self.banned_users:
             self.banned_users.append(user)
             self.banned_users_list_view.add_row([user])
+
+            self.added_users.add(user)
+            self.removed_users.discard(user)
 
     def on_add_banned_user(self, *_args):
 
@@ -1224,9 +1282,15 @@ class BannedUsersPage:
 
         for iterator in reversed(list(self.banned_users_list_view.get_selected_rows())):
             user = self.banned_users_list_view.get_row_value(iterator, "username")
+            orig_iterator = self.banned_users_list_view.iterators[user]
 
-            self.banned_users_list_view.remove_row(iterator)
+            self.banned_users_list_view.remove_row(orig_iterator)
             self.banned_users.remove(user)
+
+            if user not in self.added_users:
+                self.removed_users.add(user)
+
+            self.added_users.discard(user)
 
     def on_add_banned_ip_response(self, dialog, _response_id, _data):
 
@@ -1237,9 +1301,13 @@ class BannedUsersPage:
 
         if ip_address not in self.banned_ips:
             user = core.network_filter.get_online_username(ip_address) or ""
+            user_ip_pair = (user, ip_address)
+
             self.banned_ips[ip_address] = user
             self.banned_ips_list_view.add_row([ip_address, user])
-            self.ip_ban_required = True
+
+            self.added_ips.add(user_ip_pair)
+            self.removed_ips.discard(user_ip_pair)
 
     def on_add_banned_ip(self, *_args):
 
@@ -1255,9 +1323,17 @@ class BannedUsersPage:
 
         for iterator in reversed(list(self.banned_ips_list_view.get_selected_rows())):
             ip_address = self.banned_ips_list_view.get_row_value(iterator, "ip_address")
+            user = self.banned_ips_list_view.get_row_value(iterator, "user")
+            user_ip_pair = (user, ip_address)
+            orig_iterator = self.banned_ips_list_view.iterators[ip_address]
 
-            self.banned_ips_list_view.remove_row(iterator)
+            self.banned_ips_list_view.remove_row(orig_iterator)
             del self.banned_ips[ip_address]
+
+            if user_ip_pair not in self.added_ips:
+                self.removed_ips.add(user_ip_pair)
+
+            self.added_ips.discard(user_ip_pair)
 
 
 class ChatsPage:
@@ -1301,7 +1377,7 @@ class ChatsPage:
 
         self.format_codes_label.set_markup(
             f"<a href='{format_codes_url}' title='{format_codes_url}'>{format_codes_label}</a>")
-        self.format_codes_label.connect("activate-link", lambda x, url: open_uri(url))
+        self.format_codes_label.connect("activate-link", self.on_activate_link)
 
         self.tts_command_combobox = ComboBox(
             container=self.tts_command_label.get_parent(), label=self.tts_command_label, has_entry=True,
@@ -1446,6 +1522,10 @@ class ChatsPage:
             }
         }
 
+    def on_activate_link(self, _label, url):
+        open_uri(url)
+        return True
+
     def on_private_room_changed(self, *_args):
         self.private_room_required = True
 
@@ -1517,8 +1597,9 @@ class ChatsPage:
 
         for iterator in reversed(list(self.censor_list_view.get_selected_rows())):
             censor = self.censor_list_view.get_row_value(iterator, "pattern")
+            orig_iterator = self.censor_list_view.iterators[censor]
 
-            self.censor_list_view.remove_row(iterator)
+            self.censor_list_view.remove_row(orig_iterator)
             self.censored_patterns.remove(censor)
 
     def on_add_replacement_response(self, dialog, _response_id, _data):
@@ -1581,8 +1662,9 @@ class ChatsPage:
 
         for iterator in reversed(list(self.replacement_list_view.get_selected_rows())):
             replacement = self.replacement_list_view.get_row_value(iterator, "pattern")
+            orig_iterator = self.replacement_list_view.iterators[replacement]
 
-            self.replacement_list_view.remove_row(iterator)
+            self.replacement_list_view.remove_row(orig_iterator)
             del self.replacements[replacement]
 
 
@@ -1611,8 +1693,6 @@ class UserInterfacePage:
             self.color_input_text_entry,
             self.color_list_text_button,
             self.color_list_text_entry,
-            self.color_queued_result_text_button,
-            self.color_queued_result_text_entry,
             self.color_status_away_button,
             self.color_status_away_entry,
             self.color_status_offline_button,
@@ -1763,7 +1843,6 @@ class UserInterfacePage:
             "textbg": self.color_input_background_button,
             "inputcolor": self.color_input_text_button,
             "search": self.color_list_text_button,
-            "searchq": self.color_queued_result_text_button,
             "useraway": self.color_status_away_button,
             "useronline": self.color_status_online_button,
             "useroffline": self.color_status_offline_button,
@@ -1782,7 +1861,6 @@ class UserInterfacePage:
             "textbg": self.color_input_background_entry,
             "inputcolor": self.color_input_text_entry,
             "search": self.color_list_text_entry,
-            "searchq": self.color_queued_result_text_entry,
             "useraway": self.color_status_away_entry,
             "useronline": self.color_status_online_entry,
             "useroffline": self.color_status_offline_entry,
@@ -1929,7 +2007,6 @@ class UserInterfacePage:
                 "textbg": self.color_input_background_entry,
                 "inputcolor": self.color_input_text_entry,
                 "search": self.color_list_text_entry,
-                "searchq": self.color_queued_result_text_entry,
                 "useraway": self.color_status_away_entry,
                 "useronline": self.color_status_online_entry,
                 "useroffline": self.color_status_offline_entry,
@@ -2027,7 +2104,6 @@ class UserInterfacePage:
                 "textbg": self.color_input_background_entry.get_text().strip(),
                 "inputcolor": self.color_input_text_entry.get_text().strip(),
                 "search": self.color_list_text_entry.get_text().strip(),
-                "searchq": self.color_queued_result_text_entry.get_text().strip(),
                 "useraway": self.color_status_away_entry.get_text().strip(),
                 "useronline": self.color_status_online_entry.get_text().strip(),
                 "useroffline": self.color_status_offline_entry.get_text().strip(),
@@ -2157,7 +2233,7 @@ class LoggingPage:
 
         self.format_codes_label.set_markup(
             f"<a href='{format_codes_url}' title='{format_codes_url}'>{format_codes_label}</a>")
-        self.format_codes_label.connect("activate-link", lambda x, url: open_uri(url))
+        self.format_codes_label.connect("activate-link", self.on_activate_link)
 
         self.private_chat_log_folder_button = FileChooserButton(
             self.private_chat_log_folder_label.get_parent(), window=application.preferences,
@@ -2221,6 +2297,10 @@ class LoggingPage:
                 "log_timestamp": self.log_timestamp_format_entry.get_text()
             }
         }
+
+    def on_activate_link(self, _label, url):
+        open_uri(url)
+        return True
 
     def on_default_timestamp(self, *_args):
         self.log_timestamp_format_entry.set_text(config.defaults["logging"]["log_timestamp"])
@@ -2464,7 +2544,7 @@ class UrlHandlersPage:
     def set_settings(self):
 
         self.protocol_list_view.clear()
-        self.protocol_list_view.disable_sorting()
+        self.protocol_list_view.freeze()
         self.protocols.clear()
 
         self.application.preferences.set_widgets_data(self.options)
@@ -2474,7 +2554,7 @@ class UrlHandlersPage:
         for protocol, command in self.protocols.items():
             self.protocol_list_view.add_row([str(protocol), str(command)], select_row=False)
 
-        self.protocol_list_view.enable_sorting()
+        self.protocol_list_view.unfreeze()
 
     def get_settings(self):
 
@@ -2558,8 +2638,9 @@ class UrlHandlersPage:
 
         for iterator in reversed(list(self.protocol_list_view.get_selected_rows())):
             protocol = self.protocol_list_view.get_row_value(iterator, "protocol")
+            orig_iterator = self.protocol_list_view.iterators[protocol]
 
-            self.protocol_list_view.remove_row(iterator)
+            self.protocol_list_view.remove_row(orig_iterator)
             del self.protocols[protocol]
 
     def on_default_file_manager(self, *_args):
@@ -2815,7 +2896,7 @@ class PluginsPage:
                 },
 
                 # Hidden data columns
-                "plugin_id": {"data_type": str, "iterator_key": True}
+                "plugin_id": {"data_type": GObject.TYPE_STRING, "iterator_key": True}
             }
         )
 
@@ -2832,7 +2913,7 @@ class PluginsPage:
     def set_settings(self):
 
         self.plugin_list_view.clear()
-        self.plugin_list_view.disable_sorting()
+        self.plugin_list_view.freeze()
 
         self.application.preferences.set_widgets_data(self.options)
 
@@ -2846,7 +2927,7 @@ class PluginsPage:
             enabled = (plugin_id in config.sections["plugins"]["enabled"])
             self.plugin_list_view.add_row([enabled, plugin_name, plugin_id], select_row=False)
 
-        self.plugin_list_view.enable_sorting()
+        self.plugin_list_view.unfreeze()
 
     def get_settings(self):
 
@@ -2940,7 +3021,7 @@ class Preferences(Dialog):
         ("network", NetworkPage, _("Network"), "network-wireless-symbolic"),
         ("user-interface", UserInterfacePage, _("User Interface"), "view-grid-symbolic"),
         ("shares", SharesPage, _("Shares"), "folder-symbolic"),
-        ("downloads", DownloadsPage, _("Downloads"), "document-save-symbolic"),
+        ("downloads", DownloadsPage, _("Downloads"), "folder-download-symbolic"),
         ("uploads", UploadsPage, _("Uploads"), "emblem-shared-symbolic"),
         ("searches", SearchesPage, _("Searches"), "system-search-symbolic"),
         ("user-profile", UserProfilePage, _("User Profile"), "avatar-default-symbolic"),
@@ -2949,8 +3030,8 @@ class Preferences(Dialog):
         ("logging", LoggingPage, _("Logging"), "folder-documents-symbolic"),
         ("banned-users", BannedUsersPage, _("Banned Users"), "action-unavailable-symbolic"),
         ("ignored-users", IgnoredUsersPage, _("Ignored Users"), "microphone-sensitivity-muted-symbolic"),
-        ("plugins", PluginsPage, _("Plugins"), "list-add-symbolic"),
-        ("url-handlers", UrlHandlersPage, _("URL Handlers"), "insert-link-symbolic")
+        ("url-handlers", UrlHandlersPage, _("URL Handlers"), "insert-link-symbolic"),
+        ("plugins", PluginsPage, _("Plugins"), "application-x-addon-symbolic")
     ]
 
     def __init__(self, application):
@@ -3087,7 +3168,7 @@ class Preferences(Dialog):
             widget.set_font(value)
 
         elif isinstance(widget, TreeView):
-            widget.disable_sorting()
+            widget.freeze()
 
             if isinstance(value, list):
                 for item in value:
@@ -3102,7 +3183,7 @@ class Preferences(Dialog):
                 for item1, item2 in value.items():
                     widget.add_row([str(item1), str(item2)], select_row=False)
 
-            widget.enable_sorting()
+            widget.unfreeze()
 
         elif isinstance(widget, FileChooserButton):
             widget.set_path(value)
@@ -3173,12 +3254,6 @@ class Preferences(Dialog):
             completion_required = False
 
         try:
-            ip_ban_required = self.pages["banned-users"].ip_ban_required
-
-        except KeyError:
-            ip_ban_required = False
-
-        try:
             search_required = self.pages["searches"].search_required
 
         except KeyError:
@@ -3191,7 +3266,6 @@ class Preferences(Dialog):
             user_profile_required,
             private_room_required,
             completion_required,
-            ip_ban_required,
             search_required,
             options
         )
@@ -3205,13 +3279,45 @@ class Preferences(Dialog):
             user_profile_required,
             private_room_required,
             completion_required,
-            ip_ban_required,
             search_required,
             options
         ) = self.get_settings()
 
         for key, data in options.items():
             config.sections[key].update(data)
+
+        banned_page = self.pages.get("banned-users")
+        ignored_page = self.pages.get("ignored-users")
+
+        if banned_page is not None:
+            for username in banned_page.added_users:
+                core.network_filter.ban_user(username)
+
+            for username, ip_address in banned_page.added_ips:
+                core.network_filter.ban_user_ip(username, ip_address)
+
+            for username in banned_page.removed_users:
+                core.network_filter.unban_user(username)
+
+            for username, ip_address in banned_page.removed_ips:
+                core.network_filter.unban_user_ip(username, ip_address)
+
+            banned_page.clear_changes()
+
+        if ignored_page is not None:
+            for username in ignored_page.added_users:
+                core.network_filter.ignore_user(username)
+
+            for username, ip_address in ignored_page.added_ips:
+                core.network_filter.ignore_user_ip(username, ip_address)
+
+            for username in ignored_page.removed_users:
+                core.network_filter.unignore_user(username)
+
+            for username, ip_address in ignored_page.removed_ips:
+                core.network_filter.unignore_user_ip(username, ip_address)
+
+            ignored_page.clear_changes()
 
         if portmap_required == "add":
             core.portmapper.add_port_mapping()
@@ -3229,9 +3335,6 @@ class Preferences(Dialog):
         if completion_required:
             core.chatrooms.update_completions()
             core.privatechat.update_completions()
-
-        if ip_ban_required:
-            core.network_filter.close_banned_ip_connections()
 
         if search_required:
             self.application.window.search.populate_search_history()

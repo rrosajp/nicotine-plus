@@ -82,10 +82,12 @@ class ChatRooms(IconNotebook):
         self.room_wall = None
         self.highlighted_rooms = {}
 
+        window.chatrooms_entry.set_max_length(core.chatrooms.ROOM_NAME_MAX_LENGTH)
+
         if GTK_API_VERSION >= 4:
-            self.window.chatrooms_paned.set_resize_start_child(True)
+            window.chatrooms_paned.set_resize_start_child(True)
         else:
-            self.window.chatrooms_paned.child_set_property(self.window.chatrooms_container, "resize", True)
+            window.chatrooms_paned.child_set_property(window.chatrooms_container, "resize", True)
 
         for event_name, callback in (
             ("clear-room-messages", self.clear_room_messages),
@@ -175,7 +177,10 @@ class ChatRooms(IconNotebook):
             if tab.container != page:
                 continue
 
+            joined_room = core.chatrooms.joined_rooms.get(room)
+
             self.chat_entry.set_parent(room, tab.chat_entry_container, tab.chat_view)
+            self.chat_entry.set_sensitive(joined_room is not None and joined_room.users)
             tab.update_room_user_completions()
 
             if self.command_help is None:
@@ -271,6 +276,8 @@ class ChatRooms(IconNotebook):
             return
 
         if page.container == self.get_current_page():
+            self.chat_entry.set_parent(None)
+
             if self.command_help is not None:
                 self.command_help.set_menu_button(None)
 
@@ -315,9 +322,9 @@ class ChatRooms(IconNotebook):
             return
 
         page.join_room(msg)
-        self.chat_entry.set_sensitive(True)
 
         if page.container == self.get_current_page():
+            self.chat_entry.set_sensitive(True)
             page.on_focus()
 
     def leave_room(self, msg):
@@ -326,7 +333,6 @@ class ChatRooms(IconNotebook):
 
         if page is not None:
             page.leave_room()
-            self.chat_entry.set_sensitive(False)
 
     def user_stats(self, msg):
         for page in self.pages.values():
@@ -426,6 +432,7 @@ class ChatRooms(IconNotebook):
     def server_disconnect(self, *_args):
 
         self.window.chatrooms_title.set_sensitive(False)
+        self.chat_entry.set_sensitive(False)
 
         for page in self.pages.values():
             page.server_disconnect()
@@ -438,14 +445,12 @@ class ChatRoom:
         (
             self.activity_container,
             self.activity_search_bar,
-            self.activity_search_entry,
             self.activity_view_container,
             self.chat_container,
             self.chat_entry_container,
             self.chat_entry_row,
             self.chat_paned,
             self.chat_search_bar,
-            self.chat_search_entry,
             self.chat_view_container,
             self.container,
             self.help_button,
@@ -488,12 +493,15 @@ class ChatRoom:
 
         # Event Text Search
         self.activity_search_bar = TextSearchBar(
-            self.activity_view.widget, self.activity_search_bar, self.activity_search_entry)
+            self.activity_view.widget, self.activity_search_bar,
+            placeholder_text=_("Search activity log…")
+        )
 
         # Chat Text Search
         self.chat_search_bar = TextSearchBar(
-            self.chat_view.widget, self.chat_search_bar, self.chat_search_entry,
-            controller_widget=self.chat_container, focus_widget=self.chatrooms.chat_entry
+            self.chat_view.widget, self.chat_search_bar,
+            controller_widget=self.chat_container, focus_widget=self.chatrooms.chat_entry,
+            placeholder_text=_("Search chat log…")
         )
 
         self.log_toggle.set_active(room in config.sections["logging"]["rooms"])
@@ -636,7 +644,6 @@ class ChatRoom:
             widget.set_visible(False)
 
         self.speech_toggle.set_active(False)  # Public feed is jibberish and too fast for TTS
-        self.chatrooms.chat_entry.set_sensitive(False)
         self.chat_entry_row.set_halign(Gtk.Align.END)
 
     def add_user_row(self, userdata):
@@ -697,7 +704,7 @@ class ChatRoom:
     def populate_room_users(self, joined_users):
 
         # Temporarily disable sorting for increased performance
-        self.users_list_view.disable_sorting()
+        self.users_list_view.freeze()
 
         for userdata in joined_users:
             username = userdata.username
@@ -721,7 +728,7 @@ class ChatRoom:
             if owner and owner not in self.users_list_view.iterators:
                 self.add_user_row(UserData(owner, status=UserStatus.OFFLINE))
 
-        self.users_list_view.enable_sorting()
+        self.users_list_view.unfreeze()
 
         # Update user count
         self.update_user_count()
@@ -865,7 +872,8 @@ class ChatRoom:
         if self.chatrooms.get_current_page() == self.container:
             self.chatrooms.chat_entry.add_completion(username)
 
-        if (not core.network_filter.is_user_ignored(username)
+        if (username != core.users.login_username
+                and not core.network_filter.is_user_ignored(username)
                 and not core.network_filter.is_user_ip_ignored(username)):
             self.activity_view.append_line(
                 _("%s joined the room") % username,
@@ -1055,8 +1063,14 @@ class ChatRoom:
         self.leave_room()
 
     def join_room(self, msg):
+
         self.is_private = msg.private
         self.populate_room_users(msg.users)
+
+        self.activity_view.append_line(
+            _("%s joined the room") % core.users.login_username,
+            timestamp_format=config.sections["logging"]["rooms_timestamp"]
+        )
 
     def leave_room(self):
 

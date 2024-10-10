@@ -177,8 +177,7 @@ class Config:
                 "autojoin": [],
                 "autoaway": 15,
                 "away": False,
-                "private_chatrooms": False,
-                "command_aliases": {}
+                "private_chatrooms": False
             },
             "transfers": {
                 "incompletedir": os.path.join(data_home_env, "incomplete"),
@@ -223,10 +222,11 @@ class Config:
                 "enablefilters": False,
                 "downloadregexp": "",
                 "downloadfilters": [
+                    ["*.DS_Store", 1],
+                    ["*.exe", 1],
+                    ["*.msi", 1],
                     ["desktop.ini", 1],
-                    ["*.url", 1],
-                    ["thumbs.db", 1],
-                    ["albumart(_{........-....-....-....-............}_)?(_?(large|small))?\\.jpg", 0]
+                    ["Thumbs.db", 1]
                 ],
                 "download_doubleclick": 2,
                 "upload_doubleclick": 2,
@@ -310,7 +310,7 @@ class Config:
                 "filtertype": [],
                 "filterlength": [],
                 "search_results": True,
-                "max_displayed_results": 1500,
+                "max_displayed_results": 2500,
                 "min_search_chars": 3,
                 "private_search_results": False
             },
@@ -332,7 +332,6 @@ class Config:
                 "usernamestyle": "bold",
                 "textbg": "",
                 "search": "",
-                "searchq": "GREY",
                 "inputcolor": "",
                 "spellcheck": True,
                 "exitdialog": 1,
@@ -391,9 +390,6 @@ class Config:
                 "maximized": True,
                 "reverse_file_paths": True,
                 "file_size_unit": ""
-            },
-            "private_rooms": {
-                "rooms": {}  # TODO: remove in 3.3.5
             },
             "urls": {
                 "protocols": {}
@@ -460,7 +456,8 @@ class Config:
                 "fallbackencodings",
                 "roomencoding",
                 "userencoding",
-                "firewalled"
+                "firewalled",
+                "command_aliases"
             ),
             "ui": (
                 "enabletrans",
@@ -492,7 +489,8 @@ class Config:
                 "decimalsep",
                 "urgencyhint",
                 "tab_status_icons",
-                "file_path_tooltips"
+                "file_path_tooltips",
+                "searchq"
             ),
             "columns": (
                 "downloads",
@@ -530,6 +528,7 @@ class Config:
             ),
             "private_rooms": (
                 "enabled",
+                "rooms"
             ),
             "logging": (
                 "logsdir",

@@ -25,7 +25,7 @@ try:
 except ImportError:
     from hashlib import md5
 
-from locale import strxfrm
+from operator import itemgetter
 from random import randint
 from socket import inet_aton
 from socket import inet_ntoa
@@ -148,15 +148,6 @@ class CloseConnection(InternalMessage):
 
     def __init__(self, sock=None):
         self.sock = sock
-
-
-class CloseConnectionIP(InternalMessage):
-    """Sent to the networking thread to close any connections using a certain IP address."""
-
-    __slots__ = ("addr",)
-
-    def __init__(self, addr=None):
-        self.addr = addr
 
 
 class ServerConnect(InternalMessage):
@@ -464,6 +455,9 @@ class FileListMessage(SlskMessage):
     @staticmethod
     def parse_file_attributes(attributes):
 
+        if attributes is None:
+            attributes = {}
+
         try:
             bitrate = attributes.get(FileAttribute.BITRATE)
             length = attributes.get(FileAttribute.DURATION)
@@ -629,10 +623,9 @@ class UsersMessage(SlskMessage):
         for i in range(slotslen):
             pos, users[i].slotsfull = cls.unpack_uint32(message, pos)
 
-        if message[pos:]:
-            pos, countrylen = cls.unpack_uint32(message, pos)
-            for i in range(countrylen):
-                pos, users[i].country = cls.unpack_string(message, pos)
+        pos, countrylen = cls.unpack_uint32(message, pos)
+        for i in range(countrylen):
+            pos, users[i].country = cls.unpack_string(message, pos)
 
         return pos, users
 
@@ -653,7 +646,7 @@ class Login(ServerMessage):
     """
 
     __slots__ = ("username", "passwd", "version", "minorversion", "success", "reason",
-                 "banner", "ip_address", "local_address", "is_supporter")
+                 "banner", "ip_address", "local_address", "server_address", "is_supporter")
     __excluded_attrs__ = {"passwd"}
 
     def __init__(self, username=None, passwd=None, version=None, minorversion=None):
@@ -666,6 +659,7 @@ class Login(ServerMessage):
         self.banner = None
         self.ip_address = None
         self.local_address = None
+        self.server_address = None
         self.is_supporter = None
 
     def make_network_message(self):
@@ -692,16 +686,8 @@ class Login(ServerMessage):
 
         pos, self.banner = self.unpack_string(message, pos)
         pos, self.ip_address = self.unpack_ip(message, pos)
-
-        if not message[pos:]:
-            # Soulfind server support
-            return
-
         pos, _checksum = self.unpack_string(message, pos)  # MD5 hexdigest of the password you sent
-
-        if message[pos:]:
-            # Soulfind server support
-            pos, self.is_supporter = self.unpack_bool(message, pos)
+        pos, self.is_supporter = self.unpack_bool(message, pos)
 
 
 class SetWaitPort(ServerMessage):
@@ -743,11 +729,6 @@ class GetPeerAddress(ServerMessage):
         pos, self.user = self.unpack_string(message)
         pos, self.ip_address = self.unpack_ip(message, pos)
         pos, self.port = self.unpack_uint32(message, pos)
-
-        if not message[pos:]:
-            # Soulfind server support
-            return
-
         pos, self.unknown = self.unpack_uint32(message, pos)
         pos, self.obfuscated_port = self.unpack_uint16(message, pos)
 
@@ -838,10 +819,7 @@ class GetUserStatus(ServerMessage):
     def parse_network_message(self, message):
         pos, self.user = self.unpack_string(message)
         pos, self.status = self.unpack_uint32(message, pos)
-
-        # Soulfind server support
-        if message[pos:]:
-            pos, self.privileged = self.unpack_bool(message, pos)
+        pos, self.privileged = self.unpack_bool(message, pos)
 
 
 class IgnoreUser(ServerMessage):
@@ -943,7 +921,7 @@ class JoinRoom(ServerMessage):
 
     __slots__ = ("room", "private", "owner", "users", "operators")
 
-    def __init__(self, room=None, private=None):
+    def __init__(self, room=None, private=False):
         self.room = room
         self.private = private
         self.owner = None
@@ -1016,10 +994,7 @@ class UserJoinedRoom(ServerMessage):
         pos, self.userdata.files = self.unpack_uint32(message, pos)
         pos, self.userdata.dirs = self.unpack_uint32(message, pos)
         pos, self.userdata.slotsfull = self.unpack_uint32(message, pos)
-
-        # Soulfind server support
-        if message[pos:]:
-            pos, self.userdata.country = self.unpack_string(message, pos)
+        pos, self.userdata.country = self.unpack_string(message, pos)
 
 
 class UserLeftRoom(ServerMessage):
@@ -1073,11 +1048,6 @@ class ConnectToPeer(ServerMessage):
         pos, self.ip_address = self.unpack_ip(message, pos)
         pos, self.port = self.unpack_uint32(message, pos)
         pos, self.token = self.unpack_uint32(message, pos)
-
-        if not message[pos:]:
-            # Soulfind server support
-            return
-
         pos, self.privileged = self.unpack_bool(message, pos)
         pos, self.unknown = self.unpack_uint32(message, pos)
         pos, self.obfuscated_port = self.unpack_uint32(message, pos)
@@ -1113,9 +1083,7 @@ class MessageUser(ServerMessage):
         pos, self.timestamp = self.unpack_uint32(message, pos)
         pos, self.user = self.unpack_string(message, pos)
         pos, self.message = self.unpack_string(message, pos)
-
-        if message[pos:]:
-            pos, self.is_new_message = self.unpack_bool(message, pos)
+        pos, self.is_new_message = self.unpack_bool(message, pos)
 
 
 class MessageAcked(ServerMessage):
@@ -1233,7 +1201,7 @@ class ServerPing(ServerMessage):
         return b""
 
     def parse_network_message(self, message):
-        """Obsolete in the official server, but still used in Soulfind."""
+        """Obsolete."""
 
 
 class SendConnectToken(ServerMessage):
@@ -1396,10 +1364,43 @@ class UserSearch(ServerMessage):
         return msg
 
     def parse_network_message(self, message):
-        """Obsolete in the official server, but still used in Soulfind."""
+        """Obsolete."""
         pos, self.search_username = self.unpack_string(message)
         pos, self.token = self.unpack_uint32(message, pos)
         pos, self.searchterm = self.unpack_string(message, pos)
+
+
+class SimilarRecommendations(ServerMessage):
+    """Server code 50.
+
+    We send this to the server when we are adding a recommendation to our
+    "My recommendations" list, and want to receive a list of similar
+    recommendations.
+
+    The server sends a list of similar recommendations to the one we want to
+    add. Older versions of the official Soulseek client would display a dialog
+    containing such recommendations, asking us if we want to add our original
+    recommendation or one of the similar ones instead.
+
+    OBSOLETE
+    """
+
+    __slots__ = ("recommendation", "similar_recommendations")
+
+    def __init__(self, recommendation=None):
+        self.recommendation = recommendation
+        self.similar_recommendations = []
+
+    def make_network_message(self):
+        return self.pack_string(self.recommendation)
+
+    def parse_network_message(self, message):
+        pos, self.recommendation = self.unpack_string(message)
+        pos, num = self.unpack_uint32(message)
+
+        for _ in range(num):
+            pos, similar_recommendation = self.unpack_string(message, pos)
+            self.similar_recommendations.append(similar_recommendation)
 
 
 class AddThingILike(ServerMessage):
@@ -1457,6 +1458,37 @@ class Recommendations(ServerMessage):
 
     def parse_network_message(self, message):
         _pos, self.recommendations, self.unrecommendations = RecommendationsMessage.parse_recommendations(message)
+
+
+class MyRecommendations(ServerMessage):
+    """Server code 55.
+
+    We send this to the server to ask for our own list of added
+    likes/recommendations (called "My recommendations" in older versions
+    of the official Soulseek client).
+
+    The server sends us the list of recommendations it knows we have added.
+    For any recommendations present locally, but not on the server, the
+    official Soulseek client would send a AddThingILike message for each
+    missing item.
+
+    OBSOLETE
+    """
+
+    __slots__ = ("my_recommendations",)
+
+    def __init__(self):
+        self.my_recommendations = []
+
+    def make_network_message(self):
+        return b""
+
+    def parse_network_message(self, message):
+        pos, num = self.unpack_uint32(message)
+
+        for _ in range(num):
+            pos, recommendation = self.unpack_string(message, pos)
+            self.my_recommendations.append(recommendation)
 
 
 class GlobalRecommendations(ServerMessage):
@@ -1631,10 +1663,6 @@ class RoomList(ServerMessage):
 
     def parse_network_message(self, message):
         pos, self.rooms = self.parse_rooms(message)
-
-        if not message[pos:]:
-            return
-
         pos, self.ownedprivaterooms = self.parse_rooms(message, pos)
         pos, self.otherprivaterooms = self.parse_rooms(message, pos)
         pos, self.operatedprivaterooms = self.parse_rooms(message, pos, has_count=False)
@@ -2291,7 +2319,7 @@ class RoomSearch(ServerMessage):
         return msg
 
     def parse_network_message(self, message):
-        """Obsolete in the official server, but still used in Soulfind."""
+        """Obsolete."""
         pos, self.search_username = self.unpack_string(message)
         pos, self.token = self.unpack_uint32(message, pos)
         pos, self.searchterm = self.unpack_string(message, pos)
@@ -3150,12 +3178,12 @@ class SharedFileListResponse(PeerMessage):
                 files.append((code, name, size, ext, attrs))
 
             if nfiles > 1:
-                files.sort(key=lambda x: strxfrm(x[1]))
+                files.sort(key=itemgetter(1))
 
             shares.append((directory, files))
 
         if ndir > 1:
-            shares.sort(key=lambda x: strxfrm(x[0]))
+            shares.sort(key=itemgetter(0))
 
         return pos, shares
 
@@ -3288,7 +3316,7 @@ class FileSearchResponse(PeerMessage):
             results.append((code, name.replace("/", "\\"), size, ext, attrs))
 
         if nfiles > 1:
-            results.sort(key=lambda x: strxfrm(x[1]))
+            results.sort(key=itemgetter(1))
 
         return pos, results
 
@@ -3467,7 +3495,7 @@ class FolderContentsResponse(PeerMessage):
                 folders[directory].append((code, name, size, ext, attrs))
 
             if nfiles > 1:
-                folders[directory].sort(key=lambda x: strxfrm(x[1]))
+                folders[directory].sort(key=itemgetter(1))
 
         self.list = folders
 
@@ -3999,7 +4027,6 @@ NETWORK_MESSAGE_EVENTS = {
     QueueUpload: "queue-upload",
     Recommendations: "recommendations",
     RoomList: "room-list",
-    RoomSearch: "file-search-request-server",
     RoomTickerAdd: "ticker-add",
     RoomTickerRemove: "ticker-remove",
     RoomTickerState: "ticker-state",
@@ -4017,7 +4044,6 @@ NETWORK_MESSAGE_EVENTS = {
     UserInterests: "user-interests",
     UserJoinedRoom: "user-joined-room",
     UserLeftRoom: "user-left-room",
-    UserSearch: "file-search-request-server",
     WatchUser: "watch-user",
     WishlistInterval: "set-wishlist-interval"
 }
@@ -4054,9 +4080,11 @@ SERVER_MESSAGE_CODES = {
     QueuedDownloads: 40,          # Obsolete
     Relogged: 41,
     UserSearch: 42,
+    SimilarRecommendations: 50,   # Obsolete
     AddThingILike: 51,            # Deprecated
     RemoveThingILike: 52,         # Deprecated
     Recommendations: 54,          # Deprecated
+    MyRecommendations: 55,        # Obsolete
     GlobalRecommendations: 56,    # Deprecated
     UserInterests: 57,            # Deprecated
     AdminCommand: 58,             # Obsolete

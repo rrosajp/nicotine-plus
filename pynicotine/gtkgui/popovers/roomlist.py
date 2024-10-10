@@ -78,7 +78,7 @@ class RoomList(Popover):
 
                 # Hidden data columns
                 "users_data": {"data_type": GObject.TYPE_UINT},
-                "is_private_data": {"data_type": bool},
+                "is_private_data": {"data_type": GObject.TYPE_BOOLEAN},
                 "room_weight_data": {"data_type": Pango.Weight},
                 "room_underline_data": {"data_type": Pango.Underline}
             }
@@ -202,7 +202,21 @@ class RoomList(Popover):
         self.add_room(msg.room, is_private=True)
 
     def join_room(self, msg):
-        self.update_room_user_count(msg.room, user_count=len(msg.users))
+
+        room = msg.room
+
+        if room not in core.chatrooms.joined_rooms:
+            return
+
+        user_count = len(msg.users)
+
+        if room not in self.list_view.iterators:
+            self.add_room(
+                room, user_count, is_private=msg.private,
+                is_owned=(msg.owner == core.users.login_username)
+            )
+
+        self.update_room_user_count(room, user_count=user_count)
 
     def show_room(self, room, *_args):
         if room == core.chatrooms.GLOBAL_ROOM_NAME:
@@ -216,14 +230,16 @@ class RoomList(Popover):
         self.update_room_user_count(room, decrement=True)
 
     def user_joined_room(self, msg):
-        self.update_room_user_count(msg.room)
+        if msg.userdata.username != core.users.login_username:
+            self.update_room_user_count(msg.room)
 
     def user_left_room(self, msg):
-        self.update_room_user_count(msg.room, decrement=True)
+        if msg.username != core.users.login_username:
+            self.update_room_user_count(msg.room, decrement=True)
 
     def room_list(self, msg):
 
-        self.list_view.disable_sorting()
+        self.list_view.freeze()
         self.clear()
 
         for room, user_count in msg.ownedprivaterooms:
@@ -235,7 +251,7 @@ class RoomList(Popover):
         for room, user_count in msg.rooms:
             self.add_room(room, user_count)
 
-        self.list_view.enable_sorting()
+        self.list_view.unfreeze()
 
     def on_row_activated(self, *_args):
 
@@ -268,12 +284,16 @@ class RoomList(Popover):
 
     def on_toggle_public_feed(self, *_args):
 
+        global_room_name = core.chatrooms.GLOBAL_ROOM_NAME
+
         if self.public_feed_toggle.get_active():
-            core.chatrooms.show_room(core.chatrooms.GLOBAL_ROOM_NAME)
+            if global_room_name not in core.chatrooms.joined_rooms:
+                core.chatrooms.show_room(global_room_name)
+
             self.close(use_transition=False)
             return
 
-        core.chatrooms.remove_room(core.chatrooms.GLOBAL_ROOM_NAME)
+        core.chatrooms.remove_room(global_room_name)
 
     def on_popup_private_room_disown(self, *_args):
         core.chatrooms.request_private_room_disown(self.popup_room)

@@ -28,8 +28,8 @@
                 <property name="vexpand">True</property>
                 <property name="visible">True</property>
                 <child>
-                  <object class="GtkBox">
-                    <property name="hexpand">False</property>
+                  <object class="GtkBox" id="user_info_container">
+                    <property name="hexpand">True</property>
                     <property name="orientation">vertical</property>
                     <property name="visible">True</property>
                     <property name="width-request">185</property>
@@ -179,8 +179,8 @@
                               <object class="GtkLabel">
                                 <property name="ellipsize">end</property>
                                 <property name="hexpand">True</property>
-                                <property name="label" translatable="yes">Upload Slots</property>
-                                <property name="mnemonic-widget">upload_slots_label</property>
+                                <property name="label" translatable="yes">Country</property>
+                                <property name="mnemonic-widget">country_label</property>
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <style>
@@ -189,61 +189,8 @@
                               </object>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="upload_slots_label">
-                                <property name="label" translatable="yes">Unknown</property>
-                                <property name="selectable">True</property>
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="spacing">24</property>
-                            <property name="visible">True</property>
-                            <child>
-                              <object class="GtkLabel">
+                              <object class="GtkLabel" id="country_label">
                                 <property name="ellipsize">end</property>
-                                <property name="hexpand">True</property>
-                                <property name="label" translatable="yes">Queued Uploads</property>
-                                <property name="mnemonic-widget">queued_uploads_label</property>
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <style>
-                                  <class name="dim-label"/>
-                                </style>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="queued_uploads_label">
-                                <property name="label" translatable="yes">Unknown</property>
-                                <property name="selectable">True</property>
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="spacing">24</property>
-                            <property name="visible">True</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="ellipsize">end</property>
-                                <property name="hexpand">True</property>
-                                <property name="label" translatable="yes">Free Upload Slots</property>
-                                <property name="mnemonic-widget">free_upload_slots_label</property>
-                                <property name="visible">True</property>
-                                <property name="xalign">0</property>
-                                <style>
-                                  <class name="dim-label"/>
-                                </style>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="free_upload_slots_label">
                                 <property name="label" translatable="yes">Unknown</property>
                                 <property name="selectable">True</property>
                                 <property name="visible">True</property>
@@ -287,8 +234,8 @@
                               <object class="GtkLabel">
                                 <property name="ellipsize">end</property>
                                 <property name="hexpand">True</property>
-                                <property name="label" translatable="yes">Country</property>
-                                <property name="mnemonic-widget">country_label</property>
+                                <property name="label" translatable="yes">Free Upload Slots</property>
+                                <property name="mnemonic-widget">free_upload_slots_label</property>
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
                                 <style>
@@ -297,8 +244,61 @@
                               </object>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="country_label">
+                              <object class="GtkLabel" id="free_upload_slots_label">
+                                <property name="label" translatable="yes">Unknown</property>
+                                <property name="selectable">True</property>
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">24</property>
+                            <property name="visible">False</property>
+                            <child>
+                              <object class="GtkLabel">
                                 <property name="ellipsize">end</property>
+                                <property name="hexpand">True</property>
+                                <property name="label" translatable="yes">Upload Slots</property>
+                                <property name="mnemonic-widget">upload_slots_label</property>
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="upload_slots_label">
+                                <property name="label" translatable="yes">Unknown</property>
+                                <property name="selectable">True</property>
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">24</property>
+                            <property name="visible">False</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="ellipsize">end</property>
+                                <property name="hexpand">True</property>
+                                <property name="label" translatable="yes">Queued Uploads</property>
+                                <property name="mnemonic-widget">queued_uploads_label</property>
+                                <property name="visible">True</property>
+                                <property name="xalign">0</property>
+                                <style>
+                                  <class name="dim-label"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="queued_uploads_label">
                                 <property name="label" translatable="yes">Unknown</property>
                                 <property name="selectable">True</property>
                                 <property name="visible">True</property>
@@ -328,8 +328,8 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkBox">
-                    <property name="hexpand">False</property>
+                  <object class="GtkBox" id="interests_container">
+                    <property name="hexpand">True</property>
                     <property name="orientation">vertical</property>
                     <property name="visible">True</property>
                     <property name="width-request">125</property>
@@ -414,39 +414,17 @@
                         </child>
                       </object>
                     </child>
-                    <style>
-                      <class name="border-end"/>
-                    </style>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkStack" id="picture_container">
+                  <object class="GtkBox" id="picture_view">
+                    <property name="hexpand">False</property>
+                    <property name="margin-bottom">36</property>
+                    <property name="margin-end">6</property>
+                    <property name="margin-start">24</property>
+                    <property name="margin-top">36</property>
                     <property name="visible">True</property>
-                    <child>
-                      <object class="GtkImage" id="placeholder_picture">
-                        <property name="halign">center</property>
-                        <property name="icon-name">avatar-default-symbolic</property>
-                        <property name="margin-bottom">6</property>
-                        <property name="margin-start">6</property>
-                        <property name="margin-top">6</property>
-                        <property name="pixel-size">128</property>
-                        <property name="valign">center</property>
-                        <property name="visible">True</property>
-                        <style>
-                          <class name="dim-label"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox" id="picture_view">
-                        <property name="margin-bottom">36</property>
-                        <property name="margin-end">6</property>
-                        <property name="margin-start">24</property>
-                        <property name="margin-top">36</property>
-                        <property name="visible">True</property>
-                        <property name="width-request">104</property>
-                      </object>
-                    </child>
+                    <property name="width-request">104</property>
                   </object>
                 </child>
                 <child>
@@ -535,7 +513,7 @@
                             <property name="visible">True</property>
                             <child>
                               <object class="GtkImage">
-                                <property name="icon-name">contact-new-symbolic</property>
+                                <property name="icon-name">system-users-symbolic</property>
                                 <property name="visible">True</property>
                               </object>
                             </child>

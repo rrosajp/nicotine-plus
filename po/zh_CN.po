@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-07 21:39+0300\n"
+"POT-Creation-Date: 2024-09-22 14:03+0300\n"
 "PO-Revision-Date: 2024-08-07 19:33+0000\n"
 "Last-Translator: Mat <mail@mathias.is>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -22,7 +22,7 @@ msgid "Soulseek Client"
 msgstr "Soulseek客户端"
 
 #: data/org.nicotine_plus.Nicotine.desktop.in:7 pynicotine/__init__.py:49
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:71
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:112
 msgid "Graphical client for the Soulseek peer-to-peer network"
 msgstr "Soulseek 点对点网络的图形客户端"
 
@@ -50,43 +50,42 @@ msgstr ""
 
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:27
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:43
-#: pynicotine/gtkgui/mainwindow.py:706
+#: pynicotine/gtkgui/mainwindow.py:709
 #: pynicotine/plugins/core_commands/__init__.py:29
 #: pynicotine/gtkgui/ui/mainwindow.ui:221
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:614
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:799
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:617
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:802
 #: pynicotine/gtkgui/ui/userbrowse.ui:144
 msgid "Search Files"
 msgstr "搜索文件"
 
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:31
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:47
-#: pynicotine/gtkgui/dialogs/preferences.py:2943
-#: pynicotine/gtkgui/mainwindow.py:707 pynicotine/gtkgui/mainwindow.py:1059
-#: pynicotine/gtkgui/widgets/trayicon.py:89
+#: pynicotine/gtkgui/dialogs/preferences.py:3024
+#: pynicotine/gtkgui/mainwindow.py:710 pynicotine/gtkgui/mainwindow.py:1062
 #: pynicotine/gtkgui/ui/mainwindow.ui:460
 #: pynicotine/gtkgui/ui/settings/downloads.ui:62
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:626
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:629
 msgid "Downloads"
 msgstr "下载"
 
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:35
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:51
-#: pynicotine/gtkgui/mainwindow.py:709
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:260
+#: pynicotine/gtkgui/mainwindow.py:712
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:267
 #: pynicotine/gtkgui/ui/mainwindow.ui:867
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:650
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:821
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:653
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:824
 msgid "Browse Shares"
 msgstr "浏览共享"
 
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:39
 #: data/org.nicotine_plus.Nicotine.appdata.xml.in:55
-#: pynicotine/gtkgui/mainwindow.py:711 pynicotine/gtkgui/widgets/trayicon.py:94
+#: pynicotine/gtkgui/mainwindow.py:714 pynicotine/gtkgui/widgets/trayicon.py:94
 #: pynicotine/plugins/core_commands/__init__.py:27
 #: pynicotine/gtkgui/ui/mainwindow.ui:1194
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:674
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:865
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:677
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:868
 msgid "Private Chat"
 msgstr "私聊"
 
@@ -185,12 +184,12 @@ msgstr "%(user)s 已离线"
 msgid "Buddy Status"
 msgstr "好友状态"
 
-#: pynicotine/chatrooms.py:379
+#: pynicotine/chatrooms.py:383
 #, python-format
 msgid "You have been added to a private room: %(room)s"
 msgstr "您已被加入到私密聊天室：%(room)s"
 
-#: pynicotine/chatrooms.py:474
+#: pynicotine/chatrooms.py:478
 #, python-format
 msgid "Chat message from user '%(user)s' in room '%(room)s': %(message)s"
 msgstr "来自房间“%(room)s”中用户“%(user)s”的聊天消息：%(message)s"
@@ -200,18 +199,18 @@ msgstr "来自房间“%(room)s”中用户“%(user)s”的聊天消息：%(mes
 msgid "Can't create directory '%(path)s', reported error: %(error)s"
 msgstr "无法创建目录“%(path)s”，错误信息：%(error)s"
 
-#: pynicotine/config.py:814
+#: pynicotine/config.py:813
 #, python-format
 msgid "Error backing up config: %s"
 msgstr "备份配置时出错：%s"
 
-#: pynicotine/config.py:817
+#: pynicotine/config.py:816
 #, python-format
 msgid "Config backed up to: %s"
 msgstr "配置备份到：%s"
 
 #: pynicotine/core.py:101 pynicotine/core.py:106
-#: pynicotine/gtkgui/__init__.py:96
+#: pynicotine/gtkgui/__init__.py:102
 #, python-format
 msgid "Loading %(program)s %(version)s"
 msgstr "正在加载 %(program)s %(version)s"
@@ -287,7 +286,7 @@ msgstr "已在文件夹上执行：%s"
 msgid "Couldn't move '%(tempfile)s' to '%(file)s': %(error)s"
 msgstr "无法将“%(tempfile)s”移动到“%(file)s”：%(error)s"
 
-#: pynicotine/downloads.py:448 pynicotine/downloads.py:1195
+#: pynicotine/downloads.py:448 pynicotine/downloads.py:1193
 msgid "Download Folder Error"
 msgstr "下载文件夹错误"
 
@@ -301,273 +300,259 @@ msgstr "下载完成：用户%(user)s，文件%(file)s"
 msgid "Download aborted, user %(user)s file %(file)s"
 msgstr "下载中止，用户 %(user)s 文件 %(file)s"
 
-#: pynicotine/downloads.py:1137
+#: pynicotine/downloads.py:1135
 #, python-format
 msgid "Download I/O error: %s"
 msgstr "下载 I/O 错误：%s"
 
-#: pynicotine/downloads.py:1176
+#: pynicotine/downloads.py:1174
 #, python-format
 msgid "Can't get an exclusive lock on file - I/O error: %s"
 msgstr "无法独占锁定文件 - I/O 错误：%s"
 
-#: pynicotine/downloads.py:1189
+#: pynicotine/downloads.py:1187
 #, python-format
 msgid "Cannot save file in %(folder_path)s: %(error)s"
 msgstr "无法保存文件至 %(folder_path)s: %(error)s"
 
-#: pynicotine/downloads.py:1208
+#: pynicotine/downloads.py:1206
 #, python-format
 msgid "Download started: user %(user)s, file %(file)s"
 msgstr "下载开始：用户 %(user)s，文件 %(file)s"
 
-#: pynicotine/gtkgui/__init__.py:77 pynicotine/gtkgui/__init__.py:86
+#: pynicotine/gtkgui/__init__.py:83 pynicotine/gtkgui/__init__.py:92
 #, python-format
 msgid "Cannot find %s, please install it."
 msgstr "找不到 %s，请安装。"
 
-#: pynicotine/gtkgui/__init__.py:151
+#: pynicotine/gtkgui/__init__.py:157
 msgid "No graphical environment available, using headless (no GUI) mode"
 msgstr "没有可用的图形环境，使用无界面（无 GUI）模式"
 
-#: pynicotine/gtkgui/application.py:345
-#: pynicotine/gtkgui/widgets/trayicon.py:124
+#: pynicotine/gtkgui/application.py:293
+#: pynicotine/gtkgui/widgets/trayicon.py:101
 msgid "_Connect"
 msgstr "_连接"
 
-#: pynicotine/gtkgui/application.py:346
-#: pynicotine/gtkgui/widgets/trayicon.py:124
+#: pynicotine/gtkgui/application.py:294
+#: pynicotine/gtkgui/widgets/trayicon.py:102
 msgid "_Disconnect"
 msgstr "_断开"
 
-#: pynicotine/gtkgui/application.py:347
+#: pynicotine/gtkgui/application.py:295
 msgid "Soulseek _Privileges"
 msgstr "Soulseek_特权"
 
-#: pynicotine/gtkgui/application.py:353
+#: pynicotine/gtkgui/application.py:301
 msgid "_Preferences"
 msgstr "_偏好"
 
-#: pynicotine/gtkgui/application.py:359 pynicotine/gtkgui/application.py:550
-#: pynicotine/gtkgui/widgets/trayicon.py:106
+#: pynicotine/gtkgui/application.py:307 pynicotine/gtkgui/application.py:516
+#: pynicotine/gtkgui/widgets/trayicon.py:107
 msgid "_Quit"
 msgstr "_退出"
 
-#: pynicotine/gtkgui/application.py:376
+#: pynicotine/gtkgui/application.py:324
 msgid "Browse _Public Shares"
 msgstr "浏览_公开共享"
 
-#: pynicotine/gtkgui/application.py:377
+#: pynicotine/gtkgui/application.py:325
 msgid "Browse _Buddy Shares"
 msgstr "浏览_好友分享"
 
-#: pynicotine/gtkgui/application.py:378
+#: pynicotine/gtkgui/application.py:326
 msgid "Browse _Trusted Shares"
 msgstr "浏览_信任分享"
 
-#: pynicotine/gtkgui/application.py:387 pynicotine/gtkgui/application.py:443
+#: pynicotine/gtkgui/application.py:335 pynicotine/gtkgui/application.py:391
 msgid "_Rescan Shares"
 msgstr "_重新扫描共享库"
 
-#: pynicotine/gtkgui/application.py:388 pynicotine/gtkgui/application.py:445
+#: pynicotine/gtkgui/application.py:336 pynicotine/gtkgui/application.py:393
 msgid "Configure _Shares"
 msgstr "配置_共享"
 
-#: pynicotine/gtkgui/application.py:410
+#: pynicotine/gtkgui/application.py:358
 msgid "_Keyboard Shortcuts"
 msgstr "_键盘快捷键"
 
-#: pynicotine/gtkgui/application.py:411
+#: pynicotine/gtkgui/application.py:359
 msgid "_Setup Assistant"
 msgstr "_设置向导"
 
-#: pynicotine/gtkgui/application.py:412
+#: pynicotine/gtkgui/application.py:360
 msgid "_Transfer Statistics"
 msgstr "_数据传输统计"
 
-#: pynicotine/gtkgui/application.py:414
+#: pynicotine/gtkgui/application.py:362
 msgid "Report a _Bug"
 msgstr "报告_bug"
 
-#: pynicotine/gtkgui/application.py:415
+#: pynicotine/gtkgui/application.py:363
 msgid "Improve T_ranslations"
 msgstr "协助翻_译"
 
-#: pynicotine/gtkgui/application.py:417
+#: pynicotine/gtkgui/application.py:365
 msgid "_About Nicotine+"
 msgstr "_关于Nicotine+"
 
-#: pynicotine/gtkgui/application.py:428
+#: pynicotine/gtkgui/application.py:376
 msgid "_File"
 msgstr "_文件"
 
-#: pynicotine/gtkgui/application.py:429
+#: pynicotine/gtkgui/application.py:377
 msgid "_Shares"
 msgstr "_分享"
 
-#: pynicotine/gtkgui/application.py:430 pynicotine/gtkgui/application.py:447
+#: pynicotine/gtkgui/application.py:378 pynicotine/gtkgui/application.py:395
 msgid "_Help"
 msgstr "_帮助"
 
-#: pynicotine/gtkgui/application.py:444
+#: pynicotine/gtkgui/application.py:392
 msgid "_Browse Shares"
 msgstr "_浏览共享"
 
-#: pynicotine/gtkgui/application.py:496
+#: pynicotine/gtkgui/application.py:447
 #, python-format
 msgid "Unable to show notification: %s"
 msgstr "无法显示通知：%s"
 
-#: pynicotine/gtkgui/application.py:542
+#: pynicotine/gtkgui/application.py:508
 msgid "You are still uploading files. Do you really want to exit?"
 msgstr "您正在上传文件。真的要退出吗？"
 
-#: pynicotine/gtkgui/application.py:543
+#: pynicotine/gtkgui/application.py:509
 msgid "Wait for uploads to finish"
 msgstr "等待文件上传结束"
 
-#: pynicotine/gtkgui/application.py:545
+#: pynicotine/gtkgui/application.py:511
 msgid "Do you really want to exit?"
 msgstr "你真的要退出吗？"
 
-#: pynicotine/gtkgui/application.py:549
-#: pynicotine/gtkgui/widgets/dialogs.py:465
+#: pynicotine/gtkgui/application.py:515
+#: pynicotine/gtkgui/widgets/dialogs.py:477
 msgid "_No"
 msgstr "_不"
 
-#: pynicotine/gtkgui/application.py:551
+#: pynicotine/gtkgui/application.py:517
 msgid "_Run in Background"
 msgstr "_在后台运行"
 
-#: pynicotine/gtkgui/application.py:556
-#: pynicotine/gtkgui/dialogs/preferences.py:1699
+#: pynicotine/gtkgui/application.py:522
+#: pynicotine/gtkgui/dialogs/preferences.py:1779
 #: pynicotine/plugins/core_commands/__init__.py:68
 msgid "Quit Nicotine+"
 msgstr "退出Nicotine+"
 
-#: pynicotine/gtkgui/application.py:577
+#: pynicotine/gtkgui/application.py:543
 msgid "Shares Not Available"
 msgstr "共享不可用"
 
-#: pynicotine/gtkgui/application.py:578 pynicotine/headless/application.py:121
+#: pynicotine/gtkgui/application.py:544 pynicotine/headless/application.py:124
 msgid ""
 "Verify that external disks are mounted and folder permissions are correct."
 msgstr "验证外部磁盘是否挂载、文件夹权限是否正确。"
 
-#: pynicotine/gtkgui/application.py:581 pynicotine/gtkgui/application.py:605
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:41
-#: pynicotine/gtkgui/downloads.py:173 pynicotine/gtkgui/widgets/dialogs.py:504
+#: pynicotine/gtkgui/application.py:547
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:132
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:42
+#: pynicotine/gtkgui/downloads.py:173 pynicotine/gtkgui/widgets/dialogs.py:516
 #: pynicotine/gtkgui/ui/dialogs/preferences.ui:5
 msgid "_Cancel"
 msgstr "_取消"
 
-#: pynicotine/gtkgui/application.py:582 pynicotine/gtkgui/uploads.py:49
+#: pynicotine/gtkgui/application.py:548 pynicotine/gtkgui/uploads.py:49
 msgid "_Retry"
 msgstr "_重试"
 
-#: pynicotine/gtkgui/application.py:583
+#: pynicotine/gtkgui/application.py:549
 msgid "_Force Rescan"
 msgstr "_强制重新扫描"
 
-#: pynicotine/gtkgui/application.py:596
-msgid "Invalid Password"
-msgstr "无效的密码"
-
-#: pynicotine/gtkgui/application.py:597
-#, python-format
-msgid ""
-"User %s already exists, and the password you entered is invalid. Please "
-"choose another username if this is your first time logging in."
-msgstr "用户%s已经存在，您输入的密码无效。如果这是您第一次登录，请更换用户名。"
-
-#: pynicotine/gtkgui/application.py:606
-msgid "Change _Login Details"
-msgstr "更改_登录详情"
-
-#: pynicotine/gtkgui/application.py:773
+#: pynicotine/gtkgui/application.py:724
 msgid "Message Downloading Users"
 msgstr "给正在下载的用户发消息"
 
-#: pynicotine/gtkgui/application.py:774
+#: pynicotine/gtkgui/application.py:725
 msgid "Send private message to all users who are downloading from you:"
 msgstr "给下载您文件的所有用户发送私信："
 
-#: pynicotine/gtkgui/application.py:775 pynicotine/gtkgui/application.py:789
+#: pynicotine/gtkgui/application.py:726 pynicotine/gtkgui/application.py:740
 #: pynicotine/gtkgui/widgets/popupmenu.py:415
 #: pynicotine/gtkgui/ui/userinfo.ui:478
 msgid "_Send Message"
 msgstr "_发信息"
 
-#: pynicotine/gtkgui/application.py:787
+#: pynicotine/gtkgui/application.py:738
 msgid "Message Buddies"
 msgstr "向好友发送信息"
 
-#: pynicotine/gtkgui/application.py:788
+#: pynicotine/gtkgui/application.py:739
 msgid "Send private message to all online buddies:"
 msgstr "给所有在线好友发私信："
 
-#: pynicotine/gtkgui/application.py:817
+#: pynicotine/gtkgui/application.py:768
 msgid "Select a Saved Shares List File"
 msgstr "选择已保存的共享列表文件"
 
-#: pynicotine/gtkgui/application.py:907
+#: pynicotine/gtkgui/application.py:854
 msgid "Critical Error"
 msgstr "严重错误"
 
-#: pynicotine/gtkgui/application.py:908
+#: pynicotine/gtkgui/application.py:855
 msgid ""
 "Nicotine+ has encountered a critical error and needs to exit. Please copy "
 "the following message and include it in a bug report:"
 msgstr "Nicotine+ 遇到严重错误，需要退出。请复制以下消息并将其加在bug报告中："
 
-#: pynicotine/gtkgui/application.py:912
+#: pynicotine/gtkgui/application.py:859
 msgid "_Quit Nicotine+"
 msgstr "_退出 Nicotine+"
 
-#: pynicotine/gtkgui/application.py:913
+#: pynicotine/gtkgui/application.py:860
 msgid "_Copy & Report Bug"
 msgstr "_复制和报告bug"
 
-#: pynicotine/gtkgui/buddies.py:71 pynicotine/gtkgui/chatrooms.py:509
+#: pynicotine/gtkgui/buddies.py:71 pynicotine/gtkgui/chatrooms.py:515
 #: pynicotine/gtkgui/interests.py:127
 #: pynicotine/gtkgui/popovers/chathistory.py:65
-#: pynicotine/gtkgui/transfers.py:170
+#: pynicotine/gtkgui/transfers.py:174
 msgid "Status"
 msgstr "状态"
 
-#: pynicotine/gtkgui/buddies.py:77 pynicotine/gtkgui/chatrooms.py:515
-#: pynicotine/gtkgui/interests.py:133 pynicotine/gtkgui/search.py:514
+#: pynicotine/gtkgui/buddies.py:77 pynicotine/gtkgui/chatrooms.py:521
+#: pynicotine/gtkgui/interests.py:133 pynicotine/gtkgui/search.py:518
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:292
 #: pynicotine/gtkgui/ui/popovers/searchfilterhelp.ui:387
 #: pynicotine/gtkgui/ui/userinfo.ui:290
 msgid "Country"
 msgstr "国家"
 
-#: pynicotine/gtkgui/buddies.py:83 pynicotine/gtkgui/chatrooms.py:521
-#: pynicotine/gtkgui/dialogs/preferences.py:1001
-#: pynicotine/gtkgui/dialogs/preferences.py:1144
+#: pynicotine/gtkgui/buddies.py:83 pynicotine/gtkgui/chatrooms.py:527
+#: pynicotine/gtkgui/dialogs/preferences.py:1015
+#: pynicotine/gtkgui/dialogs/preferences.py:1192
 #: pynicotine/gtkgui/interests.py:139
-#: pynicotine/gtkgui/popovers/chathistory.py:71 pynicotine/gtkgui/search.py:508
+#: pynicotine/gtkgui/popovers/chathistory.py:71 pynicotine/gtkgui/search.py:512
 #: pynicotine/gtkgui/transfers.py:145
 msgid "User"
 msgstr "用户"
 
-#: pynicotine/gtkgui/buddies.py:90 pynicotine/gtkgui/chatrooms.py:531
-#: pynicotine/gtkgui/interests.py:146 pynicotine/gtkgui/search.py:520
-#: pynicotine/gtkgui/transfers.py:192
+#: pynicotine/gtkgui/buddies.py:90 pynicotine/gtkgui/chatrooms.py:537
+#: pynicotine/gtkgui/interests.py:146 pynicotine/gtkgui/search.py:524
+#: pynicotine/gtkgui/transfers.py:199
 msgid "Speed"
 msgstr "速度"
 
-#: pynicotine/gtkgui/buddies.py:96 pynicotine/gtkgui/chatrooms.py:538
+#: pynicotine/gtkgui/buddies.py:96 pynicotine/gtkgui/chatrooms.py:544
 #: pynicotine/gtkgui/interests.py:153 pynicotine/gtkgui/ui/mainwindow.ui:338
 #: pynicotine/gtkgui/ui/mainwindow.ui:577
 msgid "Files"
 msgstr "文件"
 
 #: pynicotine/gtkgui/buddies.py:102
-#: pynicotine/gtkgui/dialogs/preferences.py:659
-#: pynicotine/gtkgui/dialogs/preferences.py:719
-#: pynicotine/gtkgui/dialogs/preferences.py:756
+#: pynicotine/gtkgui/dialogs/preferences.py:668
+#: pynicotine/gtkgui/dialogs/preferences.py:728
+#: pynicotine/gtkgui/dialogs/preferences.py:765
 msgid "Trusted"
 msgstr "信任的"
 
@@ -592,20 +577,20 @@ msgid "Add User _Note…"
 msgstr "添加用户 _备注…"
 
 #: pynicotine/gtkgui/buddies.py:145
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:213
-#: pynicotine/gtkgui/dialogs/preferences.py:291
-#: pynicotine/gtkgui/dialogs/preferences.py:817
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:224
+#: pynicotine/gtkgui/dialogs/preferences.py:297
+#: pynicotine/gtkgui/dialogs/preferences.py:827
 #: pynicotine/gtkgui/dialogs/wishlist.py:81 pynicotine/gtkgui/interests.py:188
-#: pynicotine/gtkgui/interests.py:197 pynicotine/gtkgui/transfers.py:261
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:447
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:463
+#: pynicotine/gtkgui/interests.py:197 pynicotine/gtkgui/transfers.py:272
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:512
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:528
 #: pynicotine/gtkgui/ui/dialogs/wishlist.ui:90
 #: pynicotine/gtkgui/ui/dialogs/wishlist.ui:106
 #: pynicotine/gtkgui/ui/downloads.ui:116
-#: pynicotine/gtkgui/ui/settings/ban.ui:193
-#: pynicotine/gtkgui/ui/settings/ban.ui:209
-#: pynicotine/gtkgui/ui/settings/ban.ui:315
-#: pynicotine/gtkgui/ui/settings/ban.ui:331
+#: pynicotine/gtkgui/ui/settings/ban.ui:194
+#: pynicotine/gtkgui/ui/settings/ban.ui:210
+#: pynicotine/gtkgui/ui/settings/ban.ui:316
+#: pynicotine/gtkgui/ui/settings/ban.ui:332
 #: pynicotine/gtkgui/ui/settings/chats.ui:773
 #: pynicotine/gtkgui/ui/settings/chats.ui:789
 #: pynicotine/gtkgui/ui/settings/chats.ui:957
@@ -637,228 +622,249 @@ msgid "Add a note about user %s:"
 msgstr "添加关于用户 %s 的备注："
 
 #: pynicotine/gtkgui/buddies.py:519
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:369
-#: pynicotine/gtkgui/dialogs/preferences.py:464
-#: pynicotine/gtkgui/dialogs/preferences.py:1056
-#: pynicotine/gtkgui/dialogs/preferences.py:1086
-#: pynicotine/gtkgui/dialogs/preferences.py:1219
-#: pynicotine/gtkgui/dialogs/preferences.py:1250
-#: pynicotine/gtkgui/dialogs/preferences.py:1482
-#: pynicotine/gtkgui/dialogs/preferences.py:1541
-#: pynicotine/gtkgui/dialogs/preferences.py:2520
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:384
+#: pynicotine/gtkgui/dialogs/preferences.py:470
+#: pynicotine/gtkgui/dialogs/preferences.py:1082
+#: pynicotine/gtkgui/dialogs/preferences.py:1123
+#: pynicotine/gtkgui/dialogs/preferences.py:1277
+#: pynicotine/gtkgui/dialogs/preferences.py:1318
+#: pynicotine/gtkgui/dialogs/preferences.py:1562
+#: pynicotine/gtkgui/dialogs/preferences.py:1622
+#: pynicotine/gtkgui/dialogs/preferences.py:2600
 msgid "_Add"
 msgstr "_添加"
 
-#: pynicotine/gtkgui/chatrooms.py:213
+#: pynicotine/gtkgui/chatrooms.py:218
 msgid "Create New Room?"
 msgstr "创建新聊天室？"
 
-#: pynicotine/gtkgui/chatrooms.py:214
+#: pynicotine/gtkgui/chatrooms.py:219
 #, python-format
 msgid "Do you really want to create a new room \"%s\"?"
 msgstr "您确定要创建新聊天室“%s”吗？"
 
-#: pynicotine/gtkgui/chatrooms.py:215
+#: pynicotine/gtkgui/chatrooms.py:220
 msgid "Make room private"
 msgstr "设为私密聊天室"
 
-#: pynicotine/gtkgui/chatrooms.py:563
+#: pynicotine/gtkgui/chatrooms.py:495
+msgid "Search activity log…"
+msgstr "查找活动日志……"
+
+#: pynicotine/gtkgui/chatrooms.py:502 pynicotine/gtkgui/privatechat.py:338
+msgid "Search chat log…"
+msgstr "查找聊天日志……"
+
+#: pynicotine/gtkgui/chatrooms.py:569
 msgid "Sear_ch User's Files"
 msgstr "搜索用户文件"
 
-#: pynicotine/gtkgui/chatrooms.py:569 pynicotine/gtkgui/chatrooms.py:581
+#: pynicotine/gtkgui/chatrooms.py:575 pynicotine/gtkgui/chatrooms.py:587
 #: pynicotine/gtkgui/privatechat.py:362
 msgid "Find…"
 msgstr "查找……"
 
-#: pynicotine/gtkgui/chatrooms.py:571 pynicotine/gtkgui/chatrooms.py:583
-#: pynicotine/gtkgui/chatrooms.py:765 pynicotine/gtkgui/chatrooms.py:768
+#: pynicotine/gtkgui/chatrooms.py:577 pynicotine/gtkgui/chatrooms.py:589
+#: pynicotine/gtkgui/chatrooms.py:770 pynicotine/gtkgui/chatrooms.py:773
 #: pynicotine/gtkgui/privatechat.py:364 pynicotine/gtkgui/privatechat.py:427
-#: pynicotine/gtkgui/search.py:618 pynicotine/gtkgui/transfers.py:267
+#: pynicotine/gtkgui/search.py:621 pynicotine/gtkgui/transfers.py:278
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:190
 msgid "Copy"
 msgstr "复制"
 
-#: pynicotine/gtkgui/chatrooms.py:572 pynicotine/gtkgui/chatrooms.py:585
+#: pynicotine/gtkgui/chatrooms.py:578 pynicotine/gtkgui/chatrooms.py:591
 #: pynicotine/gtkgui/privatechat.py:366
 msgid "Copy All"
 msgstr "全部复制"
 
-#: pynicotine/gtkgui/chatrooms.py:574
+#: pynicotine/gtkgui/chatrooms.py:580
 msgid "Clear Activity View"
 msgstr "清除活动视图"
 
-#: pynicotine/gtkgui/chatrooms.py:576 pynicotine/gtkgui/chatrooms.py:591
-#: pynicotine/gtkgui/chatrooms.py:596
+#: pynicotine/gtkgui/chatrooms.py:582 pynicotine/gtkgui/chatrooms.py:597
+#: pynicotine/gtkgui/chatrooms.py:602
 msgid "_Leave Room"
 msgstr "_离开房间"
 
-#: pynicotine/gtkgui/chatrooms.py:584 pynicotine/gtkgui/chatrooms.py:769
+#: pynicotine/gtkgui/chatrooms.py:590 pynicotine/gtkgui/chatrooms.py:774
 #: pynicotine/gtkgui/privatechat.py:365 pynicotine/gtkgui/privatechat.py:428
 msgid "Copy Link"
 msgstr "复制链接"
 
-#: pynicotine/gtkgui/chatrooms.py:587
+#: pynicotine/gtkgui/chatrooms.py:593
 msgid "View Room Log"
 msgstr "查看房间日志"
 
-#: pynicotine/gtkgui/chatrooms.py:588
+#: pynicotine/gtkgui/chatrooms.py:594
 msgid "Delete Room Log…"
 msgstr "删除房间日志……"
 
-#: pynicotine/gtkgui/chatrooms.py:590 pynicotine/gtkgui/privatechat.py:371
+#: pynicotine/gtkgui/chatrooms.py:596 pynicotine/gtkgui/privatechat.py:371
 msgid "Clear Message View"
 msgstr "清除消息视图"
 
-#: pynicotine/gtkgui/chatrooms.py:791
+#: pynicotine/gtkgui/chatrooms.py:796
 #, python-format
 msgid "%(user)s mentioned you in room %(room)s"
 msgstr "%(user)s 在 %(room)s 房间里提到了你"
 
-#: pynicotine/gtkgui/chatrooms.py:796 pynicotine/gtkgui/mainwindow.py:393
+#: pynicotine/gtkgui/chatrooms.py:801 pynicotine/gtkgui/mainwindow.py:397
 #, python-format
 msgid "Mentioned by %(user)s in Room %(room)s"
 msgstr "%(user)s 在房间 %(room)s 提到了您"
 
-#: pynicotine/gtkgui/chatrooms.py:814
+#: pynicotine/gtkgui/chatrooms.py:819
 #, python-format
 msgid "Message by %(user)s in Room %(room)s"
 msgstr "来自房间 %(room)s %(user)s的消息"
 
-#: pynicotine/gtkgui/chatrooms.py:871
+#: pynicotine/gtkgui/chatrooms.py:877 pynicotine/gtkgui/chatrooms.py:1069
 #, python-format
 msgid "%s joined the room"
 msgstr "%s 加入了房间"
 
-#: pynicotine/gtkgui/chatrooms.py:895
+#: pynicotine/gtkgui/chatrooms.py:901
 #, python-format
 msgid "%s left the room"
 msgstr "%s 离开了房间"
 
-#: pynicotine/gtkgui/chatrooms.py:1010
+#: pynicotine/gtkgui/chatrooms.py:1016
 #, python-format
 msgid "%s has gone away"
 msgstr "%s 已离开"
 
-#: pynicotine/gtkgui/chatrooms.py:1013
+#: pynicotine/gtkgui/chatrooms.py:1019
 #, python-format
 msgid "%s has returned"
 msgstr "%s 已返回"
 
-#: pynicotine/gtkgui/chatrooms.py:1105 pynicotine/gtkgui/privatechat.py:463
+#: pynicotine/gtkgui/chatrooms.py:1117 pynicotine/gtkgui/privatechat.py:463
 msgid "Delete Logged Messages?"
 msgstr "删除消息记录？"
 
-#: pynicotine/gtkgui/chatrooms.py:1106
+#: pynicotine/gtkgui/chatrooms.py:1118
 msgid ""
 "Do you really want to permanently delete all logged messages for this room?"
 msgstr "您确定要永久删除此房间的所有消息记录吗？"
 
-#: pynicotine/gtkgui/dialogs/about.py:382
+#: pynicotine/gtkgui/dialogs/about.py:385
 msgid "About"
 msgstr "关于"
 
-#: pynicotine/gtkgui/dialogs/about.py:392
+#: pynicotine/gtkgui/dialogs/about.py:395
 msgid "Website"
 msgstr "网站"
 
-#: pynicotine/gtkgui/dialogs/about.py:433
+#: pynicotine/gtkgui/dialogs/about.py:437
 #, python-format
 msgid "Error checking latest version: %s"
 msgstr "无法检查最新版本：%s"
 
-#: pynicotine/gtkgui/dialogs/about.py:438
+#: pynicotine/gtkgui/dialogs/about.py:442
 #, python-format
 msgid "New release available: %s"
 msgstr "新版本可下载：%s"
 
-#: pynicotine/gtkgui/dialogs/about.py:443
+#: pynicotine/gtkgui/dialogs/about.py:447
 msgid "Up to date"
 msgstr "已是最新"
 
-#: pynicotine/gtkgui/dialogs/about.py:472
+#: pynicotine/gtkgui/dialogs/about.py:476
 msgid "Checking latest version…"
 msgstr "检查最新版本……"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:71
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:75
 msgid "Setup Assistant"
 msgstr "设置向导"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:95
-#: pynicotine/gtkgui/dialogs/preferences.py:607
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:99
+#: pynicotine/gtkgui/dialogs/preferences.py:616
 msgid "Virtual Folder"
 msgstr "虚拟文件夹"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:102
-#: pynicotine/gtkgui/dialogs/preferences.py:614 pynicotine/gtkgui/search.py:534
-#: pynicotine/gtkgui/uploads.py:48 pynicotine/gtkgui/userbrowse.py:263
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:106
+#: pynicotine/gtkgui/dialogs/preferences.py:623 pynicotine/gtkgui/search.py:538
+#: pynicotine/gtkgui/uploads.py:48 pynicotine/gtkgui/userbrowse.py:261
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:113
 msgid "Folder"
 msgstr "文件夹"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:128
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:132
+msgid "_Previous"
+msgstr "_上一个"
+
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:133
 msgid "_Finish"
 msgstr "_完成"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:128
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:133
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:136
 msgid "_Next"
 msgstr "_下一个"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:169
-#: pynicotine/gtkgui/dialogs/preferences.py:710
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:179
+#: pynicotine/gtkgui/dialogs/preferences.py:719
 msgid "Add a Shared Folder"
 msgstr "添加共享文件夹"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:200
-#: pynicotine/gtkgui/dialogs/preferences.py:753
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:210
+#: pynicotine/gtkgui/dialogs/preferences.py:762
 msgid "Edit Shared Folder"
 msgstr "编辑共享文件夹"
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:201
-#: pynicotine/gtkgui/dialogs/preferences.py:754
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:211
+#: pynicotine/gtkgui/dialogs/preferences.py:763
 #, python-format
 msgid "Enter new virtual name for '%(dir)s':"
 msgstr "为“%(dir)s”输入新的虚拟名称："
 
-#: pynicotine/gtkgui/dialogs/fastconfigure.py:203
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:395
-#: pynicotine/gtkgui/dialogs/preferences.py:495
-#: pynicotine/gtkgui/dialogs/preferences.py:760
-#: pynicotine/gtkgui/dialogs/preferences.py:1509
-#: pynicotine/gtkgui/dialogs/preferences.py:1571
-#: pynicotine/gtkgui/dialogs/preferences.py:2549
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:213
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:412
+#: pynicotine/gtkgui/dialogs/preferences.py:501
+#: pynicotine/gtkgui/dialogs/preferences.py:769
+#: pynicotine/gtkgui/dialogs/preferences.py:1589
+#: pynicotine/gtkgui/dialogs/preferences.py:1652
+#: pynicotine/gtkgui/dialogs/preferences.py:2629
 #: pynicotine/gtkgui/dialogs/wishlist.py:140
 msgid "_Edit"
 msgstr "_编辑"
 
-#: pynicotine/gtkgui/dialogs/fileproperties.py:64
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:272
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:327
+#: pynicotine/gtkgui/dialogs/fastconfigure.py:307
+#, python-format
+msgid ""
+"User %s already exists, and the password you entered is invalid. Please "
+"choose another username if this is your first time logging in."
+msgstr "用户%s已经存在，您输入的密码无效。如果这是您第一次登录，请更换用户名。"
+
+#: pynicotine/gtkgui/dialogs/fileproperties.py:65
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:259
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:279
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:334
 msgid "File Properties"
 msgstr "文件属性"
 
-#: pynicotine/gtkgui/dialogs/fileproperties.py:75
+#: pynicotine/gtkgui/dialogs/fileproperties.py:76
 #, python-format
 msgid "File Properties (%(num)i of %(total)i  /  %(size)s  /  %(length)s)"
 msgstr "文件属性 (%(num)i of %(total)i  /  %(size)s  /  %(length)s)"
 
-#: pynicotine/gtkgui/dialogs/fileproperties.py:81
+#: pynicotine/gtkgui/dialogs/fileproperties.py:82
 #, python-format
 msgid "File Properties (%(num)i of %(total)i  /  %(size)s)"
 msgstr "文件属性 (%(total)i 中的第 %(num)i 个  /  %(size)s)"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:44
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:45
 #: pynicotine/gtkgui/ui/dialogs/preferences.ui:17
 msgid "_Apply"
 msgstr "_应用"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:211
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:385
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:401
-#: pynicotine/gtkgui/ui/settings/ban.ui:162
-#: pynicotine/gtkgui/ui/settings/ban.ui:178
-#: pynicotine/gtkgui/ui/settings/ban.ui:284
-#: pynicotine/gtkgui/ui/settings/ban.ui:300
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:222
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:450
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:466
+#: pynicotine/gtkgui/ui/settings/ban.ui:163
+#: pynicotine/gtkgui/ui/settings/ban.ui:179
+#: pynicotine/gtkgui/ui/settings/ban.ui:285
+#: pynicotine/gtkgui/ui/settings/ban.ui:301
 #: pynicotine/gtkgui/ui/settings/chats.ui:711
 #: pynicotine/gtkgui/ui/settings/chats.ui:727
 #: pynicotine/gtkgui/ui/settings/chats.ui:895
@@ -875,10 +881,10 @@ msgstr "_应用"
 msgid "Add…"
 msgstr "添加……"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:212
-#: pynicotine/gtkgui/dialogs/wishlist.py:79 pynicotine/gtkgui/search.py:624
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:416
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:432
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:223
+#: pynicotine/gtkgui/dialogs/wishlist.py:79 pynicotine/gtkgui/search.py:627
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:481
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:497
 #: pynicotine/gtkgui/ui/dialogs/wishlist.ui:60
 #: pynicotine/gtkgui/ui/dialogs/wishlist.ui:76
 #: pynicotine/gtkgui/ui/settings/chats.ui:742
@@ -894,24 +900,23 @@ msgstr "添加……"
 msgid "Edit…"
 msgstr "编辑……"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:351
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:365
 #, python-format
 msgid "%s Settings"
 msgstr "%s 设置"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:367
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:382
 msgid "Add Item"
 msgstr "增加条目"
 
-#: pynicotine/gtkgui/dialogs/pluginsettings.py:393
+#: pynicotine/gtkgui/dialogs/pluginsettings.py:410
 msgid "Edit Item"
 msgstr "编辑项目"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:125
-#: pynicotine/gtkgui/search.py:1525 pynicotine/gtkgui/userinfo.py:591
-#: pynicotine/gtkgui/userinfo.py:609 pynicotine/gtkgui/userinfo.py:740
-#: pynicotine/gtkgui/widgets/treeview.py:663 pynicotine/users.py:296
-#: pynicotine/gtkgui/ui/settings/network.ui:130
+#: pynicotine/gtkgui/dialogs/preferences.py:127
+#: pynicotine/gtkgui/userinfo.py:598 pynicotine/gtkgui/userinfo.py:616
+#: pynicotine/gtkgui/userinfo.py:753 pynicotine/gtkgui/widgets/treeview.py:666
+#: pynicotine/users.py:314 pynicotine/gtkgui/ui/settings/network.ui:132
 #: pynicotine/gtkgui/ui/userinfo.ui:139 pynicotine/gtkgui/ui/userinfo.ui:166
 #: pynicotine/gtkgui/ui/userinfo.ui:193 pynicotine/gtkgui/ui/userinfo.ui:220
 #: pynicotine/gtkgui/ui/userinfo.ui:247 pynicotine/gtkgui/ui/userinfo.ui:274
@@ -919,25 +924,25 @@ msgstr "编辑项目"
 msgid "Unknown"
 msgstr "未知"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:129
-#: pynicotine/gtkgui/ui/settings/network.ui:140
+#: pynicotine/gtkgui/dialogs/preferences.py:131
+#: pynicotine/gtkgui/ui/settings/network.ui:142
 msgid "Check Port Status"
 msgstr "检查端口状态"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:131
+#: pynicotine/gtkgui/dialogs/preferences.py:133
 #, python-format
 msgid "<b>%(ip)s</b>, port %(port)s"
 msgstr "<b>%(ip)s</b>，端口 %(port)s"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:198
+#: pynicotine/gtkgui/dialogs/preferences.py:204
 msgid "Password Change Rejected"
 msgstr "密码更改被拒绝"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:217
+#: pynicotine/gtkgui/dialogs/preferences.py:223
 msgid "Enter a new password for your Soulseek account:"
 msgstr "为您的 Soulseek 账户输入新密码："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:219
+#: pynicotine/gtkgui/dialogs/preferences.py:225
 msgid ""
 "You are currently logged out of the Soulseek network. If you want to change "
 "the password of an existing Soulseek account, you need to be logged into "
@@ -946,82 +951,82 @@ msgstr ""
 "您当前已退出 Soulseek 网络。如果您想更改现有 Soulseek 账户的密码，您需要登录"
 "该帐户。"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:222
+#: pynicotine/gtkgui/dialogs/preferences.py:228
 msgid "Enter password to use when logging in:"
 msgstr "输入登录时使用的密码："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:226
-#: pynicotine/gtkgui/ui/settings/network.ui:78
-#: pynicotine/gtkgui/ui/settings/network.ui:94
+#: pynicotine/gtkgui/dialogs/preferences.py:232
+#: pynicotine/gtkgui/ui/settings/network.ui:80
+#: pynicotine/gtkgui/ui/settings/network.ui:96
 msgid "Change Password"
 msgstr "更改密码"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:229
+#: pynicotine/gtkgui/dialogs/preferences.py:235
 msgid "_Change"
 msgstr "_更改"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:276
+#: pynicotine/gtkgui/dialogs/preferences.py:282
 msgid "No one"
 msgstr "没有人"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:277
+#: pynicotine/gtkgui/dialogs/preferences.py:283
 msgid "Everyone"
 msgstr "所有人"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:278
-#: pynicotine/gtkgui/dialogs/preferences.py:577
-#: pynicotine/gtkgui/dialogs/preferences.py:655
-#: pynicotine/gtkgui/mainwindow.py:712 pynicotine/gtkgui/search.py:272
+#: pynicotine/gtkgui/dialogs/preferences.py:284
+#: pynicotine/gtkgui/dialogs/preferences.py:586
+#: pynicotine/gtkgui/dialogs/preferences.py:664
+#: pynicotine/gtkgui/mainwindow.py:715 pynicotine/gtkgui/search.py:275
 #: pynicotine/gtkgui/ui/buddies.ui:18 pynicotine/gtkgui/ui/mainwindow.ui:1363
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:686
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:689
 msgid "Buddies"
 msgstr "好友"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:279
-#: pynicotine/gtkgui/dialogs/preferences.py:578
-#: pynicotine/gtkgui/dialogs/preferences.py:719
-#: pynicotine/gtkgui/dialogs/preferences.py:756
+#: pynicotine/gtkgui/dialogs/preferences.py:285
+#: pynicotine/gtkgui/dialogs/preferences.py:587
+#: pynicotine/gtkgui/dialogs/preferences.py:728
+#: pynicotine/gtkgui/dialogs/preferences.py:765
 msgid "Trusted buddies"
 msgstr "信任好友"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:286
-#: pynicotine/gtkgui/dialogs/preferences.py:812
+#: pynicotine/gtkgui/dialogs/preferences.py:292
+#: pynicotine/gtkgui/dialogs/preferences.py:822
 msgid "Nothing"
 msgstr "没有"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:287
-#: pynicotine/gtkgui/dialogs/preferences.py:813
+#: pynicotine/gtkgui/dialogs/preferences.py:293
+#: pynicotine/gtkgui/dialogs/preferences.py:823
 msgid "Open File"
 msgstr "打开文件"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:288
-#: pynicotine/gtkgui/dialogs/preferences.py:814
+#: pynicotine/gtkgui/dialogs/preferences.py:294
+#: pynicotine/gtkgui/dialogs/preferences.py:824
 #: pynicotine/gtkgui/widgets/filechooser.py:292
 msgid "Open in File Manager"
 msgstr "在文件管理器中打开"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:289
-#: pynicotine/gtkgui/dialogs/preferences.py:815
-#: pynicotine/gtkgui/mainwindow.py:1061
+#: pynicotine/gtkgui/dialogs/preferences.py:295
+#: pynicotine/gtkgui/dialogs/preferences.py:825
+#: pynicotine/gtkgui/mainwindow.py:1064
 msgid "Search"
 msgstr "搜索"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:290
+#: pynicotine/gtkgui/dialogs/preferences.py:296
 #: pynicotine/gtkgui/ui/downloads.ui:86
 msgid "Pause"
 msgstr "暂停"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:292
+#: pynicotine/gtkgui/dialogs/preferences.py:298
 #: pynicotine/gtkgui/ui/downloads.ui:56
 msgid "Resume"
 msgstr "恢复"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:293
-#: pynicotine/gtkgui/dialogs/preferences.py:819
+#: pynicotine/gtkgui/dialogs/preferences.py:299
+#: pynicotine/gtkgui/dialogs/preferences.py:829
 msgid "Browse Folder"
 msgstr "浏览文件夹"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:310
+#: pynicotine/gtkgui/dialogs/preferences.py:316
 msgid ""
 "<b>Syntax</b>: Case-insensitive. If enabled, Python regular expressions can "
 "be used, otherwise only wildcard * matches are supported."
@@ -1029,148 +1034,148 @@ msgstr ""
 "<b>语法</b>：不区分大小写。如果启用正则，则可以使用 Python 正则表达式，否则仅"
 "支持通配符 * 匹配。"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:320
+#: pynicotine/gtkgui/dialogs/preferences.py:326
 msgid "Filter"
 msgstr "筛选"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:327
+#: pynicotine/gtkgui/dialogs/preferences.py:333
 msgid "Regex"
 msgstr "正则表达式"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:462
+#: pynicotine/gtkgui/dialogs/preferences.py:468
 msgid "Add Download Filter"
 msgstr "添加下载过滤器"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:463
+#: pynicotine/gtkgui/dialogs/preferences.py:469
 msgid "Enter a new download filter:"
 msgstr "输入新的下载过滤器："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:467
-#: pynicotine/gtkgui/dialogs/preferences.py:500
+#: pynicotine/gtkgui/dialogs/preferences.py:473
+#: pynicotine/gtkgui/dialogs/preferences.py:506
 msgid "Enable regular expressions"
 msgstr "启用正则表达式"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:493
+#: pynicotine/gtkgui/dialogs/preferences.py:499
 msgid "Edit Download Filter"
 msgstr "编辑下载过滤器"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:494
+#: pynicotine/gtkgui/dialogs/preferences.py:500
 msgid "Modify the following download filter:"
 msgstr "修改以下下载过滤器："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:563
+#: pynicotine/gtkgui/dialogs/preferences.py:572
 #, python-format
 msgid "%(num)d Failed! %(error)s "
 msgstr "%(num)d 失败！ %(error)s "
 
-#: pynicotine/gtkgui/dialogs/preferences.py:570
+#: pynicotine/gtkgui/dialogs/preferences.py:579
 msgid "Filters Successful"
 msgstr "过滤成功"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:576
-#: pynicotine/gtkgui/dialogs/preferences.py:651
-#: pynicotine/gtkgui/dialogs/preferences.py:692
+#: pynicotine/gtkgui/dialogs/preferences.py:585
+#: pynicotine/gtkgui/dialogs/preferences.py:660
+#: pynicotine/gtkgui/dialogs/preferences.py:701
 msgid "Public"
 msgstr "公开"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:620
+#: pynicotine/gtkgui/dialogs/preferences.py:629
 msgid "Accessible To"
 msgstr "可访问的人"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:816
+#: pynicotine/gtkgui/dialogs/preferences.py:826
 #: pynicotine/gtkgui/ui/uploads.ui:56
 msgid "Abort"
 msgstr "中止"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:818
+#: pynicotine/gtkgui/dialogs/preferences.py:828
 #: pynicotine/gtkgui/ui/userbrowse.ui:5 pynicotine/gtkgui/ui/userinfo.ui:5
 msgid "Retry"
 msgstr "重试"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:826
+#: pynicotine/gtkgui/dialogs/preferences.py:836
 msgid "Round Robin"
 msgstr "循环调度"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:827
+#: pynicotine/gtkgui/dialogs/preferences.py:837
 msgid "First In, First Out"
 msgstr "先进先出"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:982
-#: pynicotine/gtkgui/dialogs/preferences.py:1125
+#: pynicotine/gtkgui/dialogs/preferences.py:996
+#: pynicotine/gtkgui/dialogs/preferences.py:1173
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:215
 msgid "Username"
 msgstr "用户名"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:995
-#: pynicotine/gtkgui/dialogs/preferences.py:1138 pynicotine/users.py:306
+#: pynicotine/gtkgui/dialogs/preferences.py:1009
+#: pynicotine/gtkgui/dialogs/preferences.py:1186 pynicotine/users.py:324
 msgid "IP Address"
 msgstr "IP地址"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1054
-#: pynicotine/gtkgui/userinfo.py:546 pynicotine/gtkgui/widgets/popupmenu.py:426
+#: pynicotine/gtkgui/dialogs/preferences.py:1080
+#: pynicotine/gtkgui/userinfo.py:553 pynicotine/gtkgui/widgets/popupmenu.py:426
 #: pynicotine/gtkgui/widgets/popupmenu.py:472
 msgid "Ignore User"
 msgstr "忽略用户"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1055
+#: pynicotine/gtkgui/dialogs/preferences.py:1081
 msgid "Enter the name of the user you want to ignore:"
 msgstr "输入您想要忽略的用户："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1084
+#: pynicotine/gtkgui/dialogs/preferences.py:1121
 #: pynicotine/gtkgui/widgets/popupmenu.py:429
 #: pynicotine/gtkgui/widgets/popupmenu.py:474
 msgid "Ignore IP Address"
 msgstr "忽略 IP 地址"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1085
+#: pynicotine/gtkgui/dialogs/preferences.py:1122
 msgid "Enter an IP address you want to ignore:"
 msgstr "输入要忽略的 IP 地址："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1085
-#: pynicotine/gtkgui/dialogs/preferences.py:1249
+#: pynicotine/gtkgui/dialogs/preferences.py:1122
+#: pynicotine/gtkgui/dialogs/preferences.py:1317
 msgid "* is a wildcard"
 msgstr "* 是通配符"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1217
-#: pynicotine/gtkgui/userinfo.py:542 pynicotine/gtkgui/widgets/popupmenu.py:425
+#: pynicotine/gtkgui/dialogs/preferences.py:1275
+#: pynicotine/gtkgui/userinfo.py:549 pynicotine/gtkgui/widgets/popupmenu.py:425
 #: pynicotine/gtkgui/widgets/popupmenu.py:471
 msgid "Ban User"
 msgstr "封禁用户"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1218
+#: pynicotine/gtkgui/dialogs/preferences.py:1276
 msgid "Enter the name of the user you want to ban:"
 msgstr "输入您想要封禁的用户名："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1248
+#: pynicotine/gtkgui/dialogs/preferences.py:1316
 #: pynicotine/gtkgui/widgets/popupmenu.py:428
 #: pynicotine/gtkgui/widgets/popupmenu.py:473
 msgid "Ban IP Address"
 msgstr "封禁 IP 地址"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1249
+#: pynicotine/gtkgui/dialogs/preferences.py:1317
 msgid "Enter an IP address you want to ban:"
 msgstr "输入您想要封禁的 IP 地址："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1300
-#: pynicotine/gtkgui/dialogs/preferences.py:2156
+#: pynicotine/gtkgui/dialogs/preferences.py:1376
+#: pynicotine/gtkgui/dialogs/preferences.py:2232
 msgid "Format codes"
 msgstr "样式代码"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1322
-#: pynicotine/gtkgui/dialogs/preferences.py:1336
+#: pynicotine/gtkgui/dialogs/preferences.py:1398
+#: pynicotine/gtkgui/dialogs/preferences.py:1412
 msgid "Pattern"
 msgstr "匹配模式"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1343
+#: pynicotine/gtkgui/dialogs/preferences.py:1419
 msgid "Replacement"
 msgstr "替换"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1479
+#: pynicotine/gtkgui/dialogs/preferences.py:1559
 msgid "Censor Pattern"
 msgstr "违禁词匹配模式"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1480
-#: pynicotine/gtkgui/dialogs/preferences.py:1507
+#: pynicotine/gtkgui/dialogs/preferences.py:1560
+#: pynicotine/gtkgui/dialogs/preferences.py:1587
 msgid ""
 "Enter a pattern you want to censor. Add spaces around the pattern if you "
 "don't want to match strings inside words (may fail at the beginning and end "
@@ -1179,317 +1184,316 @@ msgstr ""
 "输入违禁词的匹配模式。如果您不想匹配单词中的字符串（可能在行首和行尾失败），"
 "请在模式匹配模式周围添加空格。"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1506
+#: pynicotine/gtkgui/dialogs/preferences.py:1586
 msgid "Edit Censored Pattern"
 msgstr "编辑违禁词匹配模式"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1539
+#: pynicotine/gtkgui/dialogs/preferences.py:1620
 msgid "Add Replacement"
 msgstr "添加替换"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1540
-#: pynicotine/gtkgui/dialogs/preferences.py:1570
+#: pynicotine/gtkgui/dialogs/preferences.py:1621
+#: pynicotine/gtkgui/dialogs/preferences.py:1651
 msgid "Enter a text pattern and what to replace it with:"
 msgstr "输入文本匹配模式及其替换内容："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1569
+#: pynicotine/gtkgui/dialogs/preferences.py:1650
 msgid "Edit Replacement"
 msgstr "编辑替换"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1686
+#: pynicotine/gtkgui/dialogs/preferences.py:1766
 msgid "System default"
 msgstr "系统默认"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1700
+#: pynicotine/gtkgui/dialogs/preferences.py:1780
 msgid "Show confirmation dialog"
 msgstr "显示确认对话框"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1701
+#: pynicotine/gtkgui/dialogs/preferences.py:1781
 msgid "Run in the background"
 msgstr "在后台运行"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1709
+#: pynicotine/gtkgui/dialogs/preferences.py:1789
 msgid "bold"
 msgstr "粗体"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1710
+#: pynicotine/gtkgui/dialogs/preferences.py:1790
 msgid "italic"
 msgstr "斜体"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1711
+#: pynicotine/gtkgui/dialogs/preferences.py:1791
 msgid "underline"
 msgstr "下划线"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1712
+#: pynicotine/gtkgui/dialogs/preferences.py:1792
 msgid "normal"
 msgstr "标准"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1720
+#: pynicotine/gtkgui/dialogs/preferences.py:1800
 msgid "Separate Buddies tab"
 msgstr "拆分好友选项卡"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1721
+#: pynicotine/gtkgui/dialogs/preferences.py:1801
 msgid "Sidebar in Chat Rooms tab"
 msgstr "在聊天室中显示侧边栏"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1722
+#: pynicotine/gtkgui/dialogs/preferences.py:1802
 msgid "Always visible sidebar"
 msgstr "侧边栏总是可见"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1727
+#: pynicotine/gtkgui/dialogs/preferences.py:1807
 msgid "Top"
 msgstr "顶部"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1728
+#: pynicotine/gtkgui/dialogs/preferences.py:1808
 msgid "Bottom"
 msgstr "底部"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1729
+#: pynicotine/gtkgui/dialogs/preferences.py:1809
 msgid "Left"
 msgstr "左侧"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1730
+#: pynicotine/gtkgui/dialogs/preferences.py:1810
 msgid "Right"
 msgstr "右侧"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1865
-#: pynicotine/gtkgui/mainwindow.py:943
+#: pynicotine/gtkgui/dialogs/preferences.py:1943
+#: pynicotine/gtkgui/mainwindow.py:946
 #: pynicotine/gtkgui/widgets/iconnotebook.py:611
 #: pynicotine/gtkgui/widgets/theme.py:227
 msgid "Online"
 msgstr "在线"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1866
-#: pynicotine/gtkgui/mainwindow.py:940
+#: pynicotine/gtkgui/dialogs/preferences.py:1944
+#: pynicotine/gtkgui/mainwindow.py:943
 #: pynicotine/gtkgui/widgets/iconnotebook.py:608
 #: pynicotine/gtkgui/widgets/theme.py:228
-#: pynicotine/gtkgui/widgets/trayicon.py:101
+#: pynicotine/gtkgui/widgets/trayicon.py:100
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:33
 msgid "Away"
 msgstr "离开"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1867
-#: pynicotine/gtkgui/mainwindow.py:947
+#: pynicotine/gtkgui/dialogs/preferences.py:1945
+#: pynicotine/gtkgui/mainwindow.py:950
 #: pynicotine/gtkgui/widgets/iconnotebook.py:614
 #: pynicotine/gtkgui/widgets/theme.py:229
-#: pynicotine/gtkgui/ui/mainwindow.ui:1848
+#: pynicotine/gtkgui/ui/mainwindow.ui:1841
 msgid "Offline"
 msgstr "离线"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1869
+#: pynicotine/gtkgui/dialogs/preferences.py:1947
 msgid "Tab Changed"
 msgstr "选项卡已更改"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1870
+#: pynicotine/gtkgui/dialogs/preferences.py:1948
 msgid "Tab Highlight"
 msgstr "选项卡高亮"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1871
+#: pynicotine/gtkgui/dialogs/preferences.py:1949
 msgid "Window"
 msgstr "窗口"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1875
+#: pynicotine/gtkgui/dialogs/preferences.py:1953
 msgid "Online (Tray)"
 msgstr "在线（托盘）"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1876
+#: pynicotine/gtkgui/dialogs/preferences.py:1954
 msgid "Away (Tray)"
 msgstr "离开（托盘）"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1877
+#: pynicotine/gtkgui/dialogs/preferences.py:1955
 msgid "Offline (Tray)"
 msgstr "离线 (托盘)"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:1878
+#: pynicotine/gtkgui/dialogs/preferences.py:1956
 msgid "Message (Tray)"
 msgstr "消息（托盘）"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2443
+#: pynicotine/gtkgui/dialogs/preferences.py:2523
 msgid "Protocol"
 msgstr "协议"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2451
+#: pynicotine/gtkgui/dialogs/preferences.py:2531
 msgid "Command"
 msgstr "命令"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2518
+#: pynicotine/gtkgui/dialogs/preferences.py:2598
 msgid "Add URL Handler"
 msgstr "添加 URL 处理程序"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2519
+#: pynicotine/gtkgui/dialogs/preferences.py:2599
 msgid "Enter the protocol and the command for the URL handler:"
 msgstr "输入 URL 处理程序的协议和命令："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2547
+#: pynicotine/gtkgui/dialogs/preferences.py:2627
 msgid "Edit Command"
 msgstr "编辑命令"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2548
+#: pynicotine/gtkgui/dialogs/preferences.py:2628
 #, python-format
 msgid "Enter a new command for protocol %s:"
 msgstr "为协议输入新命令 %s:"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2703
+#: pynicotine/gtkgui/dialogs/preferences.py:2784
 msgid "Username;APIKEY"
 msgstr "用户名;APIKEY"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2707
+#: pynicotine/gtkgui/dialogs/preferences.py:2788
 msgid ""
 "Music player (e.g. amarok, audacious, exaile); leave empty to autodetect:"
 msgstr "音乐播放器（例如 amarok、audacious、exaile）; 留空自动检测："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2711
-#: pynicotine/headless/application.py:101
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:170
+#: pynicotine/gtkgui/dialogs/preferences.py:2792
+#: pynicotine/headless/application.py:104
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:233
 #: pynicotine/gtkgui/ui/settings/network.ui:54
 msgid "Username: "
 msgstr "用户名： "
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2715
+#: pynicotine/gtkgui/dialogs/preferences.py:2796
 msgid "Command:"
 msgstr "命令："
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2723
-#: pynicotine/gtkgui/dialogs/preferences.py:2726
+#: pynicotine/gtkgui/dialogs/preferences.py:2804
+#: pynicotine/gtkgui/dialogs/preferences.py:2807
 msgid "Title"
 msgstr "标题"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2725
+#: pynicotine/gtkgui/dialogs/preferences.py:2806
 #, python-format
 msgid "Now Playing (typically \"%(artist)s - %(title)s\")"
 msgstr "正在播放（通常为“%(artist)s - %(title)s”）"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2726
-#: pynicotine/gtkgui/dialogs/preferences.py:2734
+#: pynicotine/gtkgui/dialogs/preferences.py:2807
+#: pynicotine/gtkgui/dialogs/preferences.py:2815
 msgid "Artist"
 msgstr "艺术家"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2728
-#: pynicotine/gtkgui/search.py:571 pynicotine/gtkgui/userbrowse.py:346
+#: pynicotine/gtkgui/dialogs/preferences.py:2809
+#: pynicotine/gtkgui/search.py:575 pynicotine/gtkgui/userbrowse.py:344
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:163
 #: pynicotine/gtkgui/ui/popovers/searchfilterhelp.ui:323
 msgid "Duration"
 msgstr "时长"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2730
+#: pynicotine/gtkgui/dialogs/preferences.py:2811
 #: pynicotine/gtkgui/ui/popovers/searchfilterhelp.ui:274
 msgid "Bitrate"
 msgstr "比特率"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2732
+#: pynicotine/gtkgui/dialogs/preferences.py:2813
 msgid "Comment"
 msgstr "评论"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2736
+#: pynicotine/gtkgui/dialogs/preferences.py:2817
 msgid "Album"
 msgstr "专辑"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2738
+#: pynicotine/gtkgui/dialogs/preferences.py:2819
 msgid "Track Number"
 msgstr "音轨号"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2740
+#: pynicotine/gtkgui/dialogs/preferences.py:2821
 msgid "Year"
 msgstr "年"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2742
+#: pynicotine/gtkgui/dialogs/preferences.py:2823
 msgid "Filename (URI)"
 msgstr "文件名 (URI)"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2744
+#: pynicotine/gtkgui/dialogs/preferences.py:2825
 msgid "Program"
 msgstr "程序"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2806
+#: pynicotine/gtkgui/dialogs/preferences.py:2887
 msgid "Enabled"
 msgstr "启用"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2813
+#: pynicotine/gtkgui/dialogs/preferences.py:2894
 msgid "Plugin"
 msgstr "插件"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2865
+#: pynicotine/gtkgui/dialogs/preferences.py:2946
 msgid "No Plugin Selected"
 msgstr "未选择插件"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2940
+#: pynicotine/gtkgui/dialogs/preferences.py:3021
 #: pynicotine/gtkgui/ui/settings/network.ui:27
 msgid "Network"
 msgstr "网络"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2941
+#: pynicotine/gtkgui/dialogs/preferences.py:3022
 #: pynicotine/gtkgui/ui/settings/userinterface.ui:28
 msgid "User Interface"
 msgstr "用户界面"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2942
+#: pynicotine/gtkgui/dialogs/preferences.py:3023
 #: pynicotine/plugins/core_commands/__init__.py:30
 #: pynicotine/gtkgui/ui/settings/shares.ui:11
 msgid "Shares"
 msgstr "共享"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2944
-#: pynicotine/gtkgui/mainwindow.py:708 pynicotine/gtkgui/mainwindow.py:1060
-#: pynicotine/gtkgui/widgets/trayicon.py:90
+#: pynicotine/gtkgui/dialogs/preferences.py:3025
+#: pynicotine/gtkgui/mainwindow.py:711 pynicotine/gtkgui/mainwindow.py:1063
 #: pynicotine/gtkgui/ui/mainwindow.ui:699
 #: pynicotine/gtkgui/ui/settings/uploads.ui:47
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:638
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:641
 msgid "Uploads"
 msgstr "上传"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2945
+#: pynicotine/gtkgui/dialogs/preferences.py:3026
 #: pynicotine/gtkgui/widgets/trayicon.py:96
 #: pynicotine/gtkgui/ui/settings/search.ui:33
 msgid "Searches"
 msgstr "搜索"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2946
+#: pynicotine/gtkgui/dialogs/preferences.py:3027
 msgid "User Profile"
 msgstr "用户资料"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2947
+#: pynicotine/gtkgui/dialogs/preferences.py:3028
 #: pynicotine/gtkgui/ui/settings/chats.ui:32
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1064
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1029
 msgid "Chats"
 msgstr "聊天"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2948
+#: pynicotine/gtkgui/dialogs/preferences.py:3029
 #: pynicotine/gtkgui/ui/settings/nowplaying.ui:16
 msgid "Now Playing"
 msgstr "正在播放"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2949
+#: pynicotine/gtkgui/dialogs/preferences.py:3030
 #: pynicotine/gtkgui/ui/settings/log.ui:64
 msgid "Logging"
 msgstr "日志"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2950
+#: pynicotine/gtkgui/dialogs/preferences.py:3031
 #: pynicotine/gtkgui/ui/settings/ban.ui:16
 msgid "Banned Users"
 msgstr "已拉黑的用户"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2951
+#: pynicotine/gtkgui/dialogs/preferences.py:3032
 #: pynicotine/gtkgui/ui/settings/ignore.ui:16
 msgid "Ignored Users"
 msgstr "已忽略的用户"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2952
+#: pynicotine/gtkgui/dialogs/preferences.py:3033
 #: pynicotine/gtkgui/ui/settings/plugin.ui:29
 msgid "Plugins"
 msgstr "插件"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2953
+#: pynicotine/gtkgui/dialogs/preferences.py:3034
 #: pynicotine/gtkgui/ui/settings/urlhandlers.ui:11
 msgid "URL Handlers"
 msgstr "URL 处理程序"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:2979
-#: pynicotine/gtkgui/widgets/trayicon.py:105
+#: pynicotine/gtkgui/dialogs/preferences.py:3060
+#: pynicotine/gtkgui/widgets/trayicon.py:106
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:61
 msgid "Preferences"
 msgstr "偏好"
 
-#: pynicotine/gtkgui/dialogs/preferences.py:3324
+#: pynicotine/gtkgui/dialogs/preferences.py:3427
 msgid "Pick a File Name for Config Backup"
 msgstr "为配置备份选择一个文件名"
 
@@ -1511,17 +1515,17 @@ msgid "Do you really want to reset transfer statistics?"
 msgstr "您真的要重置传输统计信息吗？"
 
 #: pynicotine/gtkgui/dialogs/wishlist.py:46
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:334
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:341
 msgid "Wishlist"
 msgstr "心愿单"
 
-#: pynicotine/gtkgui/dialogs/wishlist.py:59 pynicotine/gtkgui/search.py:352
+#: pynicotine/gtkgui/dialogs/wishlist.py:59 pynicotine/gtkgui/search.py:355
 msgid "Wish"
 msgstr "心愿单"
 
 #: pynicotine/gtkgui/dialogs/wishlist.py:78 pynicotine/gtkgui/interests.py:186
 #: pynicotine/gtkgui/interests.py:195 pynicotine/gtkgui/interests.py:207
-#: pynicotine/gtkgui/userinfo.py:360
+#: pynicotine/gtkgui/userinfo.py:364
 msgid "_Search for Item"
 msgstr "_搜索条目"
 
@@ -1534,11 +1538,11 @@ msgstr "编辑心愿单"
 msgid "Enter new value for wish '%s':"
 msgstr "为心愿单“%s”输入新值："
 
-#: pynicotine/gtkgui/dialogs/wishlist.py:177
+#: pynicotine/gtkgui/dialogs/wishlist.py:173
 msgid "Clear Wishlist?"
 msgstr "清除愿心愿单？"
 
-#: pynicotine/gtkgui/dialogs/wishlist.py:178
+#: pynicotine/gtkgui/dialogs/wishlist.py:174
 msgid "Do you really want to clear your wishlist?"
 msgstr "您真的要清空心愿单吗？"
 
@@ -1617,15 +1621,15 @@ msgid ""
 "%(folder)s?"
 msgstr "您真的要从 %(user)s 的文件夹 %(folder)s 下载 %(num)i 个文件吗？"
 
-#: pynicotine/gtkgui/downloads.py:174 pynicotine/gtkgui/userbrowse.py:382
+#: pynicotine/gtkgui/downloads.py:174 pynicotine/gtkgui/userbrowse.py:380
 msgid "_Download Folder"
 msgstr "_下载文件夹"
 
-#: pynicotine/gtkgui/interests.py:79 pynicotine/gtkgui/userinfo.py:328
+#: pynicotine/gtkgui/interests.py:79 pynicotine/gtkgui/userinfo.py:329
 msgid "Likes"
 msgstr "喜欢"
 
-#: pynicotine/gtkgui/interests.py:91 pynicotine/gtkgui/userinfo.py:340
+#: pynicotine/gtkgui/interests.py:91 pynicotine/gtkgui/userinfo.py:342
 msgid "Dislikes"
 msgstr "不喜欢"
 
@@ -1638,123 +1642,127 @@ msgid "Item"
 msgstr "条目"
 
 #: pynicotine/gtkgui/interests.py:185 pynicotine/gtkgui/interests.py:194
-#: pynicotine/gtkgui/interests.py:206
+#: pynicotine/gtkgui/interests.py:206 pynicotine/gtkgui/userinfo.py:363
 msgid "_Recommendations for Item"
 msgstr "_条目建议"
 
-#: pynicotine/gtkgui/interests.py:203 pynicotine/gtkgui/interests.py:540
-#: pynicotine/gtkgui/userinfo.py:357
+#: pynicotine/gtkgui/interests.py:203 pynicotine/gtkgui/interests.py:546
+#: pynicotine/gtkgui/userinfo.py:360
 msgid "I _Like This"
 msgstr "我_喜欢这个"
 
-#: pynicotine/gtkgui/interests.py:204 pynicotine/gtkgui/interests.py:543
-#: pynicotine/gtkgui/userinfo.py:358
+#: pynicotine/gtkgui/interests.py:204 pynicotine/gtkgui/interests.py:549
+#: pynicotine/gtkgui/userinfo.py:361
 msgid "I _Dislike This"
 msgstr "我_不喜欢这个"
 
-#: pynicotine/gtkgui/interests.py:408 pynicotine/gtkgui/interests.py:423
+#: pynicotine/gtkgui/interests.py:286 pynicotine/gtkgui/interests.py:429
 #: pynicotine/gtkgui/ui/interests.ui:131
 msgid "Recommendations"
 msgstr "建议"
 
-#: pynicotine/gtkgui/interests.py:409 pynicotine/gtkgui/interests.py:447
+#: pynicotine/gtkgui/interests.py:287 pynicotine/gtkgui/interests.py:453
 #: pynicotine/gtkgui/ui/interests.ui:191
 msgid "Similar Users"
 msgstr "类似用户"
 
-#: pynicotine/gtkgui/interests.py:421
+#: pynicotine/gtkgui/interests.py:427
 #, python-format
 msgid "Recommendations (%s)"
 msgstr "建议（%s）"
 
-#: pynicotine/gtkgui/interests.py:445
+#: pynicotine/gtkgui/interests.py:451
 #, python-format
 msgid "Similar Users (%s)"
 msgstr "类似用户（%s）"
 
-#: pynicotine/gtkgui/mainwindow.py:388 pynicotine/gtkgui/privatechat.py:486
+#: pynicotine/gtkgui/mainwindow.py:230
+msgid "Search log…"
+msgstr "查找日志……"
+
+#: pynicotine/gtkgui/mainwindow.py:391 pynicotine/gtkgui/privatechat.py:486
 #, python-format
 msgid "Private Message from %(user)s"
 msgstr "来自 %(user)s 的私信"
 
-#: pynicotine/gtkgui/mainwindow.py:396 pynicotine/gtkgui/search.py:906
+#: pynicotine/gtkgui/mainwindow.py:401 pynicotine/gtkgui/search.py:913
 msgid "Wishlist Results Found"
 msgstr "已找到心愿单项目"
 
-#: pynicotine/gtkgui/mainwindow.py:710 pynicotine/gtkgui/ui/mainwindow.ui:1034
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:662
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:843
+#: pynicotine/gtkgui/mainwindow.py:713 pynicotine/gtkgui/ui/mainwindow.ui:1034
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:665
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:846
 msgid "User Profiles"
 msgstr "用户资料"
 
-#: pynicotine/gtkgui/mainwindow.py:713 pynicotine/gtkgui/widgets/trayicon.py:95
+#: pynicotine/gtkgui/mainwindow.py:716 pynicotine/gtkgui/widgets/trayicon.py:95
 #: pynicotine/plugins/core_commands/__init__.py:26
-#: pynicotine/gtkgui/ui/mainwindow.ui:1527
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:698
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:887
+#: pynicotine/gtkgui/ui/mainwindow.ui:1528
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:701
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:890
 msgid "Chat Rooms"
 msgstr "聊天室"
 
-#: pynicotine/gtkgui/mainwindow.py:714 pynicotine/gtkgui/ui/mainwindow.ui:1583
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:710
+#: pynicotine/gtkgui/mainwindow.py:717 pynicotine/gtkgui/ui/mainwindow.ui:1584
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:713
 #: pynicotine/gtkgui/ui/userinfo.ui:348
 msgid "Interests"
 msgstr "兴趣"
 
-#: pynicotine/gtkgui/mainwindow.py:1062
+#: pynicotine/gtkgui/mainwindow.py:1065
 #: pynicotine/plugins/core_commands/__init__.py:25
 msgid "Chat"
 msgstr "聊天"
 
-#: pynicotine/gtkgui/mainwindow.py:1064
+#: pynicotine/gtkgui/mainwindow.py:1067
 msgid "[Debug] Connections"
 msgstr "[调试] 连接"
 
-#: pynicotine/gtkgui/mainwindow.py:1065
+#: pynicotine/gtkgui/mainwindow.py:1068
 msgid "[Debug] Messages"
 msgstr "[调试] 信息"
 
-#: pynicotine/gtkgui/mainwindow.py:1066
+#: pynicotine/gtkgui/mainwindow.py:1069
 msgid "[Debug] Transfers"
 msgstr "[调试] 传输"
 
-#: pynicotine/gtkgui/mainwindow.py:1067
+#: pynicotine/gtkgui/mainwindow.py:1070
 msgid "[Debug] Miscellaneous"
 msgstr "[调试] 杂项"
 
-#: pynicotine/gtkgui/mainwindow.py:1072
+#: pynicotine/gtkgui/mainwindow.py:1075
 msgid "_Find…"
 msgstr "_查找……"
 
-#: pynicotine/gtkgui/mainwindow.py:1074 pynicotine/gtkgui/mainwindow.py:1100
+#: pynicotine/gtkgui/mainwindow.py:1077 pynicotine/gtkgui/mainwindow.py:1103
 msgid "_Copy"
 msgstr "_复制"
 
-#: pynicotine/gtkgui/mainwindow.py:1075
+#: pynicotine/gtkgui/mainwindow.py:1078
 msgid "Copy _All"
 msgstr "复制_全部"
 
-#: pynicotine/gtkgui/mainwindow.py:1077
+#: pynicotine/gtkgui/mainwindow.py:1080
 msgid "View _Debug Logs"
 msgstr "查看_调试日志"
 
-#: pynicotine/gtkgui/mainwindow.py:1078
+#: pynicotine/gtkgui/mainwindow.py:1081
 msgid "View _Transfer Logs"
 msgstr "打开_传输日志"
 
-#: pynicotine/gtkgui/mainwindow.py:1080
+#: pynicotine/gtkgui/mainwindow.py:1083
 msgid "_Log Categories"
 msgstr "_日志分类"
 
-#: pynicotine/gtkgui/mainwindow.py:1082
+#: pynicotine/gtkgui/mainwindow.py:1085
 msgid "Clear Log View"
 msgstr "清除日志视图"
 
-#: pynicotine/gtkgui/mainwindow.py:1149
+#: pynicotine/gtkgui/mainwindow.py:1152
 msgid "Preparing Shares"
 msgstr "准备共享"
 
-#: pynicotine/gtkgui/mainwindow.py:1157
+#: pynicotine/gtkgui/mainwindow.py:1160
 msgid "Scanning Shares"
 msgstr "扫描共享"
 
@@ -1768,41 +1776,41 @@ msgstr "房间"
 
 #: pynicotine/gtkgui/popovers/roomlist.py:74
 #: pynicotine/plugins/core_commands/__init__.py:31
-#: pynicotine/gtkgui/ui/chatrooms.ui:180 pynicotine/gtkgui/ui/mainwindow.ui:298
+#: pynicotine/gtkgui/ui/chatrooms.ui:164 pynicotine/gtkgui/ui/mainwindow.ui:298
 #: pynicotine/gtkgui/ui/mainwindow.ui:537
-#: pynicotine/gtkgui/ui/settings/ban.ui:123
+#: pynicotine/gtkgui/ui/settings/ban.ui:124
 #: pynicotine/gtkgui/ui/settings/ignore.ui:59
 msgid "Users"
 msgstr "用户"
 
 #: pynicotine/gtkgui/popovers/roomlist.py:90
-#: pynicotine/gtkgui/popovers/roomlist.py:256
+#: pynicotine/gtkgui/popovers/roomlist.py:272
 msgid "Join Room"
 msgstr "加入聊天室"
 
 #: pynicotine/gtkgui/popovers/roomlist.py:91
-#: pynicotine/gtkgui/popovers/roomlist.py:257
+#: pynicotine/gtkgui/popovers/roomlist.py:273
 msgid "Leave Room"
 msgstr "离开聊天室"
 
 #: pynicotine/gtkgui/popovers/roomlist.py:93
-#: pynicotine/gtkgui/popovers/roomlist.py:259
+#: pynicotine/gtkgui/popovers/roomlist.py:275
 msgid "Disown Private Room"
 msgstr "放弃私密聊天室所有权"
 
 #: pynicotine/gtkgui/popovers/roomlist.py:94
-#: pynicotine/gtkgui/popovers/roomlist.py:260
+#: pynicotine/gtkgui/popovers/roomlist.py:276
 msgid "Cancel Room Membership"
 msgstr "取消聊天室会员资格"
 
-#: pynicotine/gtkgui/privatechat.py:356 pynicotine/gtkgui/search.py:628
-#: pynicotine/gtkgui/userbrowse.py:280 pynicotine/gtkgui/userinfo.py:352
+#: pynicotine/gtkgui/privatechat.py:356 pynicotine/gtkgui/search.py:631
+#: pynicotine/gtkgui/userbrowse.py:278 pynicotine/gtkgui/userinfo.py:354
 #: pynicotine/gtkgui/widgets/iconnotebook.py:736
 msgid "Close All Tabs…"
 msgstr "关闭所有标签……"
 
-#: pynicotine/gtkgui/privatechat.py:357 pynicotine/gtkgui/search.py:629
-#: pynicotine/gtkgui/userbrowse.py:281 pynicotine/gtkgui/userinfo.py:353
+#: pynicotine/gtkgui/privatechat.py:357 pynicotine/gtkgui/search.py:632
+#: pynicotine/gtkgui/userbrowse.py:279 pynicotine/gtkgui/userinfo.py:355
 msgid "_Close Tab"
 msgstr "_关闭标签"
 
@@ -1814,10 +1822,10 @@ msgstr "查看聊天日志"
 msgid "Delete Chat Log…"
 msgstr "删除聊天日志……"
 
-#: pynicotine/gtkgui/privatechat.py:373 pynicotine/gtkgui/search.py:619
-#: pynicotine/gtkgui/transfers.py:269 pynicotine/gtkgui/userbrowse.py:297
-#: pynicotine/gtkgui/userbrowse.py:309 pynicotine/gtkgui/userbrowse.py:375
-#: pynicotine/gtkgui/userbrowse.py:390
+#: pynicotine/gtkgui/privatechat.py:373 pynicotine/gtkgui/search.py:622
+#: pynicotine/gtkgui/transfers.py:280 pynicotine/gtkgui/userbrowse.py:295
+#: pynicotine/gtkgui/userbrowse.py:307 pynicotine/gtkgui/userbrowse.py:373
+#: pynicotine/gtkgui/userbrowse.py:388
 msgid "User Actions"
 msgstr "用户操作"
 
@@ -1830,155 +1838,155 @@ msgstr "您确定要永久删除此用户的所有消息记录吗？"
 msgid "* Messages sent while you were offline"
 msgstr "离线收到的消息"
 
-#: pynicotine/gtkgui/search.py:81
+#: pynicotine/gtkgui/search.py:89
 msgid "_Global"
 msgstr "_全局"
 
-#: pynicotine/gtkgui/search.py:82
+#: pynicotine/gtkgui/search.py:90
 msgid "_Buddies"
 msgstr "_好友"
 
-#: pynicotine/gtkgui/search.py:83 pynicotine/gtkgui/ui/mainwindow.ui:1445
+#: pynicotine/gtkgui/search.py:91 pynicotine/gtkgui/ui/mainwindow.ui:1446
 msgid "_Rooms"
 msgstr "_聊天室"
 
-#: pynicotine/gtkgui/search.py:84
+#: pynicotine/gtkgui/search.py:92
 msgid "_User"
 msgstr "_用户"
 
-#: pynicotine/gtkgui/search.py:527
+#: pynicotine/gtkgui/search.py:531
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:242
 msgid "In Queue"
 msgstr "队列中"
 
-#: pynicotine/gtkgui/search.py:542 pynicotine/gtkgui/transfers.py:157
-#: pynicotine/gtkgui/userbrowse.py:320
+#: pynicotine/gtkgui/search.py:546 pynicotine/gtkgui/transfers.py:159
+#: pynicotine/gtkgui/userbrowse.py:318
 #: pynicotine/gtkgui/ui/popovers/searchfilterhelp.ui:139
 msgid "File Type"
 msgstr "文件类型"
 
-#: pynicotine/gtkgui/search.py:549 pynicotine/gtkgui/transfers.py:163
+#: pynicotine/gtkgui/search.py:553 pynicotine/gtkgui/transfers.py:166
 msgid "Filename"
 msgstr "文件名"
 
-#: pynicotine/gtkgui/search.py:557 pynicotine/gtkgui/transfers.py:186
-#: pynicotine/gtkgui/userbrowse.py:334
+#: pynicotine/gtkgui/search.py:561 pynicotine/gtkgui/transfers.py:192
+#: pynicotine/gtkgui/userbrowse.py:332
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:88
 msgid "Size"
 msgstr "大小"
 
-#: pynicotine/gtkgui/search.py:564 pynicotine/gtkgui/userbrowse.py:340
+#: pynicotine/gtkgui/search.py:568 pynicotine/gtkgui/userbrowse.py:338
 #: pynicotine/gtkgui/ui/dialogs/fileproperties.ui:190
 msgid "Quality"
 msgstr "质量"
 
-#: pynicotine/gtkgui/search.py:599 pynicotine/gtkgui/transfers.py:246
-#: pynicotine/gtkgui/userbrowse.py:372 pynicotine/gtkgui/userbrowse.py:387
+#: pynicotine/gtkgui/search.py:602 pynicotine/gtkgui/transfers.py:257
+#: pynicotine/gtkgui/userbrowse.py:370 pynicotine/gtkgui/userbrowse.py:385
 msgid "Copy _File Path"
 msgstr "复制_文件路径"
 
-#: pynicotine/gtkgui/search.py:600 pynicotine/gtkgui/transfers.py:247
-#: pynicotine/gtkgui/userbrowse.py:373 pynicotine/gtkgui/userbrowse.py:388
+#: pynicotine/gtkgui/search.py:603 pynicotine/gtkgui/transfers.py:258
+#: pynicotine/gtkgui/userbrowse.py:371 pynicotine/gtkgui/userbrowse.py:386
 msgid "Copy _URL"
 msgstr "复制_URL"
 
-#: pynicotine/gtkgui/search.py:601 pynicotine/gtkgui/transfers.py:248
-#: pynicotine/gtkgui/userbrowse.py:295 pynicotine/gtkgui/userbrowse.py:307
+#: pynicotine/gtkgui/search.py:604 pynicotine/gtkgui/transfers.py:259
+#: pynicotine/gtkgui/userbrowse.py:293 pynicotine/gtkgui/userbrowse.py:305
 msgid "Copy Folder U_RL"
 msgstr "复制文件夹 U_RL"
 
-#: pynicotine/gtkgui/search.py:608 pynicotine/gtkgui/userbrowse.py:379
+#: pynicotine/gtkgui/search.py:611 pynicotine/gtkgui/userbrowse.py:377
 msgid "_Download File(s)"
 msgstr "_下载文件"
 
-#: pynicotine/gtkgui/search.py:609 pynicotine/gtkgui/userbrowse.py:380
+#: pynicotine/gtkgui/search.py:612 pynicotine/gtkgui/userbrowse.py:378
 msgid "Download File(s) _To…"
 msgstr "下载文件 _到…"
 
-#: pynicotine/gtkgui/search.py:611
+#: pynicotine/gtkgui/search.py:614
 msgid "Download _Folder(s)"
 msgstr "下载_文件夹"
 
-#: pynicotine/gtkgui/search.py:612
+#: pynicotine/gtkgui/search.py:615
 msgid "Download F_older(s) To…"
 msgstr "将 _文件夹下载到…"
 
-#: pynicotine/gtkgui/search.py:614 pynicotine/gtkgui/transfers.py:263
+#: pynicotine/gtkgui/search.py:617 pynicotine/gtkgui/transfers.py:274
 #: pynicotine/gtkgui/widgets/popupmenu.py:412
 msgid "View User _Profile"
 msgstr "查看用户_资料"
 
-#: pynicotine/gtkgui/search.py:615 pynicotine/gtkgui/transfers.py:264
+#: pynicotine/gtkgui/search.py:618 pynicotine/gtkgui/transfers.py:275
 msgid "_Browse Folder"
 msgstr "_浏览文件夹"
 
-#: pynicotine/gtkgui/search.py:616 pynicotine/gtkgui/transfers.py:257
-#: pynicotine/gtkgui/userbrowse.py:292 pynicotine/gtkgui/userbrowse.py:304
-#: pynicotine/gtkgui/userbrowse.py:370 pynicotine/gtkgui/userbrowse.py:385
+#: pynicotine/gtkgui/search.py:619 pynicotine/gtkgui/transfers.py:268
+#: pynicotine/gtkgui/userbrowse.py:290 pynicotine/gtkgui/userbrowse.py:302
+#: pynicotine/gtkgui/userbrowse.py:368 pynicotine/gtkgui/userbrowse.py:383
 msgid "F_ile Properties"
 msgstr "文件属性"
 
-#: pynicotine/gtkgui/search.py:625
+#: pynicotine/gtkgui/search.py:628
 msgid "Copy Search Term"
 msgstr "复制搜索词"
 
-#: pynicotine/gtkgui/search.py:627
+#: pynicotine/gtkgui/search.py:630
 msgid "Clear All Results"
 msgstr "清除所有结果"
 
-#: pynicotine/gtkgui/search.py:702
+#: pynicotine/gtkgui/search.py:705
 msgid "Clear Filters"
 msgstr "清除过滤器"
 
-#: pynicotine/gtkgui/search.py:705
+#: pynicotine/gtkgui/search.py:708
 msgid "Restore Filters"
 msgstr "恢复过滤器"
 
-#: pynicotine/gtkgui/search.py:823 pynicotine/gtkgui/userbrowse.py:530
+#: pynicotine/gtkgui/search.py:826 pynicotine/gtkgui/userbrowse.py:499
 #, python-format
 msgid "[PRIVATE]  %s"
 msgstr "[私密]  %s"
 
-#: pynicotine/gtkgui/search.py:1260
+#: pynicotine/gtkgui/search.py:1264
 #, python-format
 msgid "_Result Filters [%d]"
 msgstr "_结果过滤 [%d]"
 
-#: pynicotine/gtkgui/search.py:1262 pynicotine/gtkgui/ui/search.ui:181
+#: pynicotine/gtkgui/search.py:1266 pynicotine/gtkgui/ui/search.ui:181
 msgid "_Result Filters"
 msgstr "_结果过滤"
 
-#: pynicotine/gtkgui/search.py:1264
+#: pynicotine/gtkgui/search.py:1268
 #, python-format
 msgid "%d active filter(s)"
 msgstr "%d 个启用的过滤器"
 
-#: pynicotine/gtkgui/search.py:1312
+#: pynicotine/gtkgui/search.py:1320
 msgid "Add Wi_sh"
 msgstr "添加到心愿单"
 
-#: pynicotine/gtkgui/search.py:1315
+#: pynicotine/gtkgui/search.py:1323
 msgid "Remove Wi_sh"
 msgstr "移除心愿项目"
 
-#: pynicotine/gtkgui/search.py:1332
+#: pynicotine/gtkgui/search.py:1340
 msgid "Select User's Results"
 msgstr "选择用户的结果"
 
-#: pynicotine/gtkgui/search.py:1454
+#: pynicotine/gtkgui/search.py:1463
 #, python-format
 msgid "Total: %s"
 msgstr "总计：%s"
 
-#: pynicotine/gtkgui/search.py:1457 pynicotine/gtkgui/ui/search.ui:105
+#: pynicotine/gtkgui/search.py:1466 pynicotine/gtkgui/ui/search.ui:105
 msgid "Results"
 msgstr "结果"
 
-#: pynicotine/gtkgui/search.py:1566
+#: pynicotine/gtkgui/search.py:1581
 msgid "Select Destination Folder for File(s)"
 msgstr "选择文件的目标文件夹"
 
-#: pynicotine/gtkgui/search.py:1609 pynicotine/gtkgui/userbrowse.py:911
+#: pynicotine/gtkgui/search.py:1624 pynicotine/gtkgui/userbrowse.py:928
 msgid "Select Destination Folder"
 msgstr "选择目标文件夹"
 
@@ -2010,7 +2018,7 @@ msgstr "连接关闭"
 msgid "Connection timeout"
 msgstr "连接超时"
 
-#: pynicotine/gtkgui/transfers.py:66
+#: pynicotine/gtkgui/transfers.py:66 pynicotine/gtkgui/transfers.py:644
 msgid "User logged off"
 msgstr "用户已登出"
 
@@ -2042,40 +2050,40 @@ msgstr "准备关闭"
 msgid "File read error"
 msgstr "文件读取错误"
 
-#: pynicotine/gtkgui/transfers.py:175
+#: pynicotine/gtkgui/transfers.py:180
 msgid "Queue"
 msgstr "队列"
 
-#: pynicotine/gtkgui/transfers.py:181
+#: pynicotine/gtkgui/transfers.py:186
 msgid "Percent"
 msgstr "百分比"
 
-#: pynicotine/gtkgui/transfers.py:198
+#: pynicotine/gtkgui/transfers.py:206
 msgid "Time Elapsed"
 msgstr "已用时间"
 
-#: pynicotine/gtkgui/transfers.py:204
+#: pynicotine/gtkgui/transfers.py:213
 msgid "Time Left"
 msgstr "剩余时间"
 
-#: pynicotine/gtkgui/transfers.py:255 pynicotine/gtkgui/userbrowse.py:368
+#: pynicotine/gtkgui/transfers.py:266 pynicotine/gtkgui/userbrowse.py:366
 msgid "_Open File"
 msgstr "_打开文件"
 
-#: pynicotine/gtkgui/transfers.py:256 pynicotine/gtkgui/userbrowse.py:291
-#: pynicotine/gtkgui/userbrowse.py:369
+#: pynicotine/gtkgui/transfers.py:267 pynicotine/gtkgui/userbrowse.py:289
+#: pynicotine/gtkgui/userbrowse.py:367
 msgid "Open in File _Manager"
 msgstr "在文件_管理器中打开"
 
-#: pynicotine/gtkgui/transfers.py:265
+#: pynicotine/gtkgui/transfers.py:276
 msgid "_Search"
 msgstr "_搜索"
 
-#: pynicotine/gtkgui/transfers.py:268
+#: pynicotine/gtkgui/transfers.py:279
 msgid "Clear All"
 msgstr "全部清除"
 
-#: pynicotine/gtkgui/transfers.py:888
+#: pynicotine/gtkgui/transfers.py:917
 msgid "Select User's Transfers"
 msgstr "选择用户的传输"
 
@@ -2124,51 +2132,51 @@ msgstr "清除所有上传"
 msgid "Do you really want to clear all uploads?"
 msgstr "您真的要清除所有上传吗？"
 
-#: pynicotine/gtkgui/userbrowse.py:279
+#: pynicotine/gtkgui/userbrowse.py:277
 msgid "_Save Shares List to Disk"
 msgstr "_将共享列表保存到磁盘"
 
-#: pynicotine/gtkgui/userbrowse.py:289
+#: pynicotine/gtkgui/userbrowse.py:287
 msgid "Upload Folder & Subfolders…"
 msgstr "上传文件夹和子文件夹……"
 
-#: pynicotine/gtkgui/userbrowse.py:294 pynicotine/gtkgui/userbrowse.py:306
+#: pynicotine/gtkgui/userbrowse.py:292 pynicotine/gtkgui/userbrowse.py:304
 msgid "Copy _Folder Path"
 msgstr "复制_文件夹路径"
 
-#: pynicotine/gtkgui/userbrowse.py:301
+#: pynicotine/gtkgui/userbrowse.py:299
 #, fuzzy
 msgid "_Download Folder & Subfolders"
 msgstr "下载文件夹和子文件夹"
 
-#: pynicotine/gtkgui/userbrowse.py:302
+#: pynicotine/gtkgui/userbrowse.py:300
 #, fuzzy
 msgid "Download Folder & Subfolders _To…"
 msgstr "下载文件夹和子文件夹到……"
 
-#: pynicotine/gtkgui/userbrowse.py:326
+#: pynicotine/gtkgui/userbrowse.py:324
 msgid "File Name"
 msgstr "文件名"
 
-#: pynicotine/gtkgui/userbrowse.py:365
+#: pynicotine/gtkgui/userbrowse.py:363
 msgid "Up_load File(s)…"
 msgstr "上传文件……"
 
-#: pynicotine/gtkgui/userbrowse.py:366
+#: pynicotine/gtkgui/userbrowse.py:364
 msgid "Upload Folder…"
 msgstr "上传文件夹……"
 
-#: pynicotine/gtkgui/userbrowse.py:383
+#: pynicotine/gtkgui/userbrowse.py:381
 msgid "Download Folder _To…"
 msgstr "下载文件夹_到……"
 
-#: pynicotine/gtkgui/userbrowse.py:581
+#: pynicotine/gtkgui/userbrowse.py:582
 msgid ""
 "User's list of shared files is empty. Either the user is not sharing "
 "anything, or they are sharing files privately."
 msgstr "用户的共享文件列表为空。用户没有共享任何内容，或者共享文件均为私密。"
 
-#: pynicotine/gtkgui/userbrowse.py:596
+#: pynicotine/gtkgui/userbrowse.py:597
 msgid ""
 "Unable to request shared files from user. Either the user is offline, the "
 "listening ports are closed on both sides, or there is a temporary "
@@ -2177,48 +2185,48 @@ msgstr ""
 "无法向用户请求共享文件。可能是用户离线，或是您与对方的监听端口均关闭，也可能"
 "是连接暂时出现问题。"
 
-#: pynicotine/gtkgui/userbrowse.py:909
+#: pynicotine/gtkgui/userbrowse.py:926
 msgid "Select Destination for Downloading Multiple Folders"
 msgstr "选择下载多个文件夹的目标路径"
 
-#: pynicotine/gtkgui/userbrowse.py:953
+#: pynicotine/gtkgui/userbrowse.py:970
 msgid "Upload Folder (with Subfolders) To User"
 msgstr "将文件夹（含子文件夹）上传给用户"
 
-#: pynicotine/gtkgui/userbrowse.py:955
+#: pynicotine/gtkgui/userbrowse.py:972
 msgid "Upload Folder To User"
 msgstr "上传文件夹给用户"
 
-#: pynicotine/gtkgui/userbrowse.py:960 pynicotine/gtkgui/userbrowse.py:1118
+#: pynicotine/gtkgui/userbrowse.py:977 pynicotine/gtkgui/userbrowse.py:1135
 msgid "Enter the name of the user you want to upload to:"
 msgstr "输入您想要传送文件的用户名："
 
-#: pynicotine/gtkgui/userbrowse.py:961 pynicotine/gtkgui/userbrowse.py:1119
+#: pynicotine/gtkgui/userbrowse.py:978 pynicotine/gtkgui/userbrowse.py:1136
 msgid "_Upload"
 msgstr "_上传"
 
-#: pynicotine/gtkgui/userbrowse.py:1095
+#: pynicotine/gtkgui/userbrowse.py:1112
 msgid "Select Destination Folder for Files"
 msgstr "选择文件的目标文件夹"
 
-#: pynicotine/gtkgui/userbrowse.py:1117
+#: pynicotine/gtkgui/userbrowse.py:1134
 msgid "Upload File(s) To User"
 msgstr "上传文件给用户"
 
-#: pynicotine/gtkgui/userinfo.py:372
+#: pynicotine/gtkgui/userinfo.py:377
 msgid "Copy Picture"
 msgstr "复制图片"
 
-#: pynicotine/gtkgui/userinfo.py:373
+#: pynicotine/gtkgui/userinfo.py:378
 msgid "Save Picture"
 msgstr "保存图片"
 
-#: pynicotine/gtkgui/userinfo.py:462
+#: pynicotine/gtkgui/userinfo.py:467
 #, python-format
 msgid "Failed to load picture for user %(user)s: %(error)s"
 msgstr "加载用户 %(user)s 图片失败：%(error)s"
 
-#: pynicotine/gtkgui/userinfo.py:477
+#: pynicotine/gtkgui/userinfo.py:482
 msgid ""
 "Unable to request information from user. Either you both have a closed "
 "listening port, the user is offline, or there's a temporary connectivity "
@@ -2227,61 +2235,61 @@ msgstr ""
 "无法向用户请求信息。可能是您与对方的监听端口均关闭，或是用户离线，也可能是连"
 "接暂时出现问题。"
 
-#: pynicotine/gtkgui/userinfo.py:538
+#: pynicotine/gtkgui/userinfo.py:545
 msgid "Remove _Buddy"
 msgstr "移除 _好友"
 
-#: pynicotine/gtkgui/userinfo.py:538
+#: pynicotine/gtkgui/userinfo.py:545
 msgid "Add _Buddy"
 msgstr "添加好友"
 
-#: pynicotine/gtkgui/userinfo.py:542
+#: pynicotine/gtkgui/userinfo.py:549
 msgid "Unban User"
 msgstr "解禁用户"
 
-#: pynicotine/gtkgui/userinfo.py:546
+#: pynicotine/gtkgui/userinfo.py:553
 msgid "Unignore User"
 msgstr "解除忽略用户"
 
-#: pynicotine/gtkgui/userinfo.py:577
+#: pynicotine/gtkgui/userinfo.py:584
 msgid "Yes"
 msgstr "是"
 
-#: pynicotine/gtkgui/userinfo.py:577
+#: pynicotine/gtkgui/userinfo.py:584
 msgid "No"
 msgstr "否"
 
-#: pynicotine/gtkgui/userinfo.py:730
+#: pynicotine/gtkgui/userinfo.py:743
 msgid "Please enter number of days."
 msgstr "请输入天数。"
 
-#: pynicotine/gtkgui/userinfo.py:744
+#: pynicotine/gtkgui/userinfo.py:757
 #, python-format
 msgid "Gift days of your Soulseek privileges to user %(user)s (%(days_left)s):"
 msgstr "您赠予 %(user)s Soulseek 特权的天数 %(days_left)s："
 
-#: pynicotine/gtkgui/userinfo.py:745
+#: pynicotine/gtkgui/userinfo.py:758
 #, python-format
 msgid "%(days)s days left"
 msgstr "剩余 %(days)s 天"
 
-#: pynicotine/gtkgui/userinfo.py:752
+#: pynicotine/gtkgui/userinfo.py:765
 msgid "Gift Privileges"
 msgstr "赠予特权"
 
-#: pynicotine/gtkgui/userinfo.py:754
+#: pynicotine/gtkgui/userinfo.py:767
 msgid "_Give Privileges"
 msgstr "_授予特权"
 
-#: pynicotine/gtkgui/widgets/dialogs.py:287
+#: pynicotine/gtkgui/widgets/dialogs.py:299
 msgid "Close"
 msgstr "关闭"
 
-#: pynicotine/gtkgui/widgets/dialogs.py:466
+#: pynicotine/gtkgui/widgets/dialogs.py:478
 msgid "_Yes"
 msgstr "_是"
 
-#: pynicotine/gtkgui/widgets/dialogs.py:500
+#: pynicotine/gtkgui/widgets/dialogs.py:512
 #: pynicotine/gtkgui/ui/dialogs/preferences.ui:23
 msgid "_OK"
 msgstr "_确定"
@@ -2386,9 +2394,20 @@ msgstr "移除 %s 的操作员身份"
 msgid "Add as Operator of %s"
 msgstr "设 %s 为管理员"
 
-#: pynicotine/gtkgui/widgets/textentry.py:36
+#: pynicotine/gtkgui/widgets/textentry.py:35
 msgid "Send message…"
 msgstr "发送消息……"
+
+#: pynicotine/gtkgui/widgets/textentry.py:499
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:232
+msgid "Find Previous Match"
+msgstr "查找上一个匹配项"
+
+#: pynicotine/gtkgui/widgets/textentry.py:500
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:225
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:293
+msgid "Find Next Match"
+msgstr "查找下一个匹配项"
 
 #: pynicotine/gtkgui/widgets/textview.py:443
 msgid "--- old messages above ---"
@@ -2411,7 +2430,7 @@ msgid "Archive"
 msgstr "压缩包"
 
 #: pynicotine/gtkgui/widgets/theme.py:221 pynicotine/pluginsystem.py:792
-#: pynicotine/gtkgui/ui/settings/network.ui:255
+#: pynicotine/gtkgui/ui/settings/network.ui:257
 msgid "Miscellaneous"
 msgstr "杂项"
 
@@ -2432,53 +2451,53 @@ msgstr "文本"
 msgid "Error loading custom icon %(path)s: %(error)s"
 msgstr "加载自定义图标时出错 %(path)s：%(error)s"
 
-#: pynicotine/gtkgui/widgets/trayicon.py:113
+#: pynicotine/gtkgui/widgets/trayicon.py:114
 msgid "Hide Nicotine+"
 msgstr "隐藏 Nicotine+"
 
-#: pynicotine/gtkgui/widgets/trayicon.py:113
+#: pynicotine/gtkgui/widgets/trayicon.py:114
 msgid "Show Nicotine+"
 msgstr "显示 Nicotine+"
 
-#: pynicotine/gtkgui/widgets/treeview.py:754
+#: pynicotine/gtkgui/widgets/treeview.py:757
 #, python-format
 msgid "Column #%i"
 msgstr "列 #%i"
 
-#: pynicotine/gtkgui/widgets/treeview.py:970
+#: pynicotine/gtkgui/widgets/treeview.py:936
 msgid "Ungrouped"
 msgstr "不分组"
 
-#: pynicotine/gtkgui/widgets/treeview.py:973
+#: pynicotine/gtkgui/widgets/treeview.py:939
 msgid "Group by Folder"
 msgstr "按文件夹分组"
 
-#: pynicotine/gtkgui/widgets/treeview.py:976
+#: pynicotine/gtkgui/widgets/treeview.py:942
 msgid "Group by User"
 msgstr "按用户分组"
 
-#: pynicotine/headless/application.py:74
+#: pynicotine/headless/application.py:77
 #, python-format
 msgid "Do you really want to exit? %s"
 msgstr "您真的要退出吗？%s"
 
-#: pynicotine/headless/application.py:78
+#: pynicotine/headless/application.py:81
 #, python-format
 msgid "User %s already exists, and the password you entered is invalid."
 msgstr "用户 %s 已经存在，您输入的密码无效。"
 
-#: pynicotine/headless/application.py:80
+#: pynicotine/headless/application.py:83
 #, python-format
 msgid "Type %s to log in with another username or password."
 msgstr "输入 %s 来使用其他用户名或密码登录。"
 
-#: pynicotine/headless/application.py:96
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:203
+#: pynicotine/headless/application.py:99
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:268
 msgid "Password: "
 msgstr "密码： "
 
-#: pynicotine/headless/application.py:99
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:131
+#: pynicotine/headless/application.py:102
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:185
 msgid ""
 "To create a new Soulseek account, fill in your desired username and "
 "password. If you already have an account, fill in your existing login "
@@ -2487,11 +2506,11 @@ msgstr ""
 "创建新的 Soulseek 帐户，请填写您想要的用户名和密码。如果您已有帐户，请填写登"
 "录信息。"
 
-#: pynicotine/headless/application.py:116
+#: pynicotine/headless/application.py:119
 msgid "The following shares are unavailable:"
 msgstr "以下的共享文件不可用："
 
-#: pynicotine/headless/application.py:122
+#: pynicotine/headless/application.py:125
 #, python-format
 msgid "Retry rescan? %s"
 msgstr "重新扫描？%s"
@@ -2506,1003 +2525,1003 @@ msgstr "无法写入日志文件“%(filename)s”：%(error)s"
 msgid "Cannot access log file %(path)s: %(error)s"
 msgstr "无法访问日志文件 %(path)s：%(error)s"
 
-#: pynicotine/networkfilter.py:41
+#: pynicotine/networkfilter.py:40
 msgid "Andorra"
 msgstr "安道尔"
 
-#: pynicotine/networkfilter.py:42
+#: pynicotine/networkfilter.py:41
 msgid "United Arab Emirates"
 msgstr "阿拉伯联合酋长国"
 
-#: pynicotine/networkfilter.py:43
+#: pynicotine/networkfilter.py:42
 msgid "Afghanistan"
 msgstr "阿富汗"
 
-#: pynicotine/networkfilter.py:44
+#: pynicotine/networkfilter.py:43
 msgid "Antigua & Barbuda"
 msgstr "安提瓜和巴布达"
 
-#: pynicotine/networkfilter.py:45
+#: pynicotine/networkfilter.py:44
 msgid "Anguilla"
 msgstr "安圭拉"
 
-#: pynicotine/networkfilter.py:46
+#: pynicotine/networkfilter.py:45
 msgid "Albania"
 msgstr "阿尔巴尼亚"
 
-#: pynicotine/networkfilter.py:47
+#: pynicotine/networkfilter.py:46
 msgid "Armenia"
 msgstr "亚美尼亚"
 
-#: pynicotine/networkfilter.py:48
+#: pynicotine/networkfilter.py:47
 msgid "Angola"
 msgstr "安哥拉"
 
-#: pynicotine/networkfilter.py:49
+#: pynicotine/networkfilter.py:48
 msgid "Antarctica"
 msgstr "南极洲"
 
-#: pynicotine/networkfilter.py:50
+#: pynicotine/networkfilter.py:49
 msgid "Argentina"
 msgstr "阿根廷"
 
-#: pynicotine/networkfilter.py:51
+#: pynicotine/networkfilter.py:50
 msgid "American Samoa"
 msgstr "美属萨摩亚"
 
-#: pynicotine/networkfilter.py:52
+#: pynicotine/networkfilter.py:51
 msgid "Austria"
 msgstr "奥地利"
 
-#: pynicotine/networkfilter.py:53
+#: pynicotine/networkfilter.py:52
 msgid "Australia"
 msgstr "澳大利亚"
 
-#: pynicotine/networkfilter.py:54
+#: pynicotine/networkfilter.py:53
 msgid "Aruba"
 msgstr "阿鲁巴岛"
 
-#: pynicotine/networkfilter.py:55
+#: pynicotine/networkfilter.py:54
 msgid "Åland Islands"
 msgstr "奥兰群岛"
 
-#: pynicotine/networkfilter.py:56
+#: pynicotine/networkfilter.py:55
 msgid "Azerbaijan"
 msgstr "阿塞拜疆"
 
-#: pynicotine/networkfilter.py:57
+#: pynicotine/networkfilter.py:56
 msgid "Bosnia & Herzegovina"
 msgstr "波斯尼亚和黑塞哥维那"
 
-#: pynicotine/networkfilter.py:58
+#: pynicotine/networkfilter.py:57
 msgid "Barbados"
 msgstr "巴巴多斯"
 
-#: pynicotine/networkfilter.py:59
+#: pynicotine/networkfilter.py:58
 msgid "Bangladesh"
 msgstr "孟加拉国"
 
-#: pynicotine/networkfilter.py:60
+#: pynicotine/networkfilter.py:59
 msgid "Belgium"
 msgstr "比利时"
 
-#: pynicotine/networkfilter.py:61
+#: pynicotine/networkfilter.py:60
 msgid "Burkina Faso"
 msgstr "布基纳法索"
 
-#: pynicotine/networkfilter.py:62
+#: pynicotine/networkfilter.py:61
 msgid "Bulgaria"
 msgstr "保加利亚"
 
-#: pynicotine/networkfilter.py:63
+#: pynicotine/networkfilter.py:62
 msgid "Bahrain"
 msgstr "巴林"
 
-#: pynicotine/networkfilter.py:64
+#: pynicotine/networkfilter.py:63
 msgid "Burundi"
 msgstr "布隆迪"
 
-#: pynicotine/networkfilter.py:65
+#: pynicotine/networkfilter.py:64
 msgid "Benin"
 msgstr "贝宁"
 
-#: pynicotine/networkfilter.py:66
+#: pynicotine/networkfilter.py:65
 msgid "Saint Barthelemy"
 msgstr "圣巴泰勒米"
 
-#: pynicotine/networkfilter.py:67
+#: pynicotine/networkfilter.py:66
 msgid "Bermuda"
 msgstr "百慕大"
 
-#: pynicotine/networkfilter.py:68
+#: pynicotine/networkfilter.py:67
 msgid "Brunei Darussalam"
 msgstr "文莱达鲁萨兰国"
 
-#: pynicotine/networkfilter.py:69
+#: pynicotine/networkfilter.py:68
 msgid "Bolivia"
 msgstr "玻利维亚"
 
-#: pynicotine/networkfilter.py:70
+#: pynicotine/networkfilter.py:69
 msgid "Bonaire, Sint Eustatius and Saba"
 msgstr "博内尔岛、圣尤斯特歇斯岛和萨巴岛"
 
-#: pynicotine/networkfilter.py:71
+#: pynicotine/networkfilter.py:70
 msgid "Brazil"
 msgstr "巴西"
 
-#: pynicotine/networkfilter.py:72
+#: pynicotine/networkfilter.py:71
 msgid "Bahamas"
 msgstr "巴哈马"
 
-#: pynicotine/networkfilter.py:73
+#: pynicotine/networkfilter.py:72
 msgid "Bhutan"
 msgstr "不丹"
 
-#: pynicotine/networkfilter.py:74
+#: pynicotine/networkfilter.py:73
 msgid "Bouvet Island"
 msgstr "布维岛"
 
-#: pynicotine/networkfilter.py:75
+#: pynicotine/networkfilter.py:74
 msgid "Botswana"
 msgstr "博茨瓦纳"
 
-#: pynicotine/networkfilter.py:76
+#: pynicotine/networkfilter.py:75
 msgid "Belarus"
 msgstr "白俄罗斯"
 
-#: pynicotine/networkfilter.py:77
+#: pynicotine/networkfilter.py:76
 msgid "Belize"
 msgstr "伯利兹"
 
-#: pynicotine/networkfilter.py:78
+#: pynicotine/networkfilter.py:77
 msgid "Canada"
 msgstr "加拿大"
 
-#: pynicotine/networkfilter.py:79
+#: pynicotine/networkfilter.py:78
 msgid "Cocos (Keeling) Islands"
 msgstr "科科斯（基林）群岛"
 
-#: pynicotine/networkfilter.py:80
+#: pynicotine/networkfilter.py:79
 msgid "Democratic Republic of Congo"
 msgstr "刚果民主共和国"
 
-#: pynicotine/networkfilter.py:81
+#: pynicotine/networkfilter.py:80
 msgid "Central African Republic"
 msgstr "中非共和国"
 
-#: pynicotine/networkfilter.py:82
+#: pynicotine/networkfilter.py:81
 msgid "Congo"
 msgstr "刚果"
 
-#: pynicotine/networkfilter.py:83
+#: pynicotine/networkfilter.py:82
 msgid "Switzerland"
 msgstr "瑞士"
 
-#: pynicotine/networkfilter.py:84
+#: pynicotine/networkfilter.py:83
 msgid "Ivory Coast"
 msgstr "象牙海岸"
 
-#: pynicotine/networkfilter.py:85
+#: pynicotine/networkfilter.py:84
 msgid "Cook Islands"
 msgstr "库克群岛"
 
-#: pynicotine/networkfilter.py:86
+#: pynicotine/networkfilter.py:85
 msgid "Chile"
 msgstr "智利"
 
-#: pynicotine/networkfilter.py:87
+#: pynicotine/networkfilter.py:86
 msgid "Cameroon"
 msgstr "喀麦隆"
 
-#: pynicotine/networkfilter.py:88
+#: pynicotine/networkfilter.py:87
 msgid "China"
 msgstr "中国"
 
-#: pynicotine/networkfilter.py:89
+#: pynicotine/networkfilter.py:88
 msgid "Colombia"
 msgstr "哥伦比亚"
 
-#: pynicotine/networkfilter.py:90
+#: pynicotine/networkfilter.py:89
 msgid "Costa Rica"
 msgstr "哥斯达黎加"
 
-#: pynicotine/networkfilter.py:91
+#: pynicotine/networkfilter.py:90
 msgid "Cuba"
 msgstr "古巴"
 
-#: pynicotine/networkfilter.py:92
+#: pynicotine/networkfilter.py:91
 msgid "Cabo Verde"
 msgstr "佛得角"
 
-#: pynicotine/networkfilter.py:93
+#: pynicotine/networkfilter.py:92
 msgid "Curaçao"
 msgstr "库拉索"
 
-#: pynicotine/networkfilter.py:94
+#: pynicotine/networkfilter.py:93
 msgid "Christmas Island"
 msgstr "圣诞岛"
 
-#: pynicotine/networkfilter.py:95
+#: pynicotine/networkfilter.py:94
 msgid "Cyprus"
 msgstr "塞浦路斯"
 
-#: pynicotine/networkfilter.py:96
+#: pynicotine/networkfilter.py:95
 msgid "Czechia"
 msgstr "捷克"
 
-#: pynicotine/networkfilter.py:97
+#: pynicotine/networkfilter.py:96
 msgid "Germany"
 msgstr "德国"
 
-#: pynicotine/networkfilter.py:98
+#: pynicotine/networkfilter.py:97
 msgid "Djibouti"
 msgstr "吉布提"
 
-#: pynicotine/networkfilter.py:99
+#: pynicotine/networkfilter.py:98
 msgid "Denmark"
 msgstr "丹麦"
 
-#: pynicotine/networkfilter.py:100
+#: pynicotine/networkfilter.py:99
 msgid "Dominica"
 msgstr "多米尼克"
 
-#: pynicotine/networkfilter.py:101
+#: pynicotine/networkfilter.py:100
 msgid "Dominican Republic"
 msgstr "多明尼加共和国"
 
-#: pynicotine/networkfilter.py:102
+#: pynicotine/networkfilter.py:101
 msgid "Algeria"
 msgstr "阿尔及利亚"
 
-#: pynicotine/networkfilter.py:103
+#: pynicotine/networkfilter.py:102
 msgid "Ecuador"
 msgstr "厄瓜多尔"
 
-#: pynicotine/networkfilter.py:104
+#: pynicotine/networkfilter.py:103
 msgid "Estonia"
 msgstr "爱沙尼亚"
 
-#: pynicotine/networkfilter.py:105
+#: pynicotine/networkfilter.py:104
 msgid "Egypt"
 msgstr "埃及"
 
-#: pynicotine/networkfilter.py:106
+#: pynicotine/networkfilter.py:105
 msgid "Western Sahara"
 msgstr "西撒哈拉"
 
-#: pynicotine/networkfilter.py:107
+#: pynicotine/networkfilter.py:106
 msgid "Eritrea"
 msgstr "厄立特里亚"
 
-#: pynicotine/networkfilter.py:108
+#: pynicotine/networkfilter.py:107
 msgid "Spain"
 msgstr "西班牙"
 
-#: pynicotine/networkfilter.py:109
+#: pynicotine/networkfilter.py:108
 msgid "Ethiopia"
 msgstr "埃塞俄比亚"
 
-#: pynicotine/networkfilter.py:110
+#: pynicotine/networkfilter.py:109
 msgid "Europe"
 msgstr "欧洲"
 
-#: pynicotine/networkfilter.py:111
+#: pynicotine/networkfilter.py:110
 msgid "Finland"
 msgstr "芬兰"
 
-#: pynicotine/networkfilter.py:112
+#: pynicotine/networkfilter.py:111
 msgid "Fiji"
 msgstr "斐济"
 
-#: pynicotine/networkfilter.py:113
+#: pynicotine/networkfilter.py:112
 msgid "Falkland Islands (Malvinas)"
 msgstr "福克兰群岛（马尔维纳斯）"
 
-#: pynicotine/networkfilter.py:114
+#: pynicotine/networkfilter.py:113
 msgid "Micronesia"
 msgstr "密克罗尼西亚联邦"
 
-#: pynicotine/networkfilter.py:115
+#: pynicotine/networkfilter.py:114
 msgid "Faroe Islands"
 msgstr "法罗群岛"
 
-#: pynicotine/networkfilter.py:116
+#: pynicotine/networkfilter.py:115
 msgid "France"
 msgstr "法国"
 
-#: pynicotine/networkfilter.py:117
+#: pynicotine/networkfilter.py:116
 msgid "Gabon"
 msgstr "加蓬"
 
-#: pynicotine/networkfilter.py:118
+#: pynicotine/networkfilter.py:117
 msgid "Great Britain"
 msgstr "大不列颠"
 
-#: pynicotine/networkfilter.py:119
+#: pynicotine/networkfilter.py:118
 msgid "Grenada"
 msgstr "格林纳达"
 
-#: pynicotine/networkfilter.py:120
+#: pynicotine/networkfilter.py:119
 msgid "Georgia"
 msgstr "格鲁吉亚"
 
-#: pynicotine/networkfilter.py:121
+#: pynicotine/networkfilter.py:120
 msgid "French Guiana"
 msgstr "法属圭亚那"
 
-#: pynicotine/networkfilter.py:122
+#: pynicotine/networkfilter.py:121
 msgid "Guernsey"
 msgstr "根西岛"
 
-#: pynicotine/networkfilter.py:123
+#: pynicotine/networkfilter.py:122
 msgid "Ghana"
 msgstr "加纳"
 
-#: pynicotine/networkfilter.py:124
+#: pynicotine/networkfilter.py:123
 msgid "Gibraltar"
 msgstr "直布罗陀"
 
-#: pynicotine/networkfilter.py:125
+#: pynicotine/networkfilter.py:124
 msgid "Greenland"
 msgstr "格陵兰岛"
 
-#: pynicotine/networkfilter.py:126
+#: pynicotine/networkfilter.py:125
 msgid "Gambia"
 msgstr "冈比亚"
 
-#: pynicotine/networkfilter.py:127
+#: pynicotine/networkfilter.py:126
 msgid "Guinea"
 msgstr "几内亚"
 
-#: pynicotine/networkfilter.py:128
+#: pynicotine/networkfilter.py:127
 msgid "Guadeloupe"
 msgstr "瓜德罗普"
 
-#: pynicotine/networkfilter.py:129
+#: pynicotine/networkfilter.py:128
 msgid "Equatorial Guinea"
 msgstr "赤道几内亚"
 
-#: pynicotine/networkfilter.py:130
+#: pynicotine/networkfilter.py:129
 msgid "Greece"
 msgstr "希腊"
 
-#: pynicotine/networkfilter.py:131
+#: pynicotine/networkfilter.py:130
 msgid "South Georgia & South Sandwich Islands"
 msgstr "南乔治亚岛和南桑威奇群岛"
 
-#: pynicotine/networkfilter.py:132
+#: pynicotine/networkfilter.py:131
 msgid "Guatemala"
 msgstr "危地马拉"
 
-#: pynicotine/networkfilter.py:133
+#: pynicotine/networkfilter.py:132
 msgid "Guam"
 msgstr "关岛"
 
-#: pynicotine/networkfilter.py:134
+#: pynicotine/networkfilter.py:133
 msgid "Guinea-Bissau"
 msgstr "几内亚比索"
 
-#: pynicotine/networkfilter.py:135
+#: pynicotine/networkfilter.py:134
 msgid "Guyana"
 msgstr "圭亚那"
 
-#: pynicotine/networkfilter.py:136
+#: pynicotine/networkfilter.py:135
 msgid "Hong Kong"
 msgstr "香港"
 
-#: pynicotine/networkfilter.py:137
+#: pynicotine/networkfilter.py:136
 msgid "Heard & McDonald Islands"
 msgstr "赫德和麦克唐纳群岛"
 
-#: pynicotine/networkfilter.py:138
+#: pynicotine/networkfilter.py:137
 msgid "Honduras"
 msgstr "洪都拉斯"
 
-#: pynicotine/networkfilter.py:139
+#: pynicotine/networkfilter.py:138
 msgid "Croatia"
 msgstr "克罗地亚"
 
-#: pynicotine/networkfilter.py:140
+#: pynicotine/networkfilter.py:139
 msgid "Haiti"
 msgstr "海地"
 
-#: pynicotine/networkfilter.py:141
+#: pynicotine/networkfilter.py:140
 msgid "Hungary"
 msgstr "匈牙利"
 
-#: pynicotine/networkfilter.py:142
+#: pynicotine/networkfilter.py:141
 msgid "Indonesia"
 msgstr "印度尼西亚"
 
-#: pynicotine/networkfilter.py:143
+#: pynicotine/networkfilter.py:142
 msgid "Ireland"
 msgstr "爱尔兰"
 
-#: pynicotine/networkfilter.py:144
+#: pynicotine/networkfilter.py:143
 msgid "Israel"
 msgstr "以色列"
 
-#: pynicotine/networkfilter.py:145
+#: pynicotine/networkfilter.py:144
 msgid "Isle of Man"
 msgstr "马恩岛"
 
-#: pynicotine/networkfilter.py:146
+#: pynicotine/networkfilter.py:145
 msgid "India"
 msgstr "印度"
 
-#: pynicotine/networkfilter.py:147
+#: pynicotine/networkfilter.py:146
 msgid "British Indian Ocean Territory"
 msgstr "英属印度洋领地"
 
-#: pynicotine/networkfilter.py:148
+#: pynicotine/networkfilter.py:147
 msgid "Iraq"
 msgstr "伊拉克"
 
-#: pynicotine/networkfilter.py:149
+#: pynicotine/networkfilter.py:148
 msgid "Iran"
 msgstr "伊朗"
 
-#: pynicotine/networkfilter.py:150
+#: pynicotine/networkfilter.py:149
 msgid "Iceland"
 msgstr "冰岛"
 
-#: pynicotine/networkfilter.py:151
+#: pynicotine/networkfilter.py:150
 msgid "Italy"
 msgstr "意大利"
 
-#: pynicotine/networkfilter.py:152
+#: pynicotine/networkfilter.py:151
 msgid "Jersey"
 msgstr "泽西岛"
 
-#: pynicotine/networkfilter.py:153
+#: pynicotine/networkfilter.py:152
 msgid "Jamaica"
 msgstr "牙买加"
 
-#: pynicotine/networkfilter.py:154
+#: pynicotine/networkfilter.py:153
 msgid "Jordan"
 msgstr "约旦"
 
-#: pynicotine/networkfilter.py:155
+#: pynicotine/networkfilter.py:154
 msgid "Japan"
 msgstr "日本"
 
-#: pynicotine/networkfilter.py:156
+#: pynicotine/networkfilter.py:155
 msgid "Kenya"
 msgstr "肯尼亚"
 
-#: pynicotine/networkfilter.py:157
+#: pynicotine/networkfilter.py:156
 msgid "Kyrgyzstan"
 msgstr "吉尔吉斯斯坦"
 
-#: pynicotine/networkfilter.py:158
+#: pynicotine/networkfilter.py:157
 msgid "Cambodia"
 msgstr "柬埔寨"
 
-#: pynicotine/networkfilter.py:159
+#: pynicotine/networkfilter.py:158
 msgid "Kiribati"
 msgstr "基里巴斯"
 
-#: pynicotine/networkfilter.py:160
+#: pynicotine/networkfilter.py:159
 msgid "Comoros"
 msgstr "科摩罗"
 
-#: pynicotine/networkfilter.py:161
+#: pynicotine/networkfilter.py:160
 msgid "Saint Kitts & Nevis"
 msgstr "圣基茨和尼维斯"
 
-#: pynicotine/networkfilter.py:162
+#: pynicotine/networkfilter.py:161
 msgid "North Korea"
 msgstr "朝鲜"
 
-#: pynicotine/networkfilter.py:163
+#: pynicotine/networkfilter.py:162
 msgid "South Korea"
 msgstr "韩国"
 
-#: pynicotine/networkfilter.py:164
+#: pynicotine/networkfilter.py:163
 msgid "Kuwait"
 msgstr "科威特"
 
-#: pynicotine/networkfilter.py:165
+#: pynicotine/networkfilter.py:164
 msgid "Cayman Islands"
 msgstr "开曼群岛"
 
-#: pynicotine/networkfilter.py:166
+#: pynicotine/networkfilter.py:165
 msgid "Kazakhstan"
 msgstr "哈萨克斯坦"
 
-#: pynicotine/networkfilter.py:167
+#: pynicotine/networkfilter.py:166
 msgid "Laos"
 msgstr "老挝"
 
-#: pynicotine/networkfilter.py:168
+#: pynicotine/networkfilter.py:167
 msgid "Lebanon"
 msgstr "黎巴嫩"
 
-#: pynicotine/networkfilter.py:169
+#: pynicotine/networkfilter.py:168
 msgid "Saint Lucia"
 msgstr "圣卢西亚"
 
-#: pynicotine/networkfilter.py:170
+#: pynicotine/networkfilter.py:169
 msgid "Liechtenstein"
 msgstr "列支敦士登"
 
-#: pynicotine/networkfilter.py:171
+#: pynicotine/networkfilter.py:170
 msgid "Sri Lanka"
 msgstr "斯里兰卡"
 
-#: pynicotine/networkfilter.py:172
+#: pynicotine/networkfilter.py:171
 msgid "Liberia"
 msgstr "利比里亚"
 
-#: pynicotine/networkfilter.py:173
+#: pynicotine/networkfilter.py:172
 msgid "Lesotho"
 msgstr "莱索托"
 
-#: pynicotine/networkfilter.py:174
+#: pynicotine/networkfilter.py:173
 msgid "Lithuania"
 msgstr "立陶宛"
 
-#: pynicotine/networkfilter.py:175
+#: pynicotine/networkfilter.py:174
 msgid "Luxembourg"
 msgstr "卢森堡"
 
-#: pynicotine/networkfilter.py:176
+#: pynicotine/networkfilter.py:175
 msgid "Latvia"
 msgstr "拉脱维亚"
 
-#: pynicotine/networkfilter.py:177
+#: pynicotine/networkfilter.py:176
 msgid "Libya"
 msgstr "利比亚"
 
-#: pynicotine/networkfilter.py:178
+#: pynicotine/networkfilter.py:177
 msgid "Morocco"
 msgstr "摩洛哥"
 
-#: pynicotine/networkfilter.py:179
+#: pynicotine/networkfilter.py:178
 msgid "Monaco"
 msgstr "摩纳哥"
 
-#: pynicotine/networkfilter.py:180
+#: pynicotine/networkfilter.py:179
 msgid "Moldova"
 msgstr "摩尔多瓦"
 
-#: pynicotine/networkfilter.py:181
+#: pynicotine/networkfilter.py:180
 msgid "Montenegro"
 msgstr "黑山"
 
-#: pynicotine/networkfilter.py:182
+#: pynicotine/networkfilter.py:181
 msgid "Saint Martin"
 msgstr "圣马丁"
 
-#: pynicotine/networkfilter.py:183
+#: pynicotine/networkfilter.py:182
 msgid "Madagascar"
 msgstr "马达加斯加"
 
-#: pynicotine/networkfilter.py:184
+#: pynicotine/networkfilter.py:183
 msgid "Marshall Islands"
 msgstr "马绍尔群岛"
 
-#: pynicotine/networkfilter.py:185
+#: pynicotine/networkfilter.py:184
 msgid "North Macedonia"
 msgstr "北马其顿"
 
-#: pynicotine/networkfilter.py:186
+#: pynicotine/networkfilter.py:185
 msgid "Mali"
 msgstr "马里"
 
-#: pynicotine/networkfilter.py:187
+#: pynicotine/networkfilter.py:186
 msgid "Myanmar"
 msgstr "缅甸"
 
-#: pynicotine/networkfilter.py:188
+#: pynicotine/networkfilter.py:187
 msgid "Mongolia"
 msgstr "蒙古"
 
-#: pynicotine/networkfilter.py:189
+#: pynicotine/networkfilter.py:188
 msgid "Macau"
 msgstr "澳门"
 
-#: pynicotine/networkfilter.py:190
+#: pynicotine/networkfilter.py:189
 msgid "Northern Mariana Islands"
 msgstr "北马里亚纳群岛"
 
-#: pynicotine/networkfilter.py:191
+#: pynicotine/networkfilter.py:190
 msgid "Martinique"
 msgstr "马提尼克"
 
-#: pynicotine/networkfilter.py:192
+#: pynicotine/networkfilter.py:191
 msgid "Mauritania"
 msgstr "毛里塔尼亚"
 
-#: pynicotine/networkfilter.py:193
+#: pynicotine/networkfilter.py:192
 msgid "Montserrat"
 msgstr "蒙塞拉特岛"
 
-#: pynicotine/networkfilter.py:194
+#: pynicotine/networkfilter.py:193
 msgid "Malta"
 msgstr "马耳他"
 
-#: pynicotine/networkfilter.py:195
+#: pynicotine/networkfilter.py:194
 msgid "Mauritius"
 msgstr "毛里求斯"
 
-#: pynicotine/networkfilter.py:196
+#: pynicotine/networkfilter.py:195
 msgid "Maldives"
 msgstr "马尔代夫"
 
-#: pynicotine/networkfilter.py:197
+#: pynicotine/networkfilter.py:196
 msgid "Malawi"
 msgstr "马拉维"
 
-#: pynicotine/networkfilter.py:198
+#: pynicotine/networkfilter.py:197
 msgid "Mexico"
 msgstr "墨西哥"
 
-#: pynicotine/networkfilter.py:199
+#: pynicotine/networkfilter.py:198
 msgid "Malaysia"
 msgstr "马来西亚"
 
-#: pynicotine/networkfilter.py:200
+#: pynicotine/networkfilter.py:199
 msgid "Mozambique"
 msgstr "莫桑比克"
 
-#: pynicotine/networkfilter.py:201
+#: pynicotine/networkfilter.py:200
 msgid "Namibia"
 msgstr "纳米比亚"
 
-#: pynicotine/networkfilter.py:202
+#: pynicotine/networkfilter.py:201
 msgid "New Caledonia"
 msgstr "新喀里多尼亚"
 
-#: pynicotine/networkfilter.py:203
+#: pynicotine/networkfilter.py:202
 msgid "Niger"
 msgstr "尼日尔"
 
-#: pynicotine/networkfilter.py:204
+#: pynicotine/networkfilter.py:203
 msgid "Norfolk Island"
 msgstr "诺福克岛"
 
-#: pynicotine/networkfilter.py:205
+#: pynicotine/networkfilter.py:204
 msgid "Nigeria"
 msgstr "尼日利亚"
 
-#: pynicotine/networkfilter.py:206
+#: pynicotine/networkfilter.py:205
 msgid "Nicaragua"
 msgstr "尼加拉瓜"
 
-#: pynicotine/networkfilter.py:207
+#: pynicotine/networkfilter.py:206
 msgid "Netherlands"
 msgstr "荷兰"
 
-#: pynicotine/networkfilter.py:208
+#: pynicotine/networkfilter.py:207
 msgid "Norway"
 msgstr "挪威"
 
-#: pynicotine/networkfilter.py:209
+#: pynicotine/networkfilter.py:208
 msgid "Nepal"
 msgstr "尼泊尔"
 
-#: pynicotine/networkfilter.py:210
+#: pynicotine/networkfilter.py:209
 msgid "Nauru"
 msgstr "瑙鲁"
 
-#: pynicotine/networkfilter.py:211
+#: pynicotine/networkfilter.py:210
 msgid "Niue"
 msgstr "纽埃"
 
-#: pynicotine/networkfilter.py:212
+#: pynicotine/networkfilter.py:211
 msgid "New Zealand"
 msgstr "新西兰"
 
-#: pynicotine/networkfilter.py:213
+#: pynicotine/networkfilter.py:212
 msgid "Oman"
 msgstr "阿曼"
 
-#: pynicotine/networkfilter.py:214
+#: pynicotine/networkfilter.py:213
 msgid "Panama"
 msgstr "巴拿马"
 
-#: pynicotine/networkfilter.py:215
+#: pynicotine/networkfilter.py:214
 msgid "Peru"
 msgstr "秘鲁"
 
-#: pynicotine/networkfilter.py:216
+#: pynicotine/networkfilter.py:215
 msgid "French Polynesia"
 msgstr "法国波利尼西亚"
 
-#: pynicotine/networkfilter.py:217
+#: pynicotine/networkfilter.py:216
 msgid "Papua New Guinea"
 msgstr "巴布亚新几内亚"
 
-#: pynicotine/networkfilter.py:218
+#: pynicotine/networkfilter.py:217
 msgid "Philippines"
 msgstr "菲律宾"
 
-#: pynicotine/networkfilter.py:219
+#: pynicotine/networkfilter.py:218
 msgid "Pakistan"
 msgstr "巴基斯坦"
 
-#: pynicotine/networkfilter.py:220
+#: pynicotine/networkfilter.py:219
 msgid "Poland"
 msgstr "波兰"
 
-#: pynicotine/networkfilter.py:221
+#: pynicotine/networkfilter.py:220
 msgid "Saint Pierre & Miquelon"
 msgstr "圣皮埃尔和密克隆群岛"
 
-#: pynicotine/networkfilter.py:222
+#: pynicotine/networkfilter.py:221
 msgid "Pitcairn"
 msgstr "皮特凯恩群岛"
 
-#: pynicotine/networkfilter.py:223
+#: pynicotine/networkfilter.py:222
 msgid "Puerto Rico"
 msgstr "波多黎各"
 
-#: pynicotine/networkfilter.py:224
+#: pynicotine/networkfilter.py:223
 msgid "State of Palestine"
 msgstr "巴勒斯坦国"
 
-#: pynicotine/networkfilter.py:225
+#: pynicotine/networkfilter.py:224
 msgid "Portugal"
 msgstr "葡萄牙"
 
-#: pynicotine/networkfilter.py:226
+#: pynicotine/networkfilter.py:225
 msgid "Palau"
 msgstr "帛琉"
 
-#: pynicotine/networkfilter.py:227
+#: pynicotine/networkfilter.py:226
 msgid "Paraguay"
 msgstr "巴拉圭"
 
-#: pynicotine/networkfilter.py:228
+#: pynicotine/networkfilter.py:227
 msgid "Qatar"
 msgstr "卡塔尔"
 
-#: pynicotine/networkfilter.py:229
+#: pynicotine/networkfilter.py:228
 msgid "Réunion"
 msgstr "留尼汪"
 
-#: pynicotine/networkfilter.py:230
+#: pynicotine/networkfilter.py:229
 msgid "Romania"
 msgstr "罗马尼亚"
 
-#: pynicotine/networkfilter.py:231
+#: pynicotine/networkfilter.py:230
 msgid "Serbia"
 msgstr "塞尔维亚"
 
-#: pynicotine/networkfilter.py:232
+#: pynicotine/networkfilter.py:231
 msgid "Russia"
 msgstr "俄罗斯"
 
-#: pynicotine/networkfilter.py:233
+#: pynicotine/networkfilter.py:232
 msgid "Rwanda"
 msgstr "卢旺达"
 
-#: pynicotine/networkfilter.py:234
+#: pynicotine/networkfilter.py:233
 msgid "Saudi Arabia"
 msgstr "沙特阿拉伯"
 
-#: pynicotine/networkfilter.py:235
+#: pynicotine/networkfilter.py:234
 msgid "Solomon Islands"
 msgstr "所罗门群岛"
 
-#: pynicotine/networkfilter.py:236
+#: pynicotine/networkfilter.py:235
 msgid "Seychelles"
 msgstr "塞舌尔"
 
-#: pynicotine/networkfilter.py:237
+#: pynicotine/networkfilter.py:236
 msgid "Sudan"
 msgstr "苏丹"
 
-#: pynicotine/networkfilter.py:238
+#: pynicotine/networkfilter.py:237
 msgid "Sweden"
 msgstr "瑞典"
 
-#: pynicotine/networkfilter.py:239
+#: pynicotine/networkfilter.py:238
 msgid "Singapore"
 msgstr "新加坡"
 
-#: pynicotine/networkfilter.py:240
+#: pynicotine/networkfilter.py:239
 msgid "Saint Helena"
 msgstr "圣赫勒拿岛"
 
-#: pynicotine/networkfilter.py:241
+#: pynicotine/networkfilter.py:240
 msgid "Slovenia"
 msgstr "斯洛文尼亚"
 
-#: pynicotine/networkfilter.py:242
+#: pynicotine/networkfilter.py:241
 msgid "Svalbard & Jan Mayen Islands"
 msgstr "斯瓦尔巴群岛和扬马延群岛"
 
-#: pynicotine/networkfilter.py:243
+#: pynicotine/networkfilter.py:242
 msgid "Slovak Republic"
 msgstr "斯洛伐克共和国"
 
-#: pynicotine/networkfilter.py:244
+#: pynicotine/networkfilter.py:243
 msgid "Sierra Leone"
 msgstr "塞拉利昂"
 
-#: pynicotine/networkfilter.py:245
+#: pynicotine/networkfilter.py:244
 msgid "San Marino"
 msgstr "圣马力诺"
 
-#: pynicotine/networkfilter.py:246
+#: pynicotine/networkfilter.py:245
 msgid "Senegal"
 msgstr "塞内加尔"
 
-#: pynicotine/networkfilter.py:247
+#: pynicotine/networkfilter.py:246
 msgid "Somalia"
 msgstr "索马里"
 
-#: pynicotine/networkfilter.py:248
+#: pynicotine/networkfilter.py:247
 msgid "Suriname"
 msgstr "苏里南"
 
-#: pynicotine/networkfilter.py:249
+#: pynicotine/networkfilter.py:248
 msgid "South Sudan"
 msgstr "南苏丹"
 
-#: pynicotine/networkfilter.py:250
+#: pynicotine/networkfilter.py:249
 msgid "Sao Tome & Principe"
 msgstr "圣多美和普林西比"
 
-#: pynicotine/networkfilter.py:251
+#: pynicotine/networkfilter.py:250
 msgid "El Salvador"
 msgstr "萨尔瓦多"
 
-#: pynicotine/networkfilter.py:252
+#: pynicotine/networkfilter.py:251
 msgid "Sint Maarten"
 msgstr "荷属圣马丁"
 
-#: pynicotine/networkfilter.py:253
+#: pynicotine/networkfilter.py:252
 msgid "Syria"
 msgstr "叙利亚"
 
-#: pynicotine/networkfilter.py:254
+#: pynicotine/networkfilter.py:253
 msgid "Eswatini"
 msgstr "斯威士兰"
 
-#: pynicotine/networkfilter.py:255
+#: pynicotine/networkfilter.py:254
 msgid "Turks & Caicos Islands"
 msgstr "特克斯和凯科斯群岛"
 
-#: pynicotine/networkfilter.py:256
+#: pynicotine/networkfilter.py:255
 msgid "Chad"
 msgstr "乍得"
 
-#: pynicotine/networkfilter.py:257
+#: pynicotine/networkfilter.py:256
 msgid "French Southern Territories"
 msgstr "法属南部领地"
 
-#: pynicotine/networkfilter.py:258
+#: pynicotine/networkfilter.py:257
 msgid "Togo"
 msgstr "多哥"
 
-#: pynicotine/networkfilter.py:259
+#: pynicotine/networkfilter.py:258
 msgid "Thailand"
 msgstr "泰国"
 
-#: pynicotine/networkfilter.py:260
+#: pynicotine/networkfilter.py:259
 msgid "Tajikistan"
 msgstr "塔吉克斯坦"
 
-#: pynicotine/networkfilter.py:261
+#: pynicotine/networkfilter.py:260
 msgid "Tokelau"
 msgstr "托克劳"
 
-#: pynicotine/networkfilter.py:262
+#: pynicotine/networkfilter.py:261
 msgid "Timor-Leste"
 msgstr "东帝汶"
 
-#: pynicotine/networkfilter.py:263
+#: pynicotine/networkfilter.py:262
 msgid "Turkmenistan"
 msgstr "土库曼斯坦"
 
-#: pynicotine/networkfilter.py:264
+#: pynicotine/networkfilter.py:263
 msgid "Tunisia"
 msgstr "突尼斯"
 
-#: pynicotine/networkfilter.py:265
+#: pynicotine/networkfilter.py:264
 msgid "Tonga"
 msgstr "汤加"
 
-#: pynicotine/networkfilter.py:266
+#: pynicotine/networkfilter.py:265
 msgid "Türkiye"
 msgstr "土耳其"
 
-#: pynicotine/networkfilter.py:267
+#: pynicotine/networkfilter.py:266
 msgid "Trinidad & Tobago"
 msgstr "特立尼达和多巴哥"
 
-#: pynicotine/networkfilter.py:268
+#: pynicotine/networkfilter.py:267
 msgid "Tuvalu"
 msgstr "图瓦卢"
 
-#: pynicotine/networkfilter.py:269
+#: pynicotine/networkfilter.py:268
 msgid "Taiwan"
 msgstr "台湾"
 
-#: pynicotine/networkfilter.py:270
+#: pynicotine/networkfilter.py:269
 msgid "Tanzania"
 msgstr "坦桑尼亚"
 
-#: pynicotine/networkfilter.py:271
+#: pynicotine/networkfilter.py:270
 msgid "Ukraine"
 msgstr "乌克兰"
 
-#: pynicotine/networkfilter.py:272
+#: pynicotine/networkfilter.py:271
 msgid "Uganda"
 msgstr "乌干达"
 
-#: pynicotine/networkfilter.py:273
+#: pynicotine/networkfilter.py:272
 msgid "U.S. Minor Outlying Islands"
 msgstr "美国本土外小岛屿"
 
-#: pynicotine/networkfilter.py:274
+#: pynicotine/networkfilter.py:273
 msgid "United States"
 msgstr "美国"
 
-#: pynicotine/networkfilter.py:275
+#: pynicotine/networkfilter.py:274
 msgid "Uruguay"
 msgstr "乌拉圭"
 
-#: pynicotine/networkfilter.py:276
+#: pynicotine/networkfilter.py:275
 msgid "Uzbekistan"
 msgstr "乌兹别克斯坦"
 
-#: pynicotine/networkfilter.py:277
+#: pynicotine/networkfilter.py:276
 msgid "Holy See (Vatican City State)"
 msgstr "罗马教廷（梵蒂冈城国）"
 
-#: pynicotine/networkfilter.py:278
+#: pynicotine/networkfilter.py:277
 msgid "Saint Vincent & The Grenadines"
 msgstr "圣文森特和格林纳丁斯"
 
-#: pynicotine/networkfilter.py:279
+#: pynicotine/networkfilter.py:278
 msgid "Venezuela"
 msgstr "委内瑞拉"
 
-#: pynicotine/networkfilter.py:280
+#: pynicotine/networkfilter.py:279
 msgid "British Virgin Islands"
 msgstr "英属维尔京群岛"
 
-#: pynicotine/networkfilter.py:281
+#: pynicotine/networkfilter.py:280
 msgid "U.S. Virgin Islands"
 msgstr "美属维尔京群岛"
 
-#: pynicotine/networkfilter.py:282
+#: pynicotine/networkfilter.py:281
 msgid "Viet Nam"
 msgstr "越南"
 
-#: pynicotine/networkfilter.py:283
+#: pynicotine/networkfilter.py:282
 msgid "Vanuatu"
 msgstr "瓦努阿图"
 
-#: pynicotine/networkfilter.py:284
+#: pynicotine/networkfilter.py:283
 msgid "Wallis & Futuna"
 msgstr "瓦利斯群岛和富图纳群岛"
 
-#: pynicotine/networkfilter.py:285
+#: pynicotine/networkfilter.py:284
 msgid "Samoa"
 msgstr "萨摩亚"
 
-#: pynicotine/networkfilter.py:286
+#: pynicotine/networkfilter.py:285
 msgid "Yemen"
 msgstr "也门"
 
-#: pynicotine/networkfilter.py:287
+#: pynicotine/networkfilter.py:286
 msgid "Mayotte"
 msgstr "马约特"
 
-#: pynicotine/networkfilter.py:288
+#: pynicotine/networkfilter.py:287
 msgid "South Africa"
 msgstr "南非"
 
-#: pynicotine/networkfilter.py:289
+#: pynicotine/networkfilter.py:288
 msgid "Zambia"
 msgstr "赞比亚"
 
-#: pynicotine/networkfilter.py:290
+#: pynicotine/networkfilter.py:289
 msgid "Zimbabwe"
 msgstr "津巴布韦"
 
@@ -3886,17 +3905,17 @@ msgstr ""
 msgid "Private message from user '%(user)s': %(message)s"
 msgstr "来自用户“%(user)s”的私信：%(message)s"
 
-#: pynicotine/search.py:348
+#: pynicotine/search.py:368
 #, python-format
 msgid "Searching for wishlist item \"%s\""
 msgstr "正在搜索心愿单条目“%s”"
 
-#: pynicotine/search.py:407
+#: pynicotine/search.py:434
 #, python-format
 msgid "Wishlist wait period set to %s seconds"
 msgstr "设置心愿单等待时间为 %s 秒"
 
-#: pynicotine/search.py:732
+#: pynicotine/search.py:762
 #, python-format
 msgid "User %(user)s is searching for \"%(query)s\", found %(num)i results"
 msgstr "用户 %(user)s 正在搜索“%(query)s”，找到了 %(num)i 结果"
@@ -3949,17 +3968,17 @@ msgstr "共享 %s 不可用，重新扫描已中止"
 msgid "User %(user)s is browsing your list of shared files"
 msgstr "用户 %(user)s 正在浏览您的共享文件列表"
 
-#: pynicotine/slskmessages.py:3079
+#: pynicotine/slskmessages.py:3115
 #, python-format
 msgid "Unable to read shares database. Please rescan your shares. Error: %s"
 msgstr "无法读取共享数据库。请重新扫描您的共享。错误： %s"
 
-#: pynicotine/slskproto.py:501
+#: pynicotine/slskproto.py:502
 #, python-format
 msgid "Specified network interface '%s' is not available"
 msgstr "指定的网络接口“%s”不可用"
 
-#: pynicotine/slskproto.py:512
+#: pynicotine/slskproto.py:513
 #, python-format
 msgid ""
 "Cannot listen on port %(port)s. Ensure no other application uses it, or "
@@ -3968,76 +3987,76 @@ msgstr ""
 "无法侦听端口 %(port)s。确保没有其他程序占用端口，或选择其他端口。错误："
 "%(error)s"
 
-#: pynicotine/slskproto.py:524
+#: pynicotine/slskproto.py:525
 #, python-format
 msgid "Listening on port: %i"
 msgstr "正在监听端口：%i"
 
-#: pynicotine/slskproto.py:806
+#: pynicotine/slskproto.py:807
 #, python-format
 msgid "Cannot connect to server %(host)s:%(port)s: %(error)s"
 msgstr "无法连接到服务器 %(host)s:%(port)s：%(error)s"
 
-#: pynicotine/slskproto.py:1103
+#: pynicotine/slskproto.py:1092
 #, python-format
 msgid "Reconnecting to server in %s seconds"
 msgstr "%s 秒后自动重连服务器"
 
-#: pynicotine/slskproto.py:1177
+#: pynicotine/slskproto.py:1166
 #, python-format
 msgid "Connecting to %(host)s:%(port)s"
 msgstr "连接到 %(host)s:%(port)s"
 
-#: pynicotine/slskproto.py:1217
+#: pynicotine/slskproto.py:1206
 #, python-format
 msgid "Connected to server %(host)s:%(port)s, logging in…"
 msgstr "已连接到服务器 %(host)s:%(port)s，正在登录……"
 
-#: pynicotine/slskproto.py:1500
+#: pynicotine/slskproto.py:1490
 #, python-format
 msgid "Disconnected from server %(host)s:%(port)s"
 msgstr "与服务器 %(host)s:%(port)s 断开连接"
 
-#: pynicotine/slskproto.py:1506
+#: pynicotine/slskproto.py:1496
 msgid "Someone logged in to your Soulseek account elsewhere"
 msgstr "有人在其他地方登录了你的 Soulseek 账户"
 
-#: pynicotine/uploads.py:358
+#: pynicotine/uploads.py:361
 #, python-format
 msgid "Upload finished: user %(user)s, IP address %(ip)s, file %(file)s"
 msgstr "上传完成：用户 %(user)s，IP 地址 %(ip)s，文件 %(file)s"
 
-#: pynicotine/uploads.py:371
+#: pynicotine/uploads.py:374
 #, python-format
 msgid "Upload aborted, user %(user)s file %(file)s"
 msgstr "上传中止，用户 %(user)s 文件 %(file)s"
 
-#: pynicotine/uploads.py:1004 pynicotine/uploads.py:1032
+#: pynicotine/uploads.py:1034 pynicotine/uploads.py:1062
 #, python-format
 msgid "Upload I/O error: %s"
 msgstr "上传 I/O 错误：%s"
 
-#: pynicotine/uploads.py:1044
+#: pynicotine/uploads.py:1074
 #, python-format
 msgid "Upload started: user %(user)s, IP address %(ip)s, file %(file)s"
 msgstr "上传开始：用户 %(user)s，IP 地址 %(ip)s，文件 %(file)s"
 
-#: pynicotine/userbrowse.py:166
+#: pynicotine/userbrowse.py:172
 #, python-format
 msgid "Can't create directory '%(folder)s', reported error: %(error)s"
 msgstr "无法创建目录“%(folder)s”，错误信息：%(error)s"
 
-#: pynicotine/userbrowse.py:217
+#: pynicotine/userbrowse.py:232
 #, python-format
 msgid "Loading Shares from disk failed: %(error)s"
 msgstr "从磁盘加载共享失败：%(error)s"
 
-#: pynicotine/userbrowse.py:263
+#: pynicotine/userbrowse.py:278
 #, python-format
 msgid "Saved list of shared files for user '%(user)s' to %(dir)s"
 msgstr "将用户“%(user)s”的共享文件列表保存到 %(dir)s"
 
-#: pynicotine/userbrowse.py:267
+#: pynicotine/userbrowse.py:282
 #, python-format
 msgid "Can't save shares, '%(user)s', reported error: %(error)s"
 msgstr "无法保存共享，“%(user)s”，报告错误：%(error)s"
@@ -4057,41 +4076,36 @@ msgstr "图片无法保存到 %(filename)s：%(error)s"
 msgid "User %(user)s is viewing your profile"
 msgstr "用户 %(user)s 正在查看您的资料"
 
-#: pynicotine/users.py:258
+#: pynicotine/users.py:276
 #, python-format
 msgid "Unable to connect to the server. Reason: %s"
 msgstr "无法连接到服务器。原因：%s"
 
-#: pynicotine/users.py:258
+#: pynicotine/users.py:276
 msgid "Cannot Connect"
 msgstr "无法连接"
 
-#: pynicotine/users.py:292
+#: pynicotine/users.py:310
 #, python-format
 msgid "Cannot retrieve the IP of user %s, since this user is offline"
 msgstr "该用户已经离线，无法检索用户 %s 的 IP"
 
-#: pynicotine/users.py:301
+#: pynicotine/users.py:319
 #, python-format
 msgid "IP address of user %(user)s: %(ip)s, port %(port)i%(country)s"
 msgstr "用户%(user)s的IP地址为：%(ip)s，端口%(port)i%(country)s"
 
-#: pynicotine/users.py:419
+#: pynicotine/users.py:437
 msgid "Soulseek Announcement"
 msgstr "Soulseek公告"
 
-#: pynicotine/users.py:427
-#, python-format
-msgid "%i privileged users"
-msgstr "%i 特权用户"
-
-#: pynicotine/users.py:437
+#: pynicotine/users.py:453
 msgid ""
 "You have no Soulseek privileges. While privileges are active, your downloads "
 "will be queued ahead of those of non-privileged users."
 msgstr "您没有 Soulseek 特权。特权用户的下载请求将优先于无特权用户。"
 
-#: pynicotine/users.py:443
+#: pynicotine/users.py:459
 #, python-format
 msgid ""
 "%(days)i days, %(hours)i hours, %(minutes)i minutes, %(seconds)i seconds of "
@@ -4100,45 +4114,45 @@ msgstr ""
 "Soulseek 特权剩余 %(days)i 天，%(hours)i 小时，%(minutes)i 分钟，%(seconds)i "
 "秒"
 
-#: pynicotine/users.py:461
+#: pynicotine/users.py:477
 msgid "Your password has been changed"
 msgstr "您的密码已更改"
 
-#: pynicotine/users.py:461
+#: pynicotine/users.py:477
 msgid "Password Changed"
 msgstr "密码已更改"
 
-#: pynicotine/utils.py:574
+#: pynicotine/utils.py:571
 #, python-format
 msgid "Cannot open file path %(path)s: %(error)s"
 msgstr "无法打开文件路径 %(path)s：%(error)s"
 
-#: pynicotine/utils.py:621
+#: pynicotine/utils.py:618
 #, python-format
 msgid "Cannot open URL %(url)s: %(error)s"
 msgstr "无法打开URL %(url)s: %(error)s"
 
-#: pynicotine/utils.py:646
+#: pynicotine/utils.py:643
 #, python-format
 msgid "Something went wrong while reading file %(filename)s: %(error)s"
 msgstr "读取文件 %(filename)s 时出现问题：%(error)s"
 
-#: pynicotine/utils.py:651
+#: pynicotine/utils.py:648
 #, python-format
 msgid "Attempting to load backup of file %s"
 msgstr "尝试加载文件的备份 %s"
 
-#: pynicotine/utils.py:672
+#: pynicotine/utils.py:669
 #, python-format
 msgid "Unable to back up file %(path)s: %(error)s"
 msgstr "无法备份文件 %(path)s：%(error)s"
 
-#: pynicotine/utils.py:692
+#: pynicotine/utils.py:689
 #, python-format
 msgid "Unable to save file %(path)s: %(error)s"
 msgstr "无法保存文件 %(path)s：%(error)s"
 
-#: pynicotine/utils.py:703
+#: pynicotine/utils.py:700
 #, python-format
 msgid "Unable to restore previous file %(path)s: %(error)s"
 msgstr "无法恢复以前的文件 %(path)s：%(error)s"
@@ -4147,31 +4161,23 @@ msgstr "无法恢复以前的文件 %(path)s：%(error)s"
 msgid "Add buddy…"
 msgstr "添加好友……"
 
-#: pynicotine/gtkgui/ui/chatrooms.ui:27
-msgid "Search activity log…"
-msgstr "查找活动日志……"
-
-#: pynicotine/gtkgui/ui/chatrooms.ui:63 pynicotine/gtkgui/ui/privatechat.ui:18
-msgid "Search chat log…"
-msgstr "查找聊天日志……"
-
-#: pynicotine/gtkgui/ui/chatrooms.ui:101 pynicotine/gtkgui/ui/privatechat.ui:56
+#: pynicotine/gtkgui/ui/chatrooms.ui:85 pynicotine/gtkgui/ui/privatechat.ui:48
 msgid "Toggle Text-to-Speech"
 msgstr "文字转语音开关"
 
-#: pynicotine/gtkgui/ui/chatrooms.ui:116
+#: pynicotine/gtkgui/ui/chatrooms.ui:100
 msgid "Chat Room Command Help"
 msgstr "聊天室命令帮助"
 
-#: pynicotine/gtkgui/ui/chatrooms.ui:131 pynicotine/gtkgui/ui/privatechat.ui:86
+#: pynicotine/gtkgui/ui/chatrooms.ui:115 pynicotine/gtkgui/ui/privatechat.ui:78
 msgid "_Log"
 msgstr "_日志"
 
-#: pynicotine/gtkgui/ui/chatrooms.ui:203
+#: pynicotine/gtkgui/ui/chatrooms.ui:187
 msgid "Room Wall"
 msgstr "聊天室留言板"
 
-#: pynicotine/gtkgui/ui/chatrooms.ui:218
+#: pynicotine/gtkgui/ui/chatrooms.ui:202
 msgid "R_oom Wall"
 msgstr "聊_天室留言版"
 
@@ -4187,50 +4193,42 @@ msgstr "译者"
 msgid "License"
 msgstr "许可"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:5
-msgid "_Previous"
-msgstr "_上一个"
-
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:57
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:98
 msgid "Welcome to Nicotine+"
 msgstr "欢迎来到Nicotine+"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:89
-msgid "_Set Up…"
-msgstr "_设置……"
-
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:141
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:195
 msgid ""
 "If your desired username is already taken, you will be prompted to change it."
 msgstr "如果您指定的用户名已被占用，系统将提示您。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:256
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:321
 msgid ""
 "To connect with other Soulseek peers, a listening port on your router has to "
 "be forwarded to your computer."
 msgstr "为了连接其他 Soulseek 用户，路由器上的一个监听端口已转发到您的电脑上。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:266
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:331
 msgid ""
 "If your listening port is closed, you will only be able to connect to users "
 "whose listening ports are open."
 msgstr "如果您的监听端口关闭，您将只能连接到监听端口打开的用户。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:276
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:341
 msgid ""
 "If necessary, choose a different listening port below. This can also be done "
 "later in the preferences."
 msgstr "如有必要，请在下面选择不同的侦听端口。您也可以稍后在偏好中选择。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:317
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:382
 msgid "Download Files to Folder"
 msgstr "下载文件到文件夹"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:338
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:403
 msgid "Share Folders"
 msgstr "共享文件夹"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:350
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:415
 #: pynicotine/gtkgui/ui/settings/shares.ui:23
 msgid ""
 "Soulseek users will be able to download from your shares. Contribute to the "
@@ -4240,16 +4238,16 @@ msgstr ""
 "Soulseek 用户可以从您的共享中下载。通过分享您自己的收藏和转发您从其他用户下载"
 "的内容，为 Soulseek 网络做出贡献。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:515
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:580
 msgid "You are ready to use Nicotine+!"
 msgstr "Nicotine+ 已经可以使用!"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:533
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:598
 msgid ""
 "Soulseek is an unencrypted protocol not intended for secure communication."
 msgstr "Soulseek 是非加密协议，并非为加密通信设计。"
 
-#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:543
+#: pynicotine/gtkgui/ui/dialogs/fastconfigure.ui:608
 msgid ""
 "Donating to Soulseek grants you privileges for a certain time period. If you "
 "have privileges, your downloads will be queued ahead of non-privileged users."
@@ -4299,7 +4297,7 @@ msgid "Rescan Shares"
 msgstr "重新扫描共享"
 
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:47
-#: pynicotine/gtkgui/ui/mainwindow.ui:1866
+#: pynicotine/gtkgui/ui/mainwindow.ui:1859
 msgid "Show Log Pane"
 msgstr "显示日志窗格"
 
@@ -4349,7 +4347,7 @@ msgid "Close Secondary Tab"
 msgstr "关闭二级选项卡"
 
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:144
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:917
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:920
 msgid "Lists"
 msgstr "列表"
 
@@ -4387,15 +4385,6 @@ msgstr "粘贴"
 msgid "Insert Emoji"
 msgstr "插入表情符号"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:225
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:286
-msgid "Find Next Match"
-msgstr "查找下一个匹配项"
-
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:232
-msgid "Find Previous Match"
-msgstr "查找上一个匹配项"
-
 #: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:240
 msgid "File Transfers"
 msgstr "文件传输"
@@ -4408,34 +4397,34 @@ msgstr "恢复/重试传输"
 msgid "Pause / Abort Transfer"
 msgstr "暂停/中止传输"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:265
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:272
 msgid "Download / Upload To"
 msgstr "下载/上传至"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:279
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:286
 msgid "Save List to Disk"
 msgstr "保存列表到磁盘"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:293
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:300
 msgid "Refresh"
 msgstr "刷新"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:300
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:307
 #: pynicotine/gtkgui/ui/mainwindow.ui:371
 #: pynicotine/gtkgui/ui/mainwindow.ui:610 pynicotine/gtkgui/ui/search.ui:199
 #: pynicotine/gtkgui/ui/userbrowse.ui:103
 msgid "Expand / Collapse All"
 msgstr "展开/折叠全部"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:307
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:314
 msgid "Back to Parent Folder"
 msgstr "返回父文件夹"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:315
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:322
 msgid "File Search"
 msgstr "文件搜索"
 
-#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:320
+#: pynicotine/gtkgui/ui/dialogs/shortcuts.ui:327
 msgid "Result Filters"
 msgstr "结果过滤器"
 
@@ -4542,13 +4531,13 @@ msgstr "查找内容……"
 
 #: pynicotine/gtkgui/ui/mainwindow.ui:60
 #: pynicotine/gtkgui/ui/settings/userinterface.ui:5
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1633
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1678
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1723
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1768
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1813
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1858
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1903
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1609
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1654
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1699
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1744
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1789
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1834
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1879
 msgid "Clear"
 msgstr "清除"
 
@@ -4639,7 +4628,7 @@ msgid "Chat _History"
 msgstr "聊天_历史"
 
 #: pynicotine/gtkgui/ui/mainwindow.ui:1138
-#: pynicotine/gtkgui/ui/mainwindow.ui:1471
+#: pynicotine/gtkgui/ui/mainwindow.ui:1472
 msgid "Configure Chats"
 msgstr "配置聊天"
 
@@ -4662,33 +4651,29 @@ msgid ""
 "notifications when they are online"
 msgstr "添加用户为好友，与他们分享特定的文件夹，并在他们在线时收到通知"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1428
+#: pynicotine/gtkgui/ui/mainwindow.ui:1429
 msgid "Join or create room…"
 msgstr "加入或创建聊天室…"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1538
+#: pynicotine/gtkgui/ui/mainwindow.ui:1539
 msgid ""
 "Join an existing chat room, or create a new room to chat with other users on "
 "the Soulseek network"
 msgstr "加入现有的聊天室，或创建一个新的聊天室，与Soulseek网络上的其他用户聊天"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1599
+#: pynicotine/gtkgui/ui/mainwindow.ui:1600
 msgid "Configure User Profile"
 msgstr "配置用户资料"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1649
-msgid "Search log…"
-msgstr "查找日志……"
-
-#: pynicotine/gtkgui/ui/mainwindow.ui:1735
+#: pynicotine/gtkgui/ui/mainwindow.ui:1728
 msgid "Connections"
 msgstr "连接"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1767
+#: pynicotine/gtkgui/ui/mainwindow.ui:1760
 msgid "Downloading (Speed / Active Users)"
 msgstr "下载（速度/活跃用户）"
 
-#: pynicotine/gtkgui/ui/mainwindow.ui:1798
+#: pynicotine/gtkgui/ui/mainwindow.ui:1791
 msgid "Uploading (Speed / Active Users)"
 msgstr "上传（速度/活跃用户）"
 
@@ -4994,7 +4979,7 @@ msgstr "使用上传速度限制 （KiB/s）："
 msgid "Use alternative upload speed limit (KiB/s):"
 msgstr "使用备用上传速度限制 （KiB/s）："
 
-#: pynicotine/gtkgui/ui/privatechat.ui:71
+#: pynicotine/gtkgui/ui/privatechat.ui:63
 msgid "Private Chat Command Help"
 msgstr "私聊命令帮助"
 
@@ -5080,19 +5065,19 @@ msgstr "根据用户名、IP 地址或国家/地区，禁止用户访问您的�
 msgid "Country codes to block (comma separated):"
 msgstr "要阻止的国家/地区代码（逗号分隔）："
 
-#: pynicotine/gtkgui/ui/settings/ban.ui:50
+#: pynicotine/gtkgui/ui/settings/ban.ui:51
 msgid "Codes must be in ISO 3166-2 format."
 msgstr "编码必须是ISO 3166-2格式。"
 
-#: pynicotine/gtkgui/ui/settings/ban.ui:65
+#: pynicotine/gtkgui/ui/settings/ban.ui:66
 msgid "Use custom geo block message:"
 msgstr "使用自定义地理块消息："
 
-#: pynicotine/gtkgui/ui/settings/ban.ui:86
+#: pynicotine/gtkgui/ui/settings/ban.ui:87
 msgid "Use custom ban message:"
 msgstr "使用自定义禁止消息："
 
-#: pynicotine/gtkgui/ui/settings/ban.ui:244
+#: pynicotine/gtkgui/ui/settings/ban.ui:245
 #: pynicotine/gtkgui/ui/settings/ignore.ui:179
 msgid "IP Addresses"
 msgstr "IP地址"
@@ -5173,23 +5158,22 @@ msgstr "私聊形式："
 #: pynicotine/gtkgui/ui/settings/log.ui:29
 #: pynicotine/gtkgui/ui/settings/log.ui:41
 #: pynicotine/gtkgui/ui/settings/log.ui:189
-#: pynicotine/gtkgui/ui/settings/network.ui:333
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:466
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:505
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:544
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1006
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1045
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1146
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1185
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1224
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1263
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1302
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1341
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1400
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1439
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1478
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1537
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1576
+#: pynicotine/gtkgui/ui/settings/network.ui:335
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:467
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:507
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:547
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1010
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1112
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1152
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1192
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1232
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1272
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1312
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1372
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1412
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1452
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1512
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1552
 msgid "Default"
 msgstr "默认"
 
@@ -5355,39 +5339,39 @@ msgid ""
 "case-sensitive and unique."
 msgstr "登录现有的 Soulseek 帐户或创建一个新帐户。用户名区分大小写且唯一。"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:116
+#: pynicotine/gtkgui/ui/settings/network.ui:118
 msgid "Public IP address:"
 msgstr "公共IP地址："
 
-#: pynicotine/gtkgui/ui/settings/network.ui:157
+#: pynicotine/gtkgui/ui/settings/network.ui:159
 msgid "Listening port (requires a restart):"
 msgstr "监听端口（需要重新启动）："
 
-#: pynicotine/gtkgui/ui/settings/network.ui:185
+#: pynicotine/gtkgui/ui/settings/network.ui:187
 msgid "Away Status"
 msgstr "离开状态"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:202
+#: pynicotine/gtkgui/ui/settings/network.ui:204
 msgid "Minutes of inactivity before going away (0 to disable):"
 msgstr "离开前的非活动分钟数（0 表示禁用）："
 
-#: pynicotine/gtkgui/ui/settings/network.ui:227
+#: pynicotine/gtkgui/ui/settings/network.ui:229
 msgid "Auto-reply message when away:"
 msgstr "离开时自动回复消息："
 
-#: pynicotine/gtkgui/ui/settings/network.ui:273
+#: pynicotine/gtkgui/ui/settings/network.ui:275
 msgid "Automatically forward listening port (UPnP/NAT-PMP)"
 msgstr "自动转发监听端口（UPnP/NAT-PMP）"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:298
+#: pynicotine/gtkgui/ui/settings/network.ui:300
 msgid "Auto-connect to server on startup"
 msgstr "启动时自动连接服务器"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:322
+#: pynicotine/gtkgui/ui/settings/network.ui:324
 msgid "Soulseek server:"
 msgstr "Soulseek服务器:"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:346
+#: pynicotine/gtkgui/ui/settings/network.ui:348
 msgid ""
 "Binds connections to a specific network interface, useful for e.g. ensuring "
 "a VPN is used at all times. Leave empty to use any available interface. Only "
@@ -5396,7 +5380,7 @@ msgstr ""
 "连接绑定到特定的网络接口，例如确保始终使用 VPN。保留为空以使用任何可用接口。"
 "仅当您知道自己在做什么时才更改此值。"
 
-#: pynicotine/gtkgui/ui/settings/network.ui:350
+#: pynicotine/gtkgui/ui/settings/network.ui:352
 msgid "Network interface (requires a restart):"
 msgstr "网络接口（需要重新启动）："
 
@@ -5730,143 +5714,139 @@ msgstr "辅助选项卡上的关闭按钮"
 msgid "Regular tab label color:"
 msgstr "常规选项卡标签颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:482
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:483
 msgid "Changed tab label color:"
 msgstr "更改选项卡标签颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:521
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:523
 msgid "Highlighted tab label color:"
 msgstr "高亮选项卡标签颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:561
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:564
 msgid "Buddy list position:"
 msgstr "好友队列位置："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:587
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:590
 msgid "Visible main tabs:"
 msgstr "可见的主选项卡："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:742
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:745
 msgid "Tab bar positions:"
 msgstr "标签栏位置："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:777
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:780
 msgid "Main tabs"
 msgstr "主选项卡"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:935
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:938
 msgid "Show reverse file paths (requires a restart)"
 msgstr "显示反向文件路径（需要重新启动）"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:959
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:962
 msgid "Show exact file sizes (requires a restart)"
 msgstr "显示文件具体大小（需要重启）"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:983
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:986
 msgid "List text color:"
 msgstr "列表文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1022
-msgid "Queued search result text color:"
-msgstr "排队搜索结果文本颜色："
-
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1082
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1047
 msgid "Enable colored usernames"
 msgstr "使用彩色用户名"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1106
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1071
 msgid "Chat username appearance:"
 msgstr "聊天用户名外观："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1123
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1088
 msgid "Remote text color:"
 msgstr "远程文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1162
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1128
 msgid "Local text color:"
 msgstr "本地文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1201
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1168
 msgid "Command output text color:"
 msgstr "命令输出文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1240
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1208
 msgid "/me action text color:"
 msgstr "/me 动作文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1279
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1248
 msgid "Highlighted text color:"
 msgstr "高亮文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1318
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1288
 msgid "URL link text color:"
 msgstr "URL 链接文本颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1360
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1331
 msgid "User Statuses"
 msgstr "用户状态"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1377
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1348
 msgid "Online color:"
 msgstr "在线颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1416
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1388
 msgid "Away color:"
 msgstr "离开颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1455
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1428
 msgid "Offline color:"
 msgstr "离线颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1497
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1471
 msgid "Text Entries"
 msgstr "文本条目"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1514
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1488
 msgid "Text entry background color:"
 msgstr "文本输入背景颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1553
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1528
 msgid "Text entry text color:"
 msgstr "文字输入文字颜色："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1595
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1571
 msgid "Fonts"
 msgstr "字体"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1612
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1588
 msgid "Global font:"
 msgstr "全局字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1657
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1633
 msgid "List font:"
 msgstr "列表字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1702
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1678
 msgid "Text view font:"
 msgstr "文本视图字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1747
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1723
 msgid "Chat font:"
 msgstr "聊天字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1792
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1768
 msgid "Transfers font:"
 msgstr "传输字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1837
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1813
 msgid "Search font:"
 msgstr "搜索字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1882
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1858
 msgid "Browse font:"
 msgstr "浏览字体："
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1931
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1907
 msgid "Icons"
 msgstr "图标"
 
-#: pynicotine/gtkgui/ui/settings/userinterface.ui:1948
+#: pynicotine/gtkgui/ui/settings/userinterface.ui:1924
 msgid "Icon theme folder:"
 msgstr "图标主题文件夹："
 
@@ -5938,6 +5918,22 @@ msgstr "_刷新资料"
 msgid "Nicotine+ Commands"
 msgstr "Nicotine+ 指令"
 
+#~ msgid "Invalid Password"
+#~ msgstr "无效的密码"
+
+#~ msgid "Change _Login Details"
+#~ msgstr "更改_登录详情"
+
+#, python-format
+#~ msgid "%i privileged users"
+#~ msgstr "%i 特权用户"
+
+#~ msgid "_Set Up…"
+#~ msgstr "_设置……"
+
+#~ msgid "Queued search result text color:"
+#~ msgstr "排队搜索结果文本颜色："
+
 #, python-format
 #~ msgid "Failed to fetch the shared folder %(folder)s: %(error)s"
 #~ msgstr "无法获取共享文件夹 %(folder)s：%(error)s"
@@ -5948,9 +5944,6 @@ msgstr "Nicotine+ 指令"
 #, python-format
 #~ msgid "Can't save %(filename)s: %(error)s"
 #~ msgstr "无法保存 %(filename)s：%(error)s"
-
-#~ msgid "Nicotine+"
-#~ msgstr "Nicotine+"
 
 #~ msgid "Trusted Buddies"
 #~ msgstr "可信的朋友"
@@ -6133,10 +6126,6 @@ msgstr "Nicotine+ 指令"
 #~ msgid "Cannot find %(option1)s or %(option2)s, please install either one."
 #~ msgstr "找不到 %(option1)s 或 %(option2)s，请安装其中一个。"
 
-#, fuzzy, python-format
-#~ msgid "%(num)s folders found before rescan"
-#~ msgstr "%(num)s 在重新扫描、重建之前找到的文件夹…"
-
 #, python-format
 #~ msgid "Failed to process the following databases: %(names)s"
 #~ msgstr "无法处理以下数据库：%(names)s"
@@ -6147,10 +6136,6 @@ msgstr "Nicotine+ 指令"
 
 #~ msgid "Quit / Run in Background"
 #~ msgstr "退出/在后台运行"
-
-#, fuzzy
-#~ msgid "Listening port:"
-#~ msgstr "监听端口范围："
 
 #~ msgid "Network interface:"
 #~ msgstr "网络界面："
@@ -6178,10 +6163,6 @@ msgstr "Nicotine+ 指令"
 #, python-format
 #~ msgid "You are using the latest version of %s"
 #~ msgstr "您正在使用最新版本 %s"
-
-#, fuzzy
-#~ msgid "Latest Version Unknown"
-#~ msgstr "检查_最新版本"
 
 #~ msgid "Prefer Dark _Mode"
 #~ msgstr "喜欢黑暗模式"
@@ -6302,15 +6283,6 @@ msgstr "Nicotine+ 指令"
 
 #~ msgid "_Auto-join Room"
 #~ msgstr "_自动加入房间"
-
-#, fuzzy
-#~ msgid ""
-#~ "<b>Syntax</b>: Letters are case-insensitive. All Python regular "
-#~ "expressions are supported if escaping is disabled. For simple filters, "
-#~ "keeping escaping enabled is recommended."
-#~ msgstr ""
-#~ "<b> 语法：</b> 字母不区分大小写。如果禁用转义，则支持所有 Python 正则表达"
-#~ "式。对于简单的过滤器，建议保持启用转义。"
 
 #~ msgid "Escaped"
 #~ msgstr "逃脱"
@@ -6605,126 +6577,14 @@ msgstr "Nicotine+ 指令"
 #~ msgid "User(s)"
 #~ msgstr "用户"
 
-#, fuzzy, python-format
-#~ msgid "Alias \"%s\" returned nothing"
-#~ msgstr "别名“%s”什么也没返回"
-
-#, fuzzy
-#~ msgid "Alternative Speed Limits"
-#~ msgstr "替代速度限制"
-
-#, fuzzy
-#~ msgid "Last played"
-#~ msgstr "最后播放"
-
-#, fuzzy
-#~ msgid "Playing now"
-#~ msgstr "现在播放"
-
-#, fuzzy, python-format
-#~ msgid "Cannot download file to %(path)s: %(error)s"
-#~ msgstr "无法保存文件 %(path)s：%(error)s"
-
-#, fuzzy, python-format
-#~ msgid "Error code %(code)s: %(description)s"
-#~ msgstr "错误代码 %(code)s：%(description)s"
-
-#, fuzzy, python-format
-#~ msgid "No such alias (%s)"
-#~ msgstr "没有这样的别名 (%s)"
-
-#, fuzzy
-#~ msgid "Aliases:"
-#~ msgstr "别名："
-
-#, fuzzy, python-format
-#~ msgid "Removed alias %(alias)s: %(action)s\n"
-#~ msgstr "移除别名 %(alias)s: %(action)s\n"
-
-#, fuzzy, python-format
-#~ msgid "No such alias (%(alias)s)\n"
-#~ msgstr "没有这样的别名 (%(alias)s)\n"
-
-#, fuzzy
-#~ msgid "Use Alternative Transfer Speed Limits"
-#~ msgstr "替代速度限制"
-
-#, fuzzy
-#~ msgid "Aliases"
-#~ msgstr "别名"
-
-#, fuzzy
-#~ msgid "/alias /al 'command' 'definition'"
-#~ msgstr "/alias /al '命令' '定义'"
-
-#, fuzzy
-#~ msgid "Add a new alias"
-#~ msgstr "添加新别名"
-
-#, fuzzy
-#~ msgid "/unalias /un 'command'"
-#~ msgstr "/unalias /un '命令'"
-
-#, fuzzy
-#~ msgid "Remove an alias"
-#~ msgstr "删除别名"
-
-#, fuzzy
-#~ msgid "Chat History"
-#~ msgstr "聊天记录"
-
 #~ msgid "Command aliases"
 #~ msgstr "命令别名"
-
-#, fuzzy
-#~ msgid "Limit download speed to (KiB/s):"
-#~ msgstr "将下载速度限制为 (KiB/s)："
-
-#, fuzzy
-#~ msgid "Author(s):"
-#~ msgstr "作者："
-
-#, fuzzy
-#~ msgid "Limit upload speed to (KiB/s):"
-#~ msgstr "将上传速度限制为 (KiB/s)："
-
-#, fuzzy
-#~ msgid "Wishlist item found"
-#~ msgstr "找到心愿单项目"
-
-#, fuzzy
-#~ msgid "Tabs show user status icons instead of status text"
-#~ msgstr "选项卡显示用户状态图标而不是状态文本"
-
-#, fuzzy
-#~ msgid "Show file path tooltips in file list views"
-#~ msgstr "在文件列表视图中显示文件路径工具提示"
-
-#, fuzzy
-#~ msgid "Colored and clickable usernames"
-#~ msgstr "彩色和可点击的用户名"
-
-#, fuzzy
-#~ msgid "Notification changes the tab's text color"
-#~ msgstr "通知更改选项卡的文本颜色"
 
 #~ msgid "Cancel"
 #~ msgstr "取消"
 
 #~ msgid "OK"
 #~ msgstr "确定"
-
-#, fuzzy
-#~ msgid "_Add to Buddy List"
-#~ msgstr "_添加到好友列表"
-
-#, fuzzy
-#~ msgid "Clear Downloads With Specific Status"
-#~ msgstr "清除所有标有特定状态的下载。"
-
-#, fuzzy
-#~ msgid "Clear Uploads With Specific Status"
-#~ msgstr "清除所有标有特定状态的上传。"
 
 #~ msgid "use non-default user data directory for e.g. list of downloads"
 #~ msgstr "为如下载列表等使用非默认用户数据目录，"
@@ -6761,137 +6621,8 @@ msgstr "Nicotine+ 指令"
 #~ msgid "Finished / Aborted"
 #~ msgstr "完成/中止"
 
-#, fuzzy
-#~ msgid "Close tab"
-#~ msgstr "关闭标签"
-
-#, fuzzy, python-format
-#~ msgid "You've been mentioned in the %(room)s room"
-#~ msgstr "你在 %(room)s 房间被提及"
-
-#, fuzzy, python-format
-#~ msgid "Command %s is not recognized"
-#~ msgstr "命令 %s 无法识别"
-
-#, fuzzy, python-format
-#~ msgid "(Warning: %(realuser)s is attempting to spoof %(fakeuser)s) "
-#~ msgstr "（警告：%(realuser)s 试图欺骗 %(fakeuser)s） "
-
-#, fuzzy, python-format
-#~ msgid ""
-#~ "The network interface you specified, '%s', does not exist. Change or "
-#~ "remove the specified network interface and restart Nicotine+."
-#~ msgstr ""
-#~ "您指定的网络接口“%s”不存在。更改或删除指定的网络接口并重新启动 Nicotine+。"
-
-#, fuzzy
-#~ msgid ""
-#~ "The range you specified for client connection ports was {}-{}, but none "
-#~ "of these were usable. Increase and/or "
-#~ msgstr "您为客户端连接端口指定的范围是 {}-{}，但没有一个可用。增加和/或 "
-
-#, fuzzy
-#~ msgid ""
-#~ "Note that part of your range lies below 1024, this is usually not allowed "
-#~ "on most operating systems with the exception of Windows."
-#~ msgstr ""
-#~ "请注意，您的部分范围低于 1024，除 Windows 外，大多数操作系统通常不允许这样"
-#~ "做。"
-
-#, fuzzy, python-format
-#~ msgid "Rescan progress: %s"
-#~ msgstr "重新扫描进度：%s"
-
-#, fuzzy, python-format
-#~ msgid "OS error: %s"
-#~ msgstr "操作系统错误：%s"
-
-#, fuzzy
-#~ msgid "UPnP is not available on this network"
-#~ msgstr "UPnP 在此网络上不可用"
-
-#, fuzzy, python-format
-#~ msgid "Failed to map the external WAN port: %(error)s"
-#~ msgstr "外接WAN口映射失败：%(error)s"
-
-#, fuzzy
-#~ msgid "Room wall"
-#~ msgstr "房间墙壁"
-
-#, fuzzy
-#~ msgid ""
-#~ "The default listening port '2234' works fine in most cases. If you need "
-#~ "to use a different port, you will be able to modify it in the preferences "
-#~ "later."
-#~ msgstr ""
-#~ "在大多数情况下，默认侦听端口“2234”可以正常工作。如果您需要使用不同的端口，"
-#~ "您可以稍后在首选项中进行修改。"
-
-#, fuzzy
-#~ msgid "Show users with similar interests"
-#~ msgstr "显示具有相似兴趣的用户"
-
-#, fuzzy
-#~ msgid "Menu"
-#~ msgstr "菜单"
-
-#, fuzzy
-#~ msgid "Expand / Collapse all"
-#~ msgstr "展开/折叠所有"
-
-#, fuzzy
-#~ msgid "Configure shares"
-#~ msgstr "配置共享"
-
-#, fuzzy
-#~ msgid "Create or join room…"
-#~ msgstr "创建或加入房间…"
-
-#, fuzzy
-#~ msgid "_Room List"
-#~ msgstr "_房间列表"
-
-#, fuzzy
-#~ msgid "Enable alternative download and upload speed limits"
-#~ msgstr "启用替代下载和上传速度限制"
-
-#, fuzzy
-#~ msgid "Show log history"
-#~ msgstr "显示日志历史"
-
-#, fuzzy
-#~ msgid "Result grouping mode"
-#~ msgstr "结果分组方式"
-
-#, fuzzy
-#~ msgid "Free slot"
-#~ msgstr "免费插槽"
-
-#, fuzzy
-#~ msgid "Save shares list to disk"
-#~ msgstr "将共享列表保存到磁盘"
-
 #~ msgid "_Away"
 #~ msgstr "_离开"
-
-#, fuzzy, python-format
-#~ msgid "Failed to load ui file %(file)s: %(error)s"
-#~ msgstr "加载ui文件失败%(file)s：%(error)s"
-
-#, fuzzy
-#~ msgid ""
-#~ "Attempting to reset index of shared files due to an error. Please rescan "
-#~ "your shares."
-#~ msgstr "由于错误而尝试重置共享文件的索引。请重新扫描您的股票。"
-
-#, fuzzy
-#~ msgid ""
-#~ "File index of shared files could not be accessed. This could occur due to "
-#~ "several instances of Nicotine+ being active simultaneously, file "
-#~ "permission issues, or another issue in Nicotine+."
-#~ msgstr ""
-#~ "无法访问共享文件的文件索引。这可能是由于多个 Nicotine+ 实例同时处于活动状"
-#~ "态、文件权限问题或 Nicotine+ 中的另一个问题。"
 
 #~ msgid "Nicotine+ is a Soulseek client"
 #~ msgstr "Nicotine+ 是 Soulseek 客户端"
@@ -6924,96 +6655,8 @@ msgstr "Nicotine+ 指令"
 #~ msgid "Picture not saved, %s already exists."
 #~ msgstr "图片未保存，%s 已存在。"
 
-#, fuzzy
-#~ msgid "_Open"
-#~ msgstr "_打开"
-
-#, fuzzy
-#~ msgid "_Save"
-#~ msgstr "_保存"
-
-#, fuzzy, python-format
-#~ msgid "Failed to load plugin '%s', could not find it."
-#~ msgstr "无法加载插件“%s”，找不到它。"
-
-#, fuzzy, python-format
-#~ msgid "I/O error: %s"
-#~ msgstr "输入/输出错误：%s"
-
-#, fuzzy, python-format
-#~ msgid "Failed to open file path: %s"
-#~ msgstr "打开文件路径失败：%s"
-
-#, fuzzy, python-format
-#~ msgid "Failed to open URL: %s"
-#~ msgstr "打开网址失败：%s"
-
-#, fuzzy
-#~ msgid "_Log Conversation"
-#~ msgstr "_记录对话"
-
-#, fuzzy
-#~ msgid "Result Filter List"
-#~ msgstr "结果过滤器列表"
-
-#, fuzzy
-#~ msgid "Prepend < or > to find files less/greater than the given value."
-#~ msgstr "添加 < 或 > 以查找小于/大于给定值的文件。"
-
-#, fuzzy
-#~ msgid ""
-#~ "VBR files display their average bitrate and are typically lower in "
-#~ "bitrate than a compressed 320 kbps CBR file of the same audio quality."
-#~ msgstr ""
-#~ "VBR 文件显示其平均比特率，并且比特率通常低于相同音频质量的压缩 320 kbps "
-#~ "CBR 文件。"
-
-#, fuzzy
-#~ msgid "Like Size above, =, <, and > can be used."
-#~ msgstr "与上面的 Size 一样，可以使用 =、< 和 >。"
-
-#, fuzzy
-#~ msgid ""
-#~ "Prevent write access by other programs for files being downloaded (turn "
-#~ "off for NFS)"
-#~ msgstr "防止其他程序对正在下载的文件进行写访问（对 NFS 关闭）"
-
-#, fuzzy
-#~ msgid "Where incomplete downloads are temporarily stored."
-#~ msgstr "临时存储不完整下载的位置。"
-
-#, fuzzy
-#~ msgid ""
-#~ "Where buddies' uploads will be stored (with a subfolder created for each "
-#~ "buddy)."
-#~ msgstr "将存储好友上传的内容（为每个好友创建一个子文件夹）。"
-
-#, fuzzy
-#~ msgid "Toggle away status after minutes of inactivity:"
-#~ msgstr "几分钟不活动后切换状态："
-
-#, fuzzy
-#~ msgid "Protocol:"
-#~ msgstr "协议："
-
-#, fuzzy
-#~ msgid "Icon theme folder (requires restart):"
-#~ msgstr "图标主题文件夹（需要重启）："
-
 #~ msgid "Establishing connection"
 #~ msgstr "建立中的连接"
 
 #~ msgid "Clear Groups"
 #~ msgstr "清除组"
-
-#, fuzzy
-#~ msgid "_Reset Statistics…"
-#~ msgstr "_重置统计…"
-
-#, fuzzy
-#~ msgid "Clear _Downloads…"
-#~ msgstr "清除_下载…"
-
-#, fuzzy
-#~ msgid "Clear Uploa_ds…"
-#~ msgstr "清除Upload_ds…"

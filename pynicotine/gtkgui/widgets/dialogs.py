@@ -243,6 +243,18 @@ class Dialog(Window):
         self.widget.set_modal(self.modal and self.parent.is_visible())
         present_callback()
 
+    def set_show_title_buttons(self, visible):
+
+        header_bar = self.widget.get_titlebar()
+
+        if header_bar is None:
+            return
+
+        if GTK_API_VERSION >= 4:
+            header_bar.set_show_title_buttons(visible)    # pylint: disable=no-member
+        else:
+            header_bar.set_show_close_button(visible)     # pylint: disable=no-member
+
     def present(self):
 
         if self not in Window.active_dialogs:
@@ -269,9 +281,9 @@ class MessageDialog(Window):
     def __init__(self, parent, title, message, callback=None, callback_data=None, long_message=None,
                  buttons=None, destructive_response_id=None):
 
-        # Prioritize modal non-message dialogs as parent
+        # Prioritize non-message dialogs as parent
         for active_dialog in reversed(Window.active_dialogs):
-            if isinstance(active_dialog, Dialog) and active_dialog.modal:
+            if isinstance(active_dialog, Dialog):
                 parent = active_dialog
                 break
 
@@ -318,7 +330,7 @@ class MessageDialog(Window):
             add_css_class(widget, css_class)
 
         header_bar = Gtk.Box(height_request=16, visible=True)
-        box = Gtk.Box(margin_start=30, margin_end=30, spacing=30, visible=True)
+        box = Gtk.Box(margin_start=24, margin_end=24, visible=True)
         message_area = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10, hexpand=True, visible=True)
         action_box = Gtk.Box(visible=True)
         action_area = Gtk.Box(hexpand=True, homogeneous=True, visible=True)
@@ -340,7 +352,7 @@ class MessageDialog(Window):
             widget.set_titlebar(header_bar_handle)
             widget.connect("close-request", self._on_close_request)
 
-            internal_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=20, visible=True)
+            internal_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, visible=True)
 
             vbox.append(internal_vbox)                                # pylint: disable=no-member
             vbox.append(action_box)                                   # pylint: disable=no-member
