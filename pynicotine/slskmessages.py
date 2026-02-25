@@ -1920,9 +1920,11 @@ class PrivilegedUsers(ServerMessage):
 class HaveNoParent(ServerMessage):
     """Server code 71.
 
-    We inform the server if we have a distributed parent or not. If not,
-    the server eventually sends us a PossibleParents message with a list
-    of 10 possible parents to connect to.
+    We inform the server if we have a distributed parent or not. If not, the
+    server eventually sends us a PossibleParents message with a list of
+    possible parents to connect to. If no candidates are found, no such
+    message is sent by the server, and we eventually become a branch root
+    (i.e. the server starts sending us EmbeddedMessage messages).
     """
 
     __slots__ = ("noparent",)
@@ -2099,6 +2101,12 @@ class EmbeddedMessage(ServerMessage):
     server message instead of the unpacked message, which resulted in other
     client implementations adopting this erroneous behavior. This bug was
     fixed in SoulseekQt in early 2026.
+
+    Soulseek NS also distributes DistribBranchLevel and DistribBranchRoot
+    messages, although the server doesn't send them, and increments the branch
+    level before distribution. This is presumably a side effect of processing
+    embedded messages as regular distributed messages, since SoulseekQt
+    doesn't accept messages other than DistribSearch from the server.
     """
 
     __slots__ = ("distrib_code", "distrib_message")
@@ -2516,8 +2524,8 @@ class AckNotifyPrivileges(ServerMessage):
 class BranchLevel(ServerMessage):
     """Server code 126.
 
-    We tell the server what our position is in our branch (xth
-    generation) on the distributed network.
+    We tell the server what our position is in our branch (nth generation) in
+    the distributed network.
     """
 
     __slots__ = ("value",)
@@ -2532,8 +2540,8 @@ class BranchLevel(ServerMessage):
 class BranchRoot(ServerMessage):
     """Server code 127.
 
-    We tell the server the username of the root of the branch we’re in
-    on the distributed network.
+    We tell the server the username of the root of the branch we’re in in the
+    distributed network.
     """
 
     __slots__ = ("user",)
@@ -2548,10 +2556,17 @@ class BranchRoot(ServerMessage):
 class ChildDepth(ServerMessage):
     """Server code 129.
 
-    We tell the server the maximum number of generation of children we
-    have on the distributed network.
+    When we are a branch root in the distributed network, and receive a
+    DistribChildDepth message from a child peer, we increment the depth and
+    send this final value to the server.
 
-    DEPRECATED, sent by Soulseek NS but not SoulseekQt
+    This message is obsolete. While Soulseek NS sends the correct value to the
+    server, SoulseekQt doesn't implement this message correctly, always sending
+    a uint8 value of 1 instead. Presumably, the server has opted to calculate
+    child depths on its own, based on branch level/root information sent by
+    peers.
+
+    OBSOLETE, no longer used
     """
 
     __slots__ = ("value",)
@@ -3945,7 +3960,7 @@ class DistribMessage(SlskMessage):
 class DistribPing(DistribMessage):
     """Distrib code 0.
 
-    We ping distributed children every 60 seconds.
+    We ping our parent and children every minute.
 
     DEPRECATED, sent by Soulseek NS but not SoulseekQt
     """
@@ -3963,11 +3978,16 @@ class DistribPing(DistribMessage):
 class DistribSearch(DistribMessage):
     """Distrib code 3.
 
-    Search request that arrives through the distributed network. We
-    transmit the search request to our child peers.
+    Search request that arrives through the distributed network. We distribute
+    the raw message (including unknown message attributes) to our child peers.
 
-    Identifier is always the code point of ASCII character 1 (49). We
-    reject messages that use any other value.
+    The first potential parent that sends us a search request in addition to
+    branch root/level information becomes our actual parent. Some clients,
+    such as Soulseek NS and earlier Nicotine+ versions, adopt a parent as soon
+    as it sends the branch root/level information instead.
+
+    Identifier is always the code point of ASCII character 1 (49). We reject
+    messages that use any other value.
     """
 
     __slots__ = ("identifier", "search_username", "token", "searchterm")
@@ -3990,8 +4010,15 @@ class DistribSearch(DistribMessage):
 class DistribBranchLevel(DistribMessage):
     """Distrib code 4.
 
-    We tell our distributed children what our position is in our branch
-    (xth generation) on the distributed network.
+    We tell our distributed children what our position is in our branch (nth
+    generation) in the distributed network. Our branch level is the branch
+    level from our parent incremented by one. If we are a branch root (i.e.
+    the server sends us EmbeddedMessage messages), our branch level is 0
+    instead.
+
+    When connecting to potential parents, they send us this message. We record
+    the information, and adopt the first parent that sends us a DistribSearch
+    message in addition to branch root/level information.
 
     If we receive a branch level of 0 from a parent, we should mark the
     parent as our branch root. Due to incorrect behavior in older client
@@ -4015,8 +4042,13 @@ class DistribBranchLevel(DistribMessage):
 class DistribBranchRoot(DistribMessage):
     """Distrib code 5.
 
-    We tell our distributed children the username of the root of the
-    branch we’re in on the distributed network.
+    We tell our distributed children the username of the root of the branch
+    we're in in the distributed network. If we are the branch root (i.e. the
+    server sends us EmbeddedMessage messages), we send our own username.
+
+    When connecting to potential parents, they send us this message. We record
+    the information, and adopt the first parent that sends us a DistribSearch
+    message in addition to branch root/level information.
 
     Note that SoulseekQt used to not send this message when becoming a branch
     root. This behavior was corrected in early 2026. We should always send the
@@ -4039,10 +4071,16 @@ class DistribBranchRoot(DistribMessage):
 class DistribChildDepth(DistribMessage):
     """Distrib code 7.
 
-    We tell our distributed parent the maximum number of generation of
-    children we have on the distributed network.
+    When adopting a new parent, we send them this message with a child depth of
+    zero. Our parent increments the depth, sends the message to their parent,
+    who does the same, until it reaches the branch root, who sends the final
+    child depth to the server in the form of a ChildDepth message.
 
-    DEPRECATED, sent by Soulseek NS but not SoulseekQt
+    This message is obsolete, since SoulseekQt doesn't send it. Presumably, the
+    server has opted to calculate child depths on its own, based on branch
+    level/root information sent by peers.
+
+    OBSOLETE, no longer used
     """
 
     __slots__ = ("value",)
@@ -4235,14 +4273,14 @@ SERVER_MESSAGE_CODES = {
     AckNotifyPrivileges: 125,     # Deprecated
     BranchLevel: 126,
     BranchRoot: 127,
-    ChildDepth: 129,              # Deprecated
+    ChildDepth: 129,              # Obsolete
     ResetDistributed: 130,
     RoomMembers: 133,
     AddRoomMember: 134,
     RemoveRoomMember: 135,
     CancelRoomMembership: 136,
     CancelRoomOwnership: 137,
-    RoomSomething: 138,    # Obsolete
+    RoomSomething: 138,           # Obsolete
     RoomMembershipGranted: 139,
     RoomMembershipRevoked: 140,
     EnableRoomInvitations: 141,
@@ -4294,7 +4332,7 @@ DISTRIBUTED_MESSAGE_CODES = {
     DistribSearch: 3,
     DistribBranchLevel: 4,
     DistribBranchRoot: 5,
-    DistribChildDepth: 7,         # Deprecated
+    DistribChildDepth: 7,         # Obsolete
     DistribEmbeddedMessage: 93    # Deprecated
 }
 
