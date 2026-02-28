@@ -3128,7 +3128,7 @@ messages that use any other value.
   - Send
     -   *Raw Message*
   - Receive
-    1.  **uint32** *identifier*
+    1.  **uint32** *identifier*  
         Value is always the code point of ASCII character 1 (`49`)
     2.  **string** *username*
     3.  **uint32** *token*
