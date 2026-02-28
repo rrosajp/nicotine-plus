@@ -708,6 +708,10 @@ class NetworkThread(Thread):
             username=username
         )
 
+        if unpacked_msg.identifier != "1":
+            # Ignore invalid message
+            return None
+
         return unpacked_msg
 
     def _emit_network_message_event(self, msg):
@@ -2335,6 +2339,10 @@ class NetworkThread(Thread):
         username = msg.username
 
         if msg_class is DistribSearch:
+            if msg.identifier != "1":
+                # Ignore invalid message
+                return True
+
             if self._parent is None:
                 self._adopt_parent(username)
 

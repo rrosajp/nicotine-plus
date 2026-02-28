@@ -3965,19 +3965,23 @@ class DistribSearch(DistribMessage):
 
     Search request that arrives through the distributed network. We
     transmit the search request to our child peers.
+
+    Identifier is always the code point of ASCII character 1 (49). We
+    reject messages that use any other value.
     """
 
-    __slots__ = ("unknown", "search_username", "token", "searchterm")
+    __slots__ = ("identifier", "search_username", "token", "searchterm")
 
     def __init__(self):
         DistribMessage.__init__(self)
-        self.unknown = None
+        self.identifier = None
         self.search_username = None
         self.token = None
         self.searchterm = None
 
     def parse_network_message(self, message):
-        pos, self.unknown = self.unpack_uint32(message)
+        pos, codepoint = self.unpack_uint32(message)
+        self.identifier = chr(codepoint)
         pos, self.search_username = self.unpack_string(message, pos)
         pos, self.token = self.unpack_uint32(message, pos)
         pos, self.searchterm = self.unpack_string(message, pos)

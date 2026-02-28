@@ -3101,12 +3101,16 @@ We ping distributed children every 60 seconds.
 Search request that arrives through the distributed network. We transmit the
 search request to our child peers.
 
+Identifier is always the code point of ASCII character 1 (49). We reject
+messages that use any other value.
+
 ### Data Order
 
   - Send
     -   *Raw Message*
   - Receive
-    1.  **uint32** *unknown*
+    1.  **uint32** *identifier*
+        Value is always the code point of ASCII character 1 (`49`)
     2.  **string** *username*
     3.  **uint32** *token*
     4.  **string** *query*
