@@ -3969,21 +3969,12 @@ class DistribSearch(DistribMessage):
 
     __slots__ = ("unknown", "search_username", "token", "searchterm")
 
-    def __init__(self, unknown=None, search_username=None, token=None, searchterm=None):
+    def __init__(self):
         DistribMessage.__init__(self)
-        self.unknown = unknown
-        self.search_username = search_username
-        self.token = token
-        self.searchterm = searchterm
-
-    def make_network_message(self):
-        msg = bytearray()
-        msg += self.pack_uint32(self.unknown)
-        msg += self.pack_string(self.search_username)
-        msg += self.pack_uint32(self.token)
-        msg += self.pack_string(self.searchterm)
-
-        return msg
+        self.unknown = None
+        self.search_username = None
+        self.token = None
+        self.searchterm = None
 
     def parse_network_message(self, message):
         pos, self.unknown = self.unpack_uint32(message)
@@ -4081,10 +4072,10 @@ class DistribEmbeddedMessage(DistribMessage):
 
     __slots__ = ("distrib_code", "distrib_message")
 
-    def __init__(self, distrib_code=None, distrib_message=None):
+    def __init__(self):
         DistribMessage.__init__(self)
-        self.distrib_code = distrib_code
-        self.distrib_message = distrib_message
+        self.distrib_code = None
+        self.distrib_message = None
 
     def parse_network_message(self, message):
         # Start from an offset, since the message type is actually uint32,

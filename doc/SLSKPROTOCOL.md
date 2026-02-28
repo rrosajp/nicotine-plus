@@ -5,7 +5,7 @@
 
 # Soulseek Protocol Documentation
 
-[Last updated on February 19, 2026](https://github.com/nicotine-plus/nicotine-plus/commits/master/doc/SLSKPROTOCOL.md)
+[Last updated on February 28, 2026](https://github.com/nicotine-plus/nicotine-plus/commits/master/doc/SLSKPROTOCOL.md)
 
 Since the official Soulseek client and server is proprietary software, this
 documentation has been compiled thanks to years of reverse engineering efforts.
@@ -3104,10 +3104,7 @@ search request to our child peers.
 ### Data Order
 
   - Send
-    1.  **uint32** *unknown*
-    2.  **string** *username*
-    3.  **uint32** *token*
-    4.  **string** *query*
+    -   *Raw Message*
   - Receive
     1.  **uint32** *unknown*
     2.  **string** *username*
@@ -3190,10 +3187,7 @@ SoulseekQt in early 2026.
 ### Data Order
 
   - Send
-    1.  **uint8** *distributed code*  
-        See [Distributed Message Codes](#distributed-message-codes)
-    2.  **bytes** *distributed message*  
-        Raw message associated with distributed code
+    -   *No Message*
   - Receive
     1.  **uint8** *distributed code*  
         See [Distributed Message Codes](#distributed-message-codes)
