@@ -314,7 +314,7 @@ server, but it handles the protocol well enough (and can be modified).
 | `125`  | [Acknowledge Notify Privileges](#server-code-125) `DEPRECATED` |
 | `126`  | [Branch Level](#server-code-126)                               |
 | `127`  | [Branch Root](#server-code-127)                                |
-| `129`  | [Child Depth](#server-code-129) `DEPRECATED`                   |
+| `129`  | [Child Depth](#server-code-129) `OBSOLETE`                     |
 | `130`  | [Reset Distributed](#server-code-130)                          |
 | `133`  | [Room Members](#server-code-133)                               |
 | `134`  | [Add Room Member](#server-code-134)                            |
@@ -3088,7 +3088,7 @@ peer is allowed. In Nicotine+, these messages are defined in slskmessages.py.
 | `3`  | [Search Request](#distributed-code-3)                 |
 | `4`  | [Branch Level](#distributed-code-4)                   |
 | `5`  | [Branch Root](#distributed-code-5)                    |
-| `7`  | [Child Depth](#distributed-code-7) `DEPRECATED`       |
+| `7`  | [Child Depth](#distributed-code-7) `OBSOLETE`         |
 | `93` | [Embedded Message](#distributed-code-93) `DEPRECATED` |
 
 
